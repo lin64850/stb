@@ -25,14 +25,14 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         this.state = {
         }
     }
-    render() {
+    protected render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>
             </div>
         )
     }
-    subscribeToEvents() {
+    protected subscribeToEvents() {
         this.onkeydown((e) => {
             if (Key.Enter === e.keyCode) {
                 this.onEnter();
@@ -42,13 +42,13 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
             }
         })
     }
-    componentDidMount() {
+    protected componentDidMount() {
         this.target(MType.Page);
     }
-    onEnter() {
+    protected onEnter() {
         this.trigger(PageType.Blank, { url: "./index.html", params: {} });
     }
-    onBackspace() {
+    protected onBackspace() {
         this.trigger(PageType.Previous);
     }
     show(msg) {
