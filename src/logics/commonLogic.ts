@@ -1,12 +1,15 @@
-import { BaseLogic, RequestInfo, ResponseInfo } from "./baseLogic";
-import { Dictionary } from "../framework/conllection/dictionary";
-import { Config, getApiAddress } from "../config";
+/**
+ * 依赖 SystemBase
+ * @description 原生Ajax 支持同步请求
+ */
+import { BaseLogic, RequestInfo, ResponseInfo } from "./systemBase";
+import { getApiAddress } from "../config";
 
 interface IMain {
 }
 
 class CommonLogic extends BaseLogic {
-    getMainData(data: IMain, callback: (info: ResponseInfo<any>) => void) {
+    getMain(data: IMain, callback: (info: ResponseInfo<any>) => void) {
         let url = getApiAddress("main");
         let params = data;
 
@@ -30,8 +33,6 @@ class CommonLogic extends BaseLogic {
         }
         this.syncGet(request);
     }
-    
-    
 }
 
 export { CommonLogic }

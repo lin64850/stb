@@ -1,0 +1,3 @@
+class MainEntity {
+}
+export { MainEntity }

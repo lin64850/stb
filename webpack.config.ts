@@ -3,11 +3,34 @@ import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
 import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as webpack from 'webpack';
 import * as cleanWebpackPlugin from 'clean-webpack-plugin';
+import { pages } from "./webpack.pages.config";
+
+const tsxTem = "./src/pages/{name}/index.tsx";
+const lesTem = "./src/pages/{name}/index.less";
+
+// 动态配置
+const entrys: any = {};
+const plugis: any = [
+  new cleanWebpackPlugin(['dist']),
+  new ExtractTextPlugin({
+    filename: '[name].css'
+  })
+];
+
+pages.forEach((v) => {
+  entrys[`js_${v}`] = tsxTem.replace("{name}", v);
+  entrys[`css_${v}`] = lesTem.replace("{name}", v);
+  plugis.push(
+    new HtmlWebpackPlugin({
+      filename: `${v}.html`,
+      template: `./src/pages/${v}/index.html`,
+      chunks: [`common`, `runtime`, `css_${v}`, `js_${v}`]
+    })
+  )
+});
 
 const config: webpack.Configuration | any = {
-  entry: {
-    index: "./src/pages/index/index.tsx"
-  },
+  entry: entrys,
   output: {
     filename: 'js/[name].js',
     chunkFilename: 'js/[name].js',
@@ -77,17 +100,7 @@ const config: webpack.Configuration | any = {
     },
     runtimeChunk: 'single'
   },
-  plugins: [
-    new cleanWebpackPlugin(['dist']),
-    new ExtractTextPlugin({
-      filename: '[name].css'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/pages/index/index.html',
-      chunks: ['index', 'common', 'runtime']
-    })
-  ],
+  plugins: plugis,
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json']
   },

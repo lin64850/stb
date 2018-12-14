@@ -2,9 +2,6 @@ import { Ajax } from "../framework/basic/ajax";
 import { Dictionary } from "../framework/conllection/dictionary";
 import { Json } from "../framework/basic/json";
 
-/**
- * @name 数据逻辑
- */
 export class RequestInfo {
 
     public readonly data: any;
