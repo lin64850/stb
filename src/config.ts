@@ -18,7 +18,7 @@ export let Config = {
     /**
      * 项目唯一标识
      */
-    mainCookieName: "***_token_cookiename"
+    mainCookieName: "xxx_token_cookiename"
 }
 
 let host = window.location.host;
