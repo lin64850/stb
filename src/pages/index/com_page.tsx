@@ -16,7 +16,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         this.state = {
         }
     }
-    render() {
+    protected render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>

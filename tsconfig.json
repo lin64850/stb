@@ -20,7 +20,8 @@
             "es2015.promise",
             "dom",
             "es2015"
-        ]
+        ],
+        "experimentalDecorators": true
     },
     "compileOnSave": false
 }
