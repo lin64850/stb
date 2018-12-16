@@ -16,6 +16,7 @@
 >>#### [我的第一个EPG程序（三）：焦点管理](https://github.com/442331311/stb/issues/5)
 >>#### [我的第一个EPG程序（四）：认识页面生命周期](https://github.com/442331311/stb/issues/18)
 >>#### [我的第一个EPG程序（五）：页面跳转与参数传递](https://github.com/442331311/stb/issues/19)
+>>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
 
 ### 进阶
 >>#### ~~[程序设计（一）：父组件]()~~
