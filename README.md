@@ -48,6 +48,7 @@
 >>[EPG开发日志（一）：盒子与浏览器差异](https://github.com/442331311/stb/issues/1)
 
 ### 开发体验优化
+>> #### [开发体验优化（一）：Visual Studio Code 插件推荐](https://github.com/442331311/stb/issues/26)
 >> ~~[开发体验优化（一）：清除缓存之本地服务]()~~
 
 #### 当前版本更新
