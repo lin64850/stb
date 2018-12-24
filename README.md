@@ -63,6 +63,9 @@
 >- 修复 css 样式冲突问题
 >- 扩展模板命令 page:clean 创建简洁模板; page:complete 创建完整模板
 >- 优化 src/component/** 文件
+>- 移除 bootstrap 采用源码级二次开发
+>- 模板细节优化
+>- 扩展组件命令 com:clean 创建简洁组件模板(yarn gulp com:clean --index/menu)
 
 # 相关项目
 - anhui-戏曲（2017）

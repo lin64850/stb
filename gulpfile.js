@@ -62,3 +62,19 @@ gulp.task('page:complete', () => {
       .pipe(gulp.dest('./src/pages/' + fileName))
   }
 })
+gulp.task('com:clean', () => {
+  var fileName = process.argv[3]
+
+  if (0 !== fileName.indexOf('--')) {
+    return new Error('错误：请输入页面名称 -componentName')
+  } else {
+    fileName = fileName.substr(2, fileName.length)
+
+    var suf = fileName.split('/');
+
+    return gulp.src('./src/template/com_clean.tsx')
+      .pipe(rename({ basename: 'com_' + suf[1] }))
+      .pipe(replace('Index', suf[1].substr(0, 1).toUpperCase() + suf[1].substr(1, suf[1].length - 1)))
+      .pipe(gulp.dest('./src/pages/' + suf[0]))
+  }
+})

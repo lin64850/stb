@@ -1,1 +1,1 @@
-export import index_bg_png = require("../../package/images/");
+// export const index_bg = require("../../package/images/");
