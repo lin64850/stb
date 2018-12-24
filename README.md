@@ -60,12 +60,14 @@
 >- TipsComponent 显示效果优化
 >- 优化 config.ts 配置文件
 >- 优化 Webpack 配置文件
+>- 新增 webpack.pages.config 配置文件，优化新页面配置流程
 >- 修复 css 样式冲突问题
 >- 扩展模板命令 page:clean 创建简洁模板; page:complete 创建完整模板
 >- 优化 src/component/** 文件
 >- 移除 bootstrap 采用源码级二次开发
 >- 模板细节优化
->- 扩展组件命令 com:clean 创建简洁组件模板(yarn gulp com:clean --index/menu)
+>- 扩展组件命令 yarn gulp com:clean --index/menu 创建组件模板
+>- 优化 HElement 访问权限
 
 # 相关项目
 - anhui-戏曲（2017）
@@ -83,3 +85,5 @@
 - anhui-直播活动（2018.11）
 - guangxi-教育（2018.11）
 - guizhou-国学（2018.11）
+- shanxi-国学（2018.11）
+- sichuanyidong-快乐佳贝（2018.12）
