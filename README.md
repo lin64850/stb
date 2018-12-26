@@ -10,6 +10,58 @@
 #### 基于这样的初衷想过一些方案，比如利用主流框架优势(React、Vue)来简化开发难度，通过TypeScript 引入模块化方案。通过前端OOP合理组织代码。有些方案可行，盒子运行内核由各大厂商(华为、中兴、海信、烽火)等。盒子版本有2k、4k，由于这些客观原因，导致主流框架无法运行。
 #### React 具有视图层复用，单项数据流等优势，对于EPG开发来说是一种福音。读了 [React 设计思想](https://github.com/react-guide/react-basic) 以及各个大神解析的 React 实现思路。完成了具备（状态机、虚拟DOM、组件化、子父组件）等概念的TV版React 框架且在各大IPTV专区完美运行，当然还有非常大改进空间。不过现有框架的优势也很明显，因此建议大家在了解后采用他，并提出自己宝贵改进建议。
 
+### [特性预览](https://github.com/442331311/stb/issues/30)
+### 特性预览
+**React API** 
+``` typescript
+export class PageModule extends React.Component<IPageProps, IPageState>{
+
+    constructor(props: IPageProps) {
+        super(props);
+        this.state = {
+        }
+    }
+    protected render() {
+        return (
+            <div class="content">
+                <span>Hello EPG!</span>
+            </div>
+        )
+    }
+    protected componentDidMount(){
+
+    }
+    protected componentDidUpdate(){
+
+    }
+    protected componentFocusUpdate(){
+        
+    }
+}
+```
+**Jsx 语法**
+``` typescript
+protected render() {
+        return (
+            <div class="content">
+                <span>Hello EPG!</span>
+            </div>
+        )
+}
+```
+
+**智能焦点**
+![autofocus](https://user-images.githubusercontent.com/27858763/50434175-70084a00-0917-11e9-82c4-356f1dd10c6d.gif)
+
+**数据滚动**
+![default](https://user-images.githubusercontent.com/27858763/50433765-36ceda80-0915-11e9-9c23-59a9eb1e2e8d.gif)
+
+**翻页组件**
+![page](https://user-images.githubusercontent.com/27858763/50434728-726ba380-0919-11e9-929c-84df1118e882.gif)
+
+~~BootEpg UI库~~
+
+
 ### 起步
 >>#### [我的第一个EPG程序（一）：初始化项目环境](https://github.com/442331311/stb/issues/3)
 >>#### [我的第一个EPG程序（二）：Hello EPG!](https://github.com/442331311/stb/issues/4)
