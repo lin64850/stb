@@ -14,7 +14,6 @@
 > **React API** 
 ``` typescript
 export class PageModule extends React.Component<IPageProps, IPageState>{
-
     constructor(props: IPageProps) {
         super(props);
         this.state = {
@@ -28,17 +27,16 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         )
     }
     protected componentDidMount(){
-
     }
     protected componentDidUpdate(){
-
     }
     protected componentFocusUpdate(){
-        
     }
 }
 ```
-> **Jsx 语法**
+
+> #### **Jsx 语法**
+
 ``` typescript
 protected render() {
         return (
@@ -49,14 +47,17 @@ protected render() {
 }
 ```
 
-> **智能焦点**
-![autofocus](https://user-images.githubusercontent.com/27858763/50434175-70084a00-0917-11e9-82c4-356f1dd10c6d.gif)
+> #### **智能焦点**
+
+> ![autofocus](https://user-images.githubusercontent.com/27858763/50434175-70084a00-0917-11e9-82c4-356f1dd10c6d.gif)
 
 > **数据滚动**
-![default](https://user-images.githubusercontent.com/27858763/50433765-36ceda80-0915-11e9-9c23-59a9eb1e2e8d.gif)
+
+> ![default](https://user-images.githubusercontent.com/27858763/50433765-36ceda80-0915-11e9-9c23-59a9eb1e2e8d.gif)
 
 > **翻页组件**
-![page](https://user-images.githubusercontent.com/27858763/50434728-726ba380-0919-11e9-929c-84df1118e882.gif)
+
+> ![page](https://user-images.githubusercontent.com/27858763/50434728-726ba380-0919-11e9-929c-84df1118e882.gif)
 
 ~~BootEpg UI库~~
 
