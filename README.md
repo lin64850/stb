@@ -11,8 +11,7 @@
 #### React 具有视图层复用，单项数据流等优势，对于EPG开发来说是一种福音。读了 [React 设计思想](https://github.com/react-guide/react-basic) 以及各个大神解析的 React 实现思路。完成了具备（状态机、虚拟DOM、组件化、子父组件）等概念的TV版React 框架且在各大IPTV专区完美运行，当然还有非常大改进空间。不过现有框架的优势也很明显，因此建议大家在了解后采用他，并提出自己宝贵改进建议。
 
 ### [特性预览](https://github.com/442331311/stb/issues/30)
-### 特性预览
-**React API** 
+>**React API** 
 ``` typescript
 export class PageModule extends React.Component<IPageProps, IPageState>{
 
@@ -39,7 +38,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
     }
 }
 ```
-**Jsx 语法**
+>**Jsx 语法**
 ``` typescript
 protected render() {
         return (
@@ -50,13 +49,13 @@ protected render() {
 }
 ```
 
-**智能焦点**
+>**智能焦点**
 ![autofocus](https://user-images.githubusercontent.com/27858763/50434175-70084a00-0917-11e9-82c4-356f1dd10c6d.gif)
 
-**数据滚动**
+>**数据滚动**
 ![default](https://user-images.githubusercontent.com/27858763/50433765-36ceda80-0915-11e9-9c23-59a9eb1e2e8d.gif)
 
-**翻页组件**
+>**翻页组件**
 ![page](https://user-images.githubusercontent.com/27858763/50434728-726ba380-0919-11e9-929c-84df1118e882.gif)
 
 ~~BootEpg UI库~~
