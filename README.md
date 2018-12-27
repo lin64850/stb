@@ -39,28 +39,28 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
 
 ``` typescript
 protected render() {
-        return (
-            <div class="content">
-                <span>Hello EPG!</span>
-            </div>
-        )
+    return (
+        <div class="content">
+        <span>Hello EPG!</span>
+        </div>
+    )
 }
 ```
+> **[智能焦点](https://github.com/442331311/stb/issues/30)**
 
-> #### **智能焦点**
+> **[数据滚动](https://github.com/442331311/stb/issues/30)**
 
-> ![autofocus](https://user-images.githubusercontent.com/27858763/50434175-70084a00-0917-11e9-82c4-356f1dd10c6d.gif)
+> **[翻页组件](https://github.com/442331311/stb/issues/30)**
 
-> **数据滚动**
-
-> ![default](https://user-images.githubusercontent.com/27858763/50433765-36ceda80-0915-11e9-9c23-59a9eb1e2e8d.gif)
-
-> **翻页组件**
-
-> ![page](https://user-images.githubusercontent.com/27858763/50434728-726ba380-0919-11e9-929c-84df1118e882.gif)
+> **数据结构 (已经兼容的ES6特性)**
+>- [字典](https://github.com/442331311/framework/blob/master/conllection/dictionary.ts)
+>- [链表](https://github.com/442331311/framework/blob/master/conllection/doublyLinkedList.ts)
+>- [队列](https://github.com/442331311/framework/blob/master/conllection/queue.ts)
+>- [集合](https://github.com/442331311/framework/blob/master/conllection/set.ts)
 
 ~~BootEpg UI库~~
-
+> ~~分页列表~~
+> ~~菜单~~
 
 ### 起步
 >>#### [我的第一个EPG程序（一）：初始化项目环境](https://github.com/442331311/stb/issues/3)
