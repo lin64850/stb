@@ -4,6 +4,7 @@
 
 #### 历史版本
 >- 前往版本 [v1.0.0](https://github.com/442331311/stb/issues/20)
+>- 前往版本 [v1.1.0](https://github.com/442331311/stb/issues/32)
 
 ## 不再复杂的EPG页面开发
 #### EPG运行于电视端，与我们所接触的前端(手机端、电脑端)有一定差异。体现为复杂的焦点管理，调试成本很高，播放器以及各个盒子之间兼容性问题。都在我们编码前无形增加难度。甚至于一天写好所有功能，要花两到三天去调试程序BUG，这几乎是无法接受的状态，恰恰也是不可避免的问题。
@@ -104,23 +105,7 @@ protected render() {
 >> ~~[开发体验优化（一）：清除缓存之本地服务]()~~
 
 #### 当前版本更新
->- 支持 axios 请求，更简洁的 logic 编写
->- 更新文件命名规则
-	logics/***.ts 无需 Logic结尾
-	entitys/***.ts 无需 Entity结尾
->- axios Get 请求支持数据缓存
->- TipsComponent 显示效果优化
->- 优化 config.ts 配置文件
->- 优化 Webpack 配置文件
->- 新增 webpack.pages.config 配置文件，优化新页面配置流程
->- 修复 css 样式冲突问题
->- 扩展模板命令 page:clean 创建简洁模板; page:complete 创建完整模板
->- 优化 src/component/** 文件
->- 移除 bootstrap 采用源码级二次开发
->- 模板细节优化
->- 扩展组件命令 yarn gulp com:clean --index/menu 创建组件模板
->- 优化 HElement 访问权限
->- 优化 Cookie 对象潜在兼容性问题
+>- todo
 
 # 相关项目
 - anhui-戏曲（2017）
