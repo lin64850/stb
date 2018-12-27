@@ -120,6 +120,7 @@ protected render() {
 >- 模板细节优化
 >- 扩展组件命令 yarn gulp com:clean --index/menu 创建组件模板
 >- 优化 HElement 访问权限
+>- 优化 Cookie 对象潜在兼容性问题
 
 # 相关项目
 - anhui-戏曲（2017）
