@@ -1,8 +1,8 @@
 # V1.2.0 文档
-#### 文档以及示例源码不定期更新
+> 文档以及示例源码不定期更新
 #### 收藏点star，订阅点watch
 
-#### 历史版本
+> 历史版本
 >- 前往版本 [v1.1.0](https://github.com/442331311/stb/issues/32)
 >- 前往版本 [v1.0.0](https://github.com/442331311/stb/issues/20)
 
@@ -73,10 +73,8 @@ protected render() {
 
 ### 进阶
 >>#### [程序设计（一）：组件](https://github.com/442331311/stb/issues/25)
->>#### [程序设计（一）：父组件](https://github.com/442331311/stb/issues/27)
->>#### [程序设计（二）：子组件](https://github.com/442331311/stb/issues/29)
->>#### ~~[程序设计（三）：子父组件通信]()~~
->>#### ~~[程序设计（三）：tab设计原则]()~~
+>>#### [程序设计（二）：父组件](https://github.com/442331311/stb/issues/27)
+>>#### [程序设计（三）：子组件](https://github.com/442331311/stb/issues/29)
 >>#### [程序设计（四）：Tips 消息](https://github.com/442331311/stb/issues/21)
 >>#### [程序设计（五）：Log 日志](https://github.com/442331311/stb/issues/23)
 >>#### [程序设计（六）：Form 表单](https://github.com/442331311/stb/issues/24)
@@ -92,7 +90,7 @@ protected render() {
 ### 播放器
 >>#### [播放器（一）：引言](https://github.com/442331311/stb/issues/31)
 >>#### [播放器（二）：接口调用](https://github.com/442331311/stb/issues/34)
->>#### ~~[播放器（一）：事件监听]()~~
+>>#### [播放器（三）：事件监听](https://github.com/442331311/stb/issues/35)
 >>#### ~~[播放器（一）：优化技巧]()~~
 
 ### EPG开发记录
