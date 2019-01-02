@@ -24,6 +24,7 @@ pages.forEach((v) => {
     new HtmlWebpackPlugin({
       filename: `${v}.html`,
       template: `./src/pages/${v}/index.html`,
+      hash: true,
       chunks: [`common`, `runtime`, `css_${v}`, `js_${v}`]
     })
   )
