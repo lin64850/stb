@@ -78,7 +78,7 @@ protected render() {
 >>#### [程序设计（五）：Log 日志](https://github.com/442331311/stb/issues/23)
 >>#### [程序设计（六）：Form 表单](https://github.com/442331311/stb/issues/24)
 >>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
->>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/22)
+>>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/36)
 
 ### 高阶
 >>#### ~~[装饰器（一）：普通组件]()~~
