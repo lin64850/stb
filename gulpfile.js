@@ -42,6 +42,10 @@ gulp.task('page:clean', () => {
   } else {
     fileName = fileName.substr(2, fileName.length)
 
+    gulp.src('./webpack.pages.config.ts')
+      .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
+      .pipe(gulp.dest('./'))
+
     return gulp.src('./src/template/clean/**/*')
       // .pipe(rename({basename: fileName}))
       .pipe(replace('index', fileName))
@@ -56,6 +60,10 @@ gulp.task('page:complete', () => {
   } else {
     fileName = fileName.substr(2, fileName.length)
 
+    gulp.src('./webpack.pages.config.ts')
+      .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
+      .pipe(gulp.dest('./'))
+      
     return gulp.src('./src/template/complete/**/*')
       // .pipe(rename({basename: fileName}))
       .pipe(replace('index', fileName))

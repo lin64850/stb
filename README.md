@@ -103,7 +103,8 @@ protected render() {
 >> ~~[开发体验优化（一）：清除缓存之本地服务]()~~
 
 #### 当前版本更新
->- todo
+>- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令。自动配置 webpack 无需手动配置
+
 
 # 相关项目
 - anhui-戏曲（2017）
