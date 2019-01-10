@@ -9,34 +9,55 @@ import { ReactDOM } from "../../framework/component/react-dom";
  */
 
 interface IFormProps {
-    props: any;
-    method: "POST" | "GET";
-    action: string;
+    super: FormComponent;
 }
 interface IFormState {
+    group?: { key: string, value: string }[];
+    action?: string;
+    method?: "get" | "post";
 }
 
 class FormModule extends React.Component<IFormProps, IFormState>{
 
     constructor(props: IFormProps) {
         super(props);
-    }
-    render() {
 
-        let group: { key, value }[] = [];
-
-        for (const key in this.props.props) {
-            if (this.props.props.hasOwnProperty(key)) {
-                const ele = this.props.props[key];
-
-                group.push({ key: key, value: ele });
-            }
+        this.state = {
+            group: [],
+            action: "",
+            method: "get"
         }
 
+        this.props.super.setProps = (props) => {
+            let group: { key, value }[] = [];
+
+            for (const key in props) {
+                if (props.hasOwnProperty(key)) {
+                    const ele = props[key];
+
+                    group.push({ key: key, value: ele });
+                }
+            }
+
+            this.setState({
+                group: group
+            })
+        }
+        this.props.super.submit = (method, action) => {
+            this.setState({
+                method,
+                action
+            });
+            new SetTimeout(300).enable(() => {
+                this.refs.find("[type=submit]").get(0).click();
+            });
+        }
+    }
+    render() {
         return (
-            <form class="form-component" action={this.props.action} method={this.props.method}>
+            <form class="form-component" action={this.state.action} method={this.state.method}>
                 {
-                    group.map((v) => {
+                    this.state.group.map((v) => {
                         return (
                             <input type="text" name={v.key} value={v.value} />
                         )
@@ -46,43 +67,26 @@ class FormModule extends React.Component<IFormProps, IFormState>{
             </form>
         );
     }
-    componentDidMount() {
-
-        new SetTimeout(300).enable(() => {
-            this.refs.find("[type=submit]").get(0).click();
-        })
-
-
-    }
 }
 export class FormComponent {
-    private readonly log;
-    private readonly msg: string;
-    private readonly ele;
 
-    private props: any;
+    constructor(id?: string) {
 
-    constructor(id: string) {
-        this.ele = document.getElementById(id);
-        this.props = {};
-    }
-    setProps(props) {
-        this.props = props;
-    }
+        // 容器
+        let c = document.getElementById('form');
+        let boy;
 
-    post(params: {
-        method: "POST" | "GET",
-        action: string;
-    }) {
-        let prp = this.props;
+        if (!c) {
+            c = document.createElement('div');
+            c.id = 'form';
 
-        let req: any = {
-            props: this.props,
-            ...params
+            boy = document.getElementsByTagName('body').item(0);
+
+            boy.insertBefore(c, boy.firstChild);
+
         }
-
-        ReactDOM.render(<FormModule {...req} />, this.ele);
+        ReactDOM.render(<FormModule super={this} />, c);
     }
-
-
+    setProps: (props: object) => void;
+    submit: (method: "get" | "post", action: string) => void;
 }

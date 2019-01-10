@@ -10,21 +10,37 @@ import { Config } from "../../config";
  */
 
 interface ILogProps {
-    message: string[];
+    super: LogComponent;
 }
 interface ILogState {
+    display?: boolean;
+    message?: string[];
 }
 
 class LogModule extends React.Component<ILogProps, ILogState>{
 
     constructor(props: ILogProps) {
         super(props);
+        this.state = {
+            display: false,
+            message: []
+        }
+
+        this.props.super.push = (msg) => {
+            return new Promise((resolve, reject) => {
+
+                this.state.message.push(msg);
+                this.setState({
+                    display: true,
+                });
+            });
+        }
     }
     render() {
         return (
-            <div class="log-component">
+            <div class="log-component" style={`display:${this.state.display ? "block" : "none"}`}>
                 {
-                    this.props.message.map((v) => {
+                    this.state.message.map((v) => {
                         return (<div>{v}</div>)
                     })
                 }
@@ -34,19 +50,35 @@ class LogModule extends React.Component<ILogProps, ILogState>{
 }
 
 export class LogComponent {
-    private readonly log;
-    private readonly msgs = [];
-    private readonly ele;
 
-    constructor(id: string) {
+    constructor(id?: string) {
         if (Config.debugMode) {
-            this.ele = document.getElementById(id);
+
+            // 容器
+            let c = document.getElementById('log');
+            let boy;
+
+            if (!c) {
+                c = document.createElement('div');
+                c.id = 'log';
+
+                boy = document.getElementsByTagName('body').item(0);
+
+                boy.insertBefore(c, boy.firstChild);
+
+            }
+
+            ReactDOM.render(<LogModule super={this} />, c);
         }
     }
     push(msg: string) {
-        if (Config.debugMode) {
-            this.msgs.push(msg);
-            ReactDOM.render(<LogModule message={this.msgs} />, this.ele);
-        }
+
+        return new Promise(() => {
+            if (Config.debugMode) {
+                this.pushMsg(msg);
+            }
+        });
+
     }
+    private pushMsg: (msg: string) => Promise<any>;
 }

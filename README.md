@@ -1,5 +1,6 @@
 # V1.2.0 文档
-> 文档以及示例源码不定期更新
+>- 文档以及示例源码不定期更新
+>- 版本声明：此版本开始向产品线兼容，之后版本都将兼容当前版本
 #### 收藏点star，订阅点watch
 
 > 历史版本
@@ -42,7 +43,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
 protected render() {
     return (
         <div class="content">
-        <span>Hello EPG!</span>
+            <span>Hello EPG!</span>
         </div>
     )
 }
@@ -74,19 +75,25 @@ protected render() {
 >>#### [程序设计（一）：组件](https://github.com/442331311/stb/issues/25)
 >>#### [程序设计（二）：父组件](https://github.com/442331311/stb/issues/27)
 >>#### [程序设计（三）：子组件](https://github.com/442331311/stb/issues/29)
->>#### [程序设计（四）：Tips 消息](https://github.com/442331311/stb/issues/21)
->>#### [程序设计（五）：Log 日志](https://github.com/442331311/stb/issues/23)
->>#### [程序设计（六）：Form 表单](https://github.com/442331311/stb/issues/24)
->>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
->>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/36)
+>>#### ~~[程序设计（四）：子组件嵌套子组件]()~~
+>>#### ~~[程序设计（五）：接口数据缓存]()~~
+>>#### ~~[代码优化（一）：TSX]()~~
 
 ### 高阶
->>#### ~~[装饰器（一）：普通组件]()~~
->>#### ~~[装饰器（二）：走马灯组件]()~~
->>#### ~~[装饰器（三）：横向翻页组件]()~~
->>#### ~~[装饰器（四）：纵向翻页组件]()~~
->>#### ~~[装饰器（五）：横向逐步滚动组件]()~~
->>#### ~~[装饰器（六）：纵向逐步滚动组件]()~~
+>>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
+>>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/36)
+>>#### ~~[插件库：引言]()~~
+>>#### [插件库（一）：消息](https://github.com/442331311/stb/issues/21)
+>>#### [插件库（二）：日志](https://github.com/442331311/stb/issues/23)
+>>#### [插件库（三）：表单](https://github.com/442331311/stb/issues/24)
+>>#### ~~[插件库（四）：对话]()~~
+>>#### ~~[装饰器：引言]()~~
+>>#### ~~[装饰器（一）：普通]()~~
+>>#### ~~[装饰器（二）：走马灯]()~~
+>>#### ~~[装饰器（三）：横向数据翻页]()~~
+>>#### ~~[装饰器（四）：纵向数据翻页]()~~
+>>#### ~~[装饰器（五）：横向数据滚动]()~~
+>>#### ~~[装饰器（六）：纵向数据滚动]()~~
 
 ### 播放器
 >>#### [播放器（一）：引言](https://github.com/442331311/stb/issues/31)
@@ -99,14 +106,23 @@ protected render() {
 >>[EPG开发日志（一）：盒子与浏览器差异](https://github.com/442331311/stb/issues/1)
 
 ### 开发体验优化
->> #### [开发体验优化（一）：Visual Studio Code 插件推荐](https://github.com/442331311/stb/issues/26)
->> ~~[开发体验优化（一）：清除缓存之本地服务]()~~
+>- #### [开发体验优化（一）：Visual Studio Code 插件推荐](https://github.com/442331311/stb/issues/26)
+>- ~~[开发体验优化（二）：服务器去缓存机制（更新代码无需再重启机顶盒）]()~~
 
 #### 当前版本更新
->- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令。自动配置 webpack 无需手动配置
+>- 新增 插件库 dialog 对话框
+>- 新增 服务器去缓存机制（更新代码无需再重启机顶盒）
+>- 新增 类组件 componentWillUnmount 卸载事件
+>- 修复 JSX 节点值含 null 报错问题
+>- 修复 JSX 节点 map 渲染列表内容为空导致的异常
+>- 修复 播放器 快进退之后，指针会跳到原始位置再恢复最新位置
+>- 修复 播放器 部分盒子播放完毕后当前进度接口获取到 0 导致播放结束事件无法触发
+>- 优化 Component setFocus setIndex 接口参数类型
+>- 优化 支持焦点组件嵌套焦点组件
+>- 优化 插件库 form、log、tips 更简洁的API，无需再静态节点定义容器。性能优化渲染更快
+>- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令自动配置 webpack（重复创建或删除页面需要手动维护 webpack.pages.config.ts 文件）
 
-
-# 相关项目
+# 案例
 - anhui-戏曲（2017）
 - neiment-环球（2017）
 - yunnan-4k（2017）
@@ -124,3 +140,10 @@ protected render() {
 - guizhou-国学（2018.11）
 - shanxi-国学（2018.11）
 - sichuanyidong-快乐佳贝（2018.12）
+- jiangxi-芒果（2018.1）
+- hainan-芒果（2018.x)
+- hainan-电竞（2018.x)
+- hainan-教育（2018.x)
+- hainan-少儿（2018.x)
+- ningxia-教育（2018.x)
+- ningxia-少儿（2018.x)

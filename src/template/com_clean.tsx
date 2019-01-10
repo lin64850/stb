@@ -46,6 +46,9 @@ class IndexModule extends React.Component<IIndexProps, IIndexState>{
 
         }
     }
+    onEnter() {
+        this.trigger(PageType.Blank, { url: "" });
+    }
     onBackspace() {
         this.trigger(PageType.Previous);
     }

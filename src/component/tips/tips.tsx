@@ -9,45 +9,71 @@ import { ReactDOM } from "../../framework/component/react-dom";
  */
 
 interface ITipsProps {
-    duration?: number;
-    message: string;
-    close?: () => void;
+    super: TipsComponent;
 }
 interface ITipsState {
+    display?: boolean;
+    message?: string;
 }
 
 class TipsModule extends React.Component<ITipsProps, ITipsState>{
-    readonly timeout = new SetTimeout(undefined === this.props.duration ? 3000 : this.props.duration);
+    private timeout = new SetTimeout(3000);
 
     constructor(props: ITipsProps) {
         super(props);
+
+        this.state = {
+            display: false,
+            message: ""
+        }
+
+        this.props.super.show = (msg: string, duration?: number) => {
+            return new Promise((resolve, reject) => {
+                if (undefined !== duration) {
+                    this.timeout = new SetTimeout(duration);
+                }
+
+                this.setState({
+                    message: msg,
+                    display: true
+                });
+
+                this.timeout.enable(() => {
+                    this.setState({
+                        display: false
+                    });
+                    resolve();
+                });
+            });
+        }
     }
     render() {
         return (
-            <div class="tips-component">
-                <div>{this.props.message}</div>
+            <div class="tips-component" style={`display:${this.state.display ? "block" : "none"}`}>
+                <div>{this.state.message}</div>
             </div>
         );
     }
-    componentDidMount() {
-
-        this.refs.show();
-        this.timeout.enable(() => {
-            this.props.close && this.props.close();
-            this.refs.hide();
-        });
-
-    }
 }
 export class TipsComponent {
-    private readonly log;
-    private readonly msg:string;
-    private readonly ele;
 
-    constructor(id:string) {
-        this.ele = document.getElementById(id);
+    constructor(id?: string) {
+
+        // 容器
+        let c = document.getElementById('tips');
+        let boy;
+
+        if (!c) {
+            c = document.createElement('div');
+            c.id = 'tips';
+
+            boy = document.getElementsByTagName('body').item(0);
+
+            boy.insertBefore(c, boy.firstChild);
+
+        }
+
+        ReactDOM.render(<TipsModule super={this} />, c);
     }
-    show(msg: string) {
-        ReactDOM.render(<TipsModule message={msg} />, this.ele);
-    }
+    show: (msg: string, duration?: number) => Promise<any>;
 }
