@@ -9,10 +9,11 @@ import { Cookie } from "../../framework/basic/cookie";
 import { ReactDOM } from "../../framework/component/react-dom";
 import { PageModule } from "./com_page";
 import { React } from "../../framework/component/react";
-import { Config, initMain } from "../../config";
+import { Config } from "../../config";
 import { Json } from "../../framework/basic/json";
 import { SetTimeout } from "../../framework/basic/setTimeout";
 import { FormatUrl } from "../../framework/basic/formatUrl";
+import { initMain } from "../../config.tool";
 
 export const enum MType {
     Page

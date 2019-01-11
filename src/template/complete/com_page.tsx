@@ -17,8 +17,8 @@ interface IPageState {
 }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly tips = new TipsComponent('tips');
-    private readonly log = new LogComponent('log');
+    private readonly tips = new TipsComponent();
+    private readonly log = new LogComponent();
 
     constructor(props: IPageProps) {
         super(props);

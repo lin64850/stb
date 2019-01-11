@@ -20,69 +20,48 @@ gulp.task('watch-file', () => {
   })
 })
 
-gulp.task('page', () => {
-  var fileName = process.argv[3]
+gulp.task('page', taskCreatePage('clean'));
+gulp.task('page:clean', taskCreatePage('clean'));
+gulp.task('page:complete', taskCreatePage('complete'));
+gulp.task('com', taskCreateComponent('clean'));
+gulp.task('com:clean', taskCreateComponent('clean'));
+gulp.task('com:complete', taskCreateComponent('complete'));
 
-  if (0 !== fileName.indexOf('--')) {
-    return new Error('错误：请输入页面名称 -pageName')
-  } else {
-    fileName = fileName.substr(2, fileName.length)
+function taskCreatePage(name) {
+  return () => {
+    var fileName = process.argv[3];
 
-    return gulp.src('./src/template/clean/**/*')
-      // .pipe(rename({basename: fileName}))
-      .pipe(replace('index', fileName))
-      .pipe(gulp.dest('./src/pages/' + fileName))
+    if (0 !== fileName.indexOf('--')) {
+      return new Error('错误：请输入页面名称 -pageName')
+    } else {
+      fileName = fileName.substr(2, fileName.length)
+
+      gulp.src('./webpack.pages.config.ts')
+        .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
+        .pipe(gulp.dest('./'))
+
+      return gulp.src('./src/template/' + name + '/**/*')
+        // .pipe(rename({basename: fileName}))
+        .pipe(replace('index', fileName))
+        .pipe(gulp.dest('./src/pages/' + fileName))
+    }
   }
-})
-gulp.task('page:clean', () => {
-  var fileName = process.argv[3]
+}
+function taskCreateComponent(name) {
+  return () => {
+    var fileName = process.argv[3]
 
-  if (0 !== fileName.indexOf('--')) {
-    return new Error('错误：请输入页面名称 -pageName')
-  } else {
-    fileName = fileName.substr(2, fileName.length)
+    if (0 !== fileName.indexOf('--')) {
+      return new Error('错误：请输入页面名称 -componentName')
+    } else {
+      fileName = fileName.substr(2, fileName.length)
 
-    gulp.src('./webpack.pages.config.ts')
-      .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
-      .pipe(gulp.dest('./'))
+      var suf = fileName.split('/');
 
-    return gulp.src('./src/template/clean/**/*')
-      // .pipe(rename({basename: fileName}))
-      .pipe(replace('index', fileName))
-      .pipe(gulp.dest('./src/pages/' + fileName))
+      return gulp.src('./src/template/com_' + name + '.tsx')
+        .pipe(rename({ basename: 'com_' + suf[1] }))
+        .pipe(replace('Index', suf[1].substr(0, 1).toUpperCase() + suf[1].substr(1, suf[1].length - 1)))
+        .pipe(gulp.dest('./src/pages/' + suf[0]))
+    }
   }
-})
-gulp.task('page:complete', () => {
-  var fileName = process.argv[3]
-
-  if (0 !== fileName.indexOf('--')) {
-    return new Error('错误：请输入页面名称 -pageName')
-  } else {
-    fileName = fileName.substr(2, fileName.length)
-
-    gulp.src('./webpack.pages.config.ts')
-      .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
-      .pipe(gulp.dest('./'))
-      
-    return gulp.src('./src/template/complete/**/*')
-      // .pipe(rename({basename: fileName}))
-      .pipe(replace('index', fileName))
-      .pipe(gulp.dest('./src/pages/' + fileName))
-  }
-})
-gulp.task('com:clean', () => {
-  var fileName = process.argv[3]
-
-  if (0 !== fileName.indexOf('--')) {
-    return new Error('错误：请输入页面名称 -componentName')
-  } else {
-    fileName = fileName.substr(2, fileName.length)
-
-    var suf = fileName.split('/');
-
-    return gulp.src('./src/template/com_clean.tsx')
-      .pipe(rename({ basename: 'com_' + suf[1] }))
-      .pipe(replace('Index', suf[1].substr(0, 1).toUpperCase() + suf[1].substr(1, suf[1].length - 1)))
-      .pipe(gulp.dest('./src/pages/' + suf[0]))
-  }
-})
+}
