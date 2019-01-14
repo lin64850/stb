@@ -112,7 +112,8 @@ protected render() {
 #### 当前版本更新
 >- 新增 插件库 dialog 对话框
 >- 新增 服务器去缓存机制（更新代码无需再重启机顶盒）
->- 新增 类组件 componentWillUnmount 卸载事件
+>- 新增 装饰器 tabs 支持多页面切换，配置过渡效果等
+>- ~~新增 类组件 componentWillUnmount 卸载事件~~
 >- 修复 JSX 节点值含 null 报错问题
 >- 修复 JSX 节点 map 渲染列表内容为空导致的异常
 >- 修复 播放器 快进退之后，指针会跳到原始位置再恢复最新位置
