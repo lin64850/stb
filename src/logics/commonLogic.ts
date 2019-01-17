@@ -3,7 +3,7 @@
  * @description 原生Ajax 支持同步请求
  */
 import { BaseLogic, RequestInfo, ResponseInfo } from "./systemBase";
-import { getApiAddress } from "../config";
+import { getApiAddress } from "@config.tool";
 
 interface IMain {
 }

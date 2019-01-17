@@ -1,6 +1,6 @@
-import { MainEntity } from "./entitys/main";
+import { MainEntity } from "../../entitys/main";
 
-export let ConfigApi = {
+export var ConfigApi = {
     serviceDomain: '',
     imgDomain: '',
     apiPath: {

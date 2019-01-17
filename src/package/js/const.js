@@ -50,6 +50,9 @@ var Util = {
     getDomainUrl: function () {
         return Authentication.CTCGetConfig("EPGDomain");
     },
+    getEvent: function () {
+        return Utility.getEvent()
+    }
 };
 /**
  * 设备配置映射

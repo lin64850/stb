@@ -1,13 +1,11 @@
-import { ConfigApi } from "./config.api";
+import { ConfigBasic } from "@config.basic";
+import { ConfigApi } from "@config.api";
 
-export let Config = {
+export var Config = {
+    ...ConfigBasic,
     ...ConfigApi,
     /**
-     * 调试模式，使用日志插件必须开启
+     * 调试模式
      */
-    debugMode: true,
-    /**
-     * 项目唯一标识
-     */
-    mainCookieName: "xxx_token_cookiename"
+    debugMode: true
 }

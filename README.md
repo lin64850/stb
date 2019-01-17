@@ -118,10 +118,12 @@ protected render() {
 >- 修复 JSX 节点 map 渲染列表内容为空导致的异常
 >- 修复 播放器 快进退之后，指针会跳到原始位置再恢复最新位置
 >- 修复 播放器 部分盒子播放完毕后当前进度接口获取到 0 导致播放结束事件无法触发
+>- 修复 播放器 快进后马上按暂停导致暂停失效
 >- 优化 Component setFocus setIndex 接口参数类型
 >- 优化 支持焦点组件嵌套焦点组件
 >- 优化 插件库 form、log、tips 更简洁的API，无需再静态节点定义容器。性能优化渲染更快
 >- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令自动配置 webpack（重复创建或删除页面需要手动维护 webpack.pages.config.ts 文件）
+>- 调整 各个库位置，可能变动模块扩展到 platform 文件夹管理
 
 # 案例
 - anhui-戏曲（2017）

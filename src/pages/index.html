@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 盒子开发时应用该设定 720P -->
+    <meta name="page-view-size" content="1280*720">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #page {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 1280px;
+            height: 720px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="page" src="./images/bg.jpg" />
+    <script type="text/javascript">
+        window.onkeydown = function (e) {
+            if (8 === e.keyCode) {
+                window.location.href = document.referrer;
+            }
+        }
+    </script>
+</body>
+
+</html>

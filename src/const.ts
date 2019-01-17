@@ -55,13 +55,9 @@ const Util = {
     getDomainUrl: function () {
         return Authentication.CTCGetConfig("EPGDomain");
     },
-    /**
-     *
-     * test
-     */
-    // getEvent:function () {
-    //     return Utility.getEvent()
-    // }
+    getEvent:function () {
+        return Utility.getEvent()
+    }
 };
 
 /**

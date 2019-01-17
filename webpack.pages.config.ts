@@ -1,6 +1,4 @@
 const pages = [
-    "index", 
-    "index", 
     "index"
 ]
 

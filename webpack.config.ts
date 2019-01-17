@@ -5,10 +5,15 @@ import * as webpack from 'webpack';
 import * as cleanWebpackPlugin from 'clean-webpack-plugin';
 import { pages } from "./webpack.pages.config";
 
+const jsonAlias = require("./src/platform/platform.alias.config.json");
+const jsonPlatform = require("./src/platform/platform.alias.config.json");
+
+const alias = jsonAlias[jsonPlatform.platform];
+
 const tsxTem = "./src/pages/{name}/index.tsx";
 const lesTem = "./src/pages/{name}/index.less";
 
-// 动态配置
+// 页面配置
 const entrys: any = {};
 const plugis: any = [
   new cleanWebpackPlugin(['dist']),
@@ -30,6 +35,19 @@ pages.forEach((v) => {
   )
 });
 
+// 别名配置
+const _alias: any = {
+  "stb": path.resolve(__dirname, 'src/framework')
+};
+
+for (const key in alias) {
+  if (alias.hasOwnProperty(key)) {
+    const val = alias[key];
+
+    _alias[key] = path.resolve(__dirname, `src/platform/${val}`);
+  }
+}
+
 const config: webpack.Configuration | any = {
   entry: entrys,
   output: {
@@ -47,7 +65,10 @@ const config: webpack.Configuration | any = {
             {
               loader: 'css-loader',
               options: {
-                minimize: true
+                minimize: true,
+                alias:{
+                  '$':path.join(__dirname,'src','platform','common')
+                }
               }
             }
             , 'less-loader']
@@ -103,7 +124,8 @@ const config: webpack.Configuration | any = {
   },
   plugins: plugis,
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+    alias: _alias
   },
   devtool: "eval-source-map"
   // --inline --devtool source-map --content-base dist
