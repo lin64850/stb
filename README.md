@@ -124,6 +124,7 @@ protected render() {
 >- 优化 插件库 form、log、tips 更简洁的API，无需再静态节点定义容器。性能优化渲染更快
 >- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令自动配置 webpack（重复创建或删除页面需要手动维护 webpack.pages.config.ts 文件）
 >- 调整 各个库位置，可能变动模块扩展到 platform 文件夹管理
+>- 提取 Config.api、Config.basic、Config.style、Config.tool、Cookie、Key、Player 单独维护，一个专区可能多个专区文件组成，随意组合
 
 # 案例
 - anhui-戏曲（2017）

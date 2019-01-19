@@ -1,10 +1,5 @@
 {
     "中国电信": {
-        "@key": "common/key",
-        "@player": "common/player",
-        "@cookie": "common/cookie",
-        "@config.tool": "common/config.tool",
-        "@config.api": "common/config.api",
-        "$": "common"
+        "@": "common"
     }
 }

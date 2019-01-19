@@ -1,5 +1,4 @@
-import { ConfigBasic } from "@config.basic";
-import { ConfigApi } from "@config.api";
+import { ConfigBasic, ConfigApi } from "@/config";
 
 export var Config = {
     ...ConfigBasic,

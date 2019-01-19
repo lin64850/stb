@@ -1,4 +1,4 @@
-import { MainEntity } from "../../entitys/main";
+import { MainEntity } from "../../../entitys/main";
 
 export var ConfigApi = {
     serviceDomain: '',

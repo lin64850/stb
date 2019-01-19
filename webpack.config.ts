@@ -6,12 +6,12 @@ import * as cleanWebpackPlugin from 'clean-webpack-plugin';
 import { pages } from "./webpack.pages.config";
 
 const jsonAlias = require("./src/platform/platform.alias.config.json");
-const jsonPlatform = require("./src/platform/platform.alias.config.json");
+const jsonPlatform = require("./src/platform/platform.config.json");
 
 const alias = jsonAlias[jsonPlatform.platform];
 
-const tsxTem = "./src/pages/{name}/index.tsx";
-const lesTem = "./src/pages/{name}/index.less";
+let tsxTem = "./src/pages/{name}/index.tsx";
+let lesTem = "./src/pages/{name}/index.less";
 
 // 页面配置
 const entrys: any = {};
@@ -21,7 +21,7 @@ const plugis: any = [
     filename: '[name].css'
   })
 ];
-
+// 常规页面配置
 pages.forEach((v) => {
   entrys[`js_${v}`] = tsxTem.replace("{name}", v);
   entrys[`css_${v}`] = lesTem.replace("{name}", v);
@@ -34,16 +34,39 @@ pages.forEach((v) => {
     })
   )
 });
+// 平台页面配置
+const name = alias["@"];
+if (name) {
+  const pagePaths = require(`./src/platform/${name}/pages/pages.config.json`);
+  if (pagePaths && pagePaths.length) {
+
+    let tsxTem = `./src/platform/${name}/pages/{name}/index.tsx`;
+    let lesTem = `./src/platform/${name}/pages/{name}/index.less`;
+    let htmTem = `./src/platform/${name}/pages/{name}/index.html`;
+
+    pagePaths.forEach((v) => {
+      entrys[`js_${v}`] = tsxTem.replace("{name}", v);
+      entrys[`css_${v}`] = lesTem.replace("{name}", v);
+      plugis.push(
+        new HtmlWebpackPlugin({
+          filename: `${v}.html`,
+          template: htmTem.replace('{name}', v),
+          hash: true,
+          chunks: [`common`, `runtime`, `css_${v}`, `js_${v}`]
+        })
+      )
+    });
+  }
+}
 
 // 别名配置
 const _alias: any = {
   "stb": path.resolve(__dirname, 'src/framework')
 };
 
-for (const key in alias) {
+for (let key in alias) {
   if (alias.hasOwnProperty(key)) {
-    const val = alias[key];
-
+    let val = alias[key];
     _alias[key] = path.resolve(__dirname, `src/platform/${val}`);
   }
 }
@@ -66,9 +89,9 @@ const config: webpack.Configuration | any = {
               loader: 'css-loader',
               options: {
                 minimize: true,
-                alias:{
-                  '$':path.join(__dirname,'src','platform','common')
-                }
+                // alias:{
+                //   '$':path.join(__dirname,'src','platform','common')
+                // }
               }
             }
             , 'less-loader']

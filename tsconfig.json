@@ -27,23 +27,8 @@
             "stb/*": [
                 "src/framework/*"
             ],
-            "@key": [
-                "src/platform/common/key"
-            ],
-            "@player": [
-                "src/platform/common/player"
-            ],
-            "@cookie": [
-                "src/platform/common/cookie"
-            ],
-            "@config.tool": [
-                "src/platform/common/config.tool"
-            ],
-            "@config.api": [
-                "src/platform/common/config.api"
-            ],
-            "@config.basic": [
-                "src/platform/common/config.basic"
+            "@/*": [
+                "src/platform/common/*"
             ]
         }
     },

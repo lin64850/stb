@@ -1,9 +1,9 @@
-import { MType } from ".";
+// import { MType } from ".";
 import { React } from "../../framework/component/react";
 import { PageEvent } from "../../framework/component/pageEvent";
 
 interface IPageProps {
-    identCode: MType.Page;
+    // identCode: MType.Page;
     event: PageEvent;
 }
 interface IPageState {

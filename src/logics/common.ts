@@ -4,7 +4,7 @@
  */
 import { BaseLogic } from "./axiosBase";
 import { MainEntity } from "../entitys/main";
-import { getApiAddress } from "@config.tool";
+import { getApiAddress } from "@/config/config.tool";
 
 interface IMain {
 }
