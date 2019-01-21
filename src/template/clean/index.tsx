@@ -2,14 +2,11 @@
  * 编写作者:
  * 创建时间:
  */
-import { BasePage, PageRegister } from "../../framework/component/page";
-import { ParseUrl } from "../../framework/basic/parseUrl";
-import { PageSource } from "../../framework/component/pageSource";
-import { Cookie } from "../../framework/basic/cookie";
-import { ReactDOM } from "../../framework/component/react-dom";
+import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
+import { ParseUrl } from "stb/basic";
+import { Cookie } from "@/config";
 import { PageModule } from "./com_page";
-import { React } from "../../framework/component/react";
-import { Config } from "../../config";
+import { Config } from "src/config";
 
 export const enum MType {
     Page

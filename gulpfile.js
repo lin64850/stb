@@ -1,24 +1,27 @@
 var gulp = require('gulp')
 var rename = require('gulp-rename')
 var replace = require('gulp-replace')
-var gulpWatch = require('gulp-watch')
+const jsonAlias = require("./src/platform/platform.alias.config.json");
+const jsonPlatform = require("./src/platform/platform.config.json");
+const alias = jsonAlias[jsonPlatform.platform];
 
-// TODO 兼容模式
-// gulp.task('init-file', function () {
-//   return gulp.src(['./src/package/**/*'])
-//     .pipe(gulp.dest('./dist'))
-// })
-gulp.task('init-file', function () {
-  return gulp.src(['./src/package/**/*', '!./src/package/images/**/*'])
-    .pipe(gulp.dest('./dist'))
-})
+gulp.task('init-file', ['init-file-default', 'init-file-platform']);
 
-gulp.task('watch-file', () => {
-  return gulpWatch('./src/package/**/*', () => {
-    gulp.src('./src/package/**/*')
-      .pipe(gulp.dest('./dist'))
-  })
-})
+gulp.task('init-file-default', function () {
+  return ()=>{
+    return gulp.src(['./src/package/**/*', '!./src/package/images/**/*']).pipe(gulp.dest('./dist'))
+  }
+});
+
+// 平台资源配置
+const name = alias["@"];
+gulp.task('init-file-platform', function () {
+  if (name) {
+    return gulp.src([`./src/platform/${name}/package/**/*`, `!./src/platform/${name}/package/images/**/*`]).pipe(gulp.dest('./dist'))
+  } else {
+    return function () { };
+  }
+});
 
 gulp.task('page', taskCreatePage('clean'));
 gulp.task('page:clean', taskCreatePage('clean'));
@@ -36,9 +39,10 @@ function taskCreatePage(name) {
     } else {
       fileName = fileName.substr(2, fileName.length)
 
-      gulp.src('./webpack.pages.config.ts')
-        .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
-        .pipe(gulp.dest('./'))
+      // 自动配置 不够智能
+      // gulp.src('./webpack.pages.config.ts')
+      //   .pipe(replace('\n]', ', \n    "' + fileName + '"\n]'))
+      //   .pipe(gulp.dest('./'))
 
       return gulp.src('./src/template/' + name + '/**/*')
         // .pipe(rename({basename: fileName}))

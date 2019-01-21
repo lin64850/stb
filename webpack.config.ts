@@ -37,6 +37,7 @@ pages.forEach((v) => {
 // 平台页面配置
 const name = alias["@"];
 if (name) {
+
   const pagePaths = require(`./src/platform/${name}/pages/pages.config.json`);
   if (pagePaths && pagePaths.length) {
 
@@ -44,6 +45,7 @@ if (name) {
     let lesTem = `./src/platform/${name}/pages/{name}/index.less`;
     let htmTem = `./src/platform/${name}/pages/{name}/index.html`;
 
+    // 页面配置
     pagePaths.forEach((v) => {
       entrys[`js_${v}`] = tsxTem.replace("{name}", v);
       entrys[`css_${v}`] = lesTem.replace("{name}", v);
@@ -56,12 +58,14 @@ if (name) {
         })
       )
     });
+
   }
 }
 
 // 别名配置
 const _alias: any = {
-  "stb": path.resolve(__dirname, 'src/framework')
+  "stb": path.resolve(__dirname, 'src/framework'),
+  "src": path.resolve(__dirname, 'src')
 };
 
 for (let key in alias) {
@@ -150,7 +154,7 @@ const config: webpack.Configuration | any = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: _alias
   },
-  devtool: "eval-source-map"
+  devtool: "eval-source-map",
   // --inline --devtool source-map --content-base dist
 }
 

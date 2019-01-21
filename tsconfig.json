@@ -5,7 +5,8 @@
     "exclude": [
         "node_modules",
         "./src/template/**/*",
-        "./src/package/**/*"
+        "./src/package/**/*",
+        "./src/platform/**/*"
     ],
     "compilerOptions": {
         "outDir": "./dist/js",

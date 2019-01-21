@@ -1,4 +1,3 @@
-import { Config } from "../config";
 import { Dictionary } from "../framework/conllection/dictionary";
 import { Json } from "../framework/basic/json";
 

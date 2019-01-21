@@ -1,8 +1,31 @@
-import { Json } from "stb/basic";
-import { Key, Player, PlayerType, Cookie, initMain } from "@/config";
+/**
+ * 编写作者:
+ * 创建时间:
+ */
+import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
+import { ParseUrl } from "stb/basic";
+import { Cookie } from "@/config";
+import { PageModule } from "./com_page";
+import { Config } from "src/config";
 
-console.log(Key.Backspace);
-console.log(Player, PlayerType);
-console.log(Cookie);
-console.log(initMain);
-console.log(Json);
+export const enum MType {
+    Page
+}
+
+interface IRequest {
+}
+
+class Page extends BasePage<IRequest> {
+    load() {
+        ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} />, document.getElementById('page'));
+    }
+}
+
+PageRegister(Page, {
+    handler: [
+        MType.Page
+    ],
+    request: new ParseUrl(location.search).getDecodeURIComponent(),
+    source: new PageSource(`${Config.mainCookieName}_index_source`),
+    cokStatus: new Cookie(`${Config.mainCookieName}_index_status`)
+});

@@ -1,5 +1,5 @@
 import { MainEntity } from "../../../entitys/main";
-import { ConfigApi } from "./config.api";
+import { Config } from "src/config";
 
 /**
  * 初始化主入口
@@ -18,7 +18,7 @@ export function initMain(): Promise<MainEntity> {
 export function getApiAddress(keyWorlds: string, ...args: string[]) {
     let reg = /\{.*?\}/g;
 
-    let url: string = ConfigApi.apiPath[keyWorlds];
+    let url: string = Config.apiPath[keyWorlds];
 
     if (url) {
         let arr;
@@ -26,7 +26,7 @@ export function getApiAddress(keyWorlds: string, ...args: string[]) {
         for (let i = 0; i < args.length; i++) {
             url = url.replace(arr[i], args[i]);
         }
-        return `${ConfigApi.serviceDomain}/${url}`;
+        return `${Config.serviceDomain}/${url}`;
     }
 }
 
@@ -35,5 +35,5 @@ export function getApiAddress(keyWorlds: string, ...args: string[]) {
  * @param path 路径
  */
 export function getImageAddress(path: string) {
-    return path ? `${ConfigApi.imgDomain}/${ConfigApi.imgPath.public}/${path}` : "";
+    return path ? `${Config.imgDomain}/${Config.imgPath.public}/${path}` : "";
 }
