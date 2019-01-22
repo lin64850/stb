@@ -1,5 +1,6 @@
-import { MainEntity } from "../../../entitys/main";
+
 import { Config } from "src/config";
+import { MainEntity } from "src/entitys/main";
 
 /**
  * 初始化主入口

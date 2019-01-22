@@ -113,6 +113,7 @@ protected render() {
 >- 新增 插件库 dialog 对话框
 >- 新增 服务器去缓存机制（更新代码无需再重启机顶盒）
 >- 新增 装饰器 tabs 支持多页面切换，配置过渡效果等
+>- 新增 平台页面 可在基础产品EPG页面库基础上为平台单独配置定制页面，且优先级大于基础页面
 >- ~~新增 类组件 componentWillUnmount 卸载事件~~
 >- 修复 JSX 节点值含 null 报错问题
 >- 修复 JSX 节点 map 渲染列表内容为空导致的异常
@@ -145,9 +146,9 @@ protected render() {
 - shanxi-国学（2018.11）
 - sichuanyidong-快乐佳贝（2018.12）
 - jiangxi-芒果（2018.1）
-- hainan-芒果（2018.x)
+- hainan-芒果（2018.1)
 - hainan-电竞（2018.x)
 - hainan-教育（2018.x)
-- hainan-少儿（2018.x)
+- hainan-少儿（2018.1)
 - ningxia-教育（2018.x)
 - ningxia-少儿（2018.x)

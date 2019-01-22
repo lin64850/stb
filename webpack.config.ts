@@ -21,8 +21,30 @@ const plugis: any = [
     filename: '[name].css'
   })
 ];
+
+const name = alias["@"];
+const pagePaths = require(`./src/platform/${name}/pages/pages.config.json`) || [];
+
 // 常规页面配置
 pages.forEach((v) => {
+
+  // 过滤平台页面
+  if (name && pagePaths && pagePaths.length) {
+    if (v) {
+
+      if (!pagePaths.every((v_2) => {
+        if (v === v_2) {
+          return false;
+        } else {
+          return true;
+        }
+      })) {
+        return;
+      }
+
+    }
+  }
+
   entrys[`js_${v}`] = tsxTem.replace("{name}", v);
   entrys[`css_${v}`] = lesTem.replace("{name}", v);
   plugis.push(
@@ -35,10 +57,7 @@ pages.forEach((v) => {
   )
 });
 // 平台页面配置
-const name = alias["@"];
 if (name) {
-
-  const pagePaths = require(`./src/platform/${name}/pages/pages.config.json`);
   if (pagePaths && pagePaths.length) {
 
     let tsxTem = `./src/platform/${name}/pages/{name}/index.tsx`;

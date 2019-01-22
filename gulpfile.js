@@ -1,16 +1,16 @@
 var gulp = require('gulp')
 var rename = require('gulp-rename')
 var replace = require('gulp-replace')
+var gulpSequence = require('gulp-sequence');
+
 const jsonAlias = require("./src/platform/platform.alias.config.json");
 const jsonPlatform = require("./src/platform/platform.config.json");
 const alias = jsonAlias[jsonPlatform.platform];
 
-gulp.task('init-file', ['init-file-default', 'init-file-platform']);
+gulp.task('init-file', gulpSequence('init-file-default', 'init-file-platform'));
 
 gulp.task('init-file-default', function () {
-  return ()=>{
-    return gulp.src(['./src/package/**/*', '!./src/package/images/**/*']).pipe(gulp.dest('./dist'))
-  }
+  return gulp.src(['./src/package/**/*', '!./src/package/images/**/*']).pipe(gulp.dest('./dist'));
 });
 
 // 平台资源配置

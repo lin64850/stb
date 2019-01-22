@@ -1,7 +1,6 @@
 import { React, PageEvent, PageType } from "stb/component";
-import { TipsComponent, LogComponent } from "stb/plugin";
 import { MainEntity } from "src/entitys/main";
-import { MType, IRequest, IMemo } from ".";
+import { MType, IRequest, IMemo, log, tips } from ".";
 import { Key } from "@/config";
 
 interface IPageProps {
@@ -15,8 +14,6 @@ interface IPageState {
 }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly tips = new TipsComponent();
-    private readonly log = new LogComponent();
 
     constructor(props: IPageProps) {
         super(props);
@@ -48,11 +45,5 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
     }
     protected onBackspace() {
         this.trigger(PageType.Previous);
-    }
-    show(msg) {
-        this.tips.show(msg);
-    }
-    pushLog(msg) {
-        this.log.push(msg);
     }
 }
