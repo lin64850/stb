@@ -6,11 +6,14 @@ import { Key } from "@/config";
 interface IPageProps {
     identCode: MType.Page;
     event: PageEvent;
-    requ: IRequest;
-    memo: IMemo;
-    nttMain:MainEntity;
+    con: PageControl;
 }
 interface IPageState {
+}
+interface IPageControl {
+    requ: IRequest;
+    memo: IMemo;
+    nttMain: MainEntity;
 }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
@@ -45,5 +48,11 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
     }
     protected onBackspace() {
         this.trigger(PageType.Previous);
+    }
+}
+export class PageControl {
+    private readonly props: IPageControl;
+    constructor(params: IPageControl) {
+        this.props = params;
     }
 }

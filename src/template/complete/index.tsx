@@ -6,7 +6,7 @@
 import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
 import { Json, SetTimeout, FormatUrl, ParseUrl } from "stb/basic";
 import { initMain, Cookie } from "@/config";
-import { PageModule } from "./com_page";
+import { PageModule, PageControl } from "./com_page";
 import { Config } from "src/config";
 import { TipsComponent, LogComponent } from "stb/plugin";
 
@@ -46,7 +46,9 @@ class Page extends BasePage<IRequest> {
         }
 
         initMain().then((ntt) => {
-            ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} requ={this.request} memo={memo} nttMain={ntt} />, document.getElementById('page'));
+            const con = new PageControl({ requ: this.request, nttMain: ntt, memo: memo });
+
+            ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} con={con} />, document.getElementById('page'));
         });
 
     }
