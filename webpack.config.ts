@@ -94,6 +94,8 @@ for (let key in alias) {
   }
 }
 
+plugis.push(new webpack.HotModuleReplacementPlugin());
+
 const config: webpack.Configuration | any = {
   entry: entrys,
   output: {
@@ -172,6 +174,11 @@ const config: webpack.Configuration | any = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: _alias
+  },
+  devServer: {
+    // contentBase: path.join(__dirname, "dist"),
+    inline: true,
+    hot: true
   },
   devtool: "eval-source-map",
   // --inline --devtool source-map --content-base dist
