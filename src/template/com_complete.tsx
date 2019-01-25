@@ -2,6 +2,7 @@ import { React } from "../../framework/component/react";
 import { PageEvent, PageType } from "../../framework/component/pageEvent";
 import { MType } from ".";
 import { PageModule } from "./com_page";
+import { tips, log } from "./com_import";
 
 interface IIndexProps {
     identCode: MType.Index;

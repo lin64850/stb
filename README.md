@@ -127,6 +127,7 @@ protected render() {
 >- 调整 各个库位置，可能变动模块扩展到 platform 文件夹管理
 >- 调整 axios v0.18.0 更换为 v0.6.0 兼容性更好
 >- 调整 promise 更换为 bluebird build version 3.5.0 兼容性更好
+>- 调整 polyfill.js 整合 => js-md5、axios v0.18.0、VelocityJS.org (1.3.1) 插件
 >- 提取 Config.api、Config.basic、Config.style、Config.tool、Cookie、Key、Player 单独维护，一个专区可能多个专区文件组成，随意组合
 
 # 案例

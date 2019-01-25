@@ -1,7 +1,8 @@
 import { React, PageEvent, PageType } from "stb/component";
 import { MainEntity } from "src/entitys/main";
-import { MType, IRequest, IMemo, log, tips } from ".";
+import { MType, IRequest, IMemo } from ".";
 import { Key } from "@/config";
+import { tips, log } from "./com_import";
 
 interface IPageProps {
     identCode: MType.Page;

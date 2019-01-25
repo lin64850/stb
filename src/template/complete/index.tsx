@@ -8,7 +8,7 @@ import { Json, SetTimeout, FormatUrl, ParseUrl } from "stb/basic";
 import { initMain, Cookie } from "@/config";
 import { PageModule, PageControl } from "./com_page";
 import { Config } from "src/config";
-import { TipsComponent, LogComponent } from "stb/plugin";
+import { tips, log } from "./com_import";
 
 export const enum MType {
     Page
@@ -117,14 +117,3 @@ PageRegister(Page, {
     source: new PageSource(`${Config.mainCookieName}_index_source`),
     cokStatus: new Cookie(`${Config.mainCookieName}_index_status`)
 });
-
-const _tips = new TipsComponent();
-const _log = new LogComponent();
-
-export function tips(msg: string, duration?: number) {
-    _tips.show(msg, duration);
-};
-
-export function log(msg: string) {
-    _log.push(msg);
-}
