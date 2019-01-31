@@ -1,5 +1,6 @@
 import { React, PageEvent } from "stb/component";
-import { MType } from ".";
+import { MType } from "..";
+import { tips, log } from "../com_import";
 
 interface IPageProps {
     identCode: MType.Page;

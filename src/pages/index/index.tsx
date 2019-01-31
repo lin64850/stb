@@ -5,8 +5,9 @@
 import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
 import { ParseUrl } from "stb/basic";
 import { Cookie } from "@/config";
-import { PageModule } from "./com_page";
 import { Config } from "src/config";
+import { PageModule } from "./view/page";
+import { tips, log } from "./com_import";
 
 export const enum MType {
     Page

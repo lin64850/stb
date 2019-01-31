@@ -2,18 +2,17 @@
  * 编写作者:
  * 创建时间:
  */
-
 import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
 import { Json, SetTimeout, FormatUrl, ParseUrl } from "stb/basic";
 import { initMain, Cookie } from "@/config";
-import { PageModule, PageControl } from "./com_page";
+import { PageModule } from "./view/page";
 import { Config } from "src/config";
 import { tips, log } from "./com_import";
+import { PageControl } from "./control/page";
 
 export const enum MType {
     Page
 }
-
 interface ISource {
     url: string;
 }

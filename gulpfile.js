@@ -23,12 +23,12 @@ gulp.task('init-file-platform', function () {
   }
 });
 
-gulp.task('page', taskCreatePage('clean'));
-gulp.task('page:clean', taskCreatePage('clean'));
-gulp.task('page:complete', taskCreatePage('complete'));
-gulp.task('com', taskCreateComponent('clean'));
-gulp.task('com:clean', taskCreateComponent('clean'));
-gulp.task('com:complete', taskCreateComponent('complete'));
+gulp.task('page', taskCreatePage('page_clean'));
+gulp.task('page:clean', taskCreatePage('page_clean'));
+gulp.task('page:complete', taskCreatePage('page_complete'));
+gulp.task('com', taskCreateComponent('com_clean'));
+gulp.task('com:clean', taskCreateComponent('com_clean'));
+gulp.task('com:complete', taskCreateComponent('com_complete'));
 
 function taskCreatePage(name) {
   return () => {
@@ -62,9 +62,14 @@ function taskCreateComponent(name) {
 
       var suf = fileName.split('/');
 
-      return gulp.src('./src/template/com_' + name + '.tsx')
-        .pipe(rename({ basename: 'com_' + suf[1] }))
+      return gulp.src('./src/template/' + name + '/**/*')
+        .pipe(rename(function (path) {
+          if ("-1" != path.basename.indexOf('com')) {
+            path.basename = path.basename.replace('com', suf[1]);
+          }
+        }))
         .pipe(replace('Index', suf[1].substr(0, 1).toUpperCase() + suf[1].substr(1, suf[1].length - 1)))
+        .pipe(replace('index', suf[1]))
         .pipe(gulp.dest('./src/pages/' + suf[0]))
     }
   }
