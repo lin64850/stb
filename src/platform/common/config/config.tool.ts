@@ -38,3 +38,22 @@ export function getApiAddress(keyWorlds: string, ...args: string[]) {
 export function getImageAddress(path: string) {
     return path ? `${Config.imgDomain}/${Config.imgPath.public}/${path}` : "";
 }
+
+/**
+ * 域名截取
+ * @param str 地址
+ */
+export function getDomainURI(str) {
+    if (!str) {
+        return "";
+    }
+    var durl = /http:\/\/([^\/]+)\//i;
+    let domain = str.match(durl);
+
+    // 非 http:// 开头
+    if (!domain) {
+        durl = /([^\/]+)\//i;
+        domain = str.match(durl);
+    }
+    return domain[1];
+}
