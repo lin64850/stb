@@ -29,6 +29,8 @@ gulp.task('page:complete', taskCreatePage('page_complete'));
 gulp.task('com', taskCreateComponent('com_clean'));
 gulp.task('com:clean', taskCreateComponent('com_clean'));
 gulp.task('com:complete', taskCreateComponent('com_complete'));
+gulp.task('platform:telecom', taskCreatePlatform('platform_telecom'));
+gulp.task('platform:mobile', taskCreatePlatform('platform_mobile'));
 
 function taskCreatePage(name) {
   return () => {
@@ -71,6 +73,20 @@ function taskCreateComponent(name) {
         .pipe(replace('Index', suf[1].substr(0, 1).toUpperCase() + suf[1].substr(1, suf[1].length - 1)))
         .pipe(replace('index', suf[1]))
         .pipe(gulp.dest('./src/pages/' + suf[0]))
+    }
+  }
+}
+function taskCreatePlatform(name) {
+  return () => {
+    var fileName = process.argv[3];
+
+    if (0 !== fileName.indexOf('--')) {
+      return new Error('错误：请输入平台名称 -platformName')
+    } else {
+      fileName = fileName.substr(2, fileName.length)
+
+      return gulp.src('./src/template/' + name + '/**/*')
+        .pipe(gulp.dest('./src/platform/' + fileName))
     }
   }
 }

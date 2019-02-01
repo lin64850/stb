@@ -115,6 +115,7 @@ protected render() {
 >- 新增 装饰器 tabs 支持多页面切换，配置过渡效果等
 >- 新增 平台页面 可在基础产品EPG页面库基础上为平台单独配置定制页面，且优先级大于基础页面
 >- ~~新增 类组件 componentWillUnmount 卸载事件~~
+>- 新增 添加新平台(电信/移动)快捷配置命令 yarn gulp platform:telecom --目录名称； yarn gulp platform:mobile --目录名称
 >- 修复 JSX 节点值含 null 报错问题
 >- 修复 JSX 节点 map 渲染列表内容为空导致的异常
 >- 修复 播放器 快进退之后，指针会跳到原始位置再恢复最新位置
