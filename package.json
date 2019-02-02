@@ -41,13 +41,10 @@
     "postcss-loader": "^3.0.0",
     "style-loader": "^0.23.0",
     "ts-loader": "^4.4.2",
-    "ts-node": "^7.0.0",
     "typedoc": "^0.11.1",
     "typescript": "^2.9.2",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.0.8"
   },
-  "dependencies": {
-    "webpack-dev-server": "^3.1.14"
-  }
+  "dependencies": {}
 }
