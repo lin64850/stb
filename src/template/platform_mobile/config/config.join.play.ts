@@ -51,9 +51,9 @@ function playApk(params: IPlayParams) {
  * 订购回调 
  * @description EPG 跳转、表单跳转、APK打开回调处理
  */
-let PlayCallBack: IOrderCallBack;
+let PlayCallBack: IPlayCallBack;
 
-PlayCallBack = (...args) => {
+PlayCallBack = (href: string) => {
     // TODO
 
 }

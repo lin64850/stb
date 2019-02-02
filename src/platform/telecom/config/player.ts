@@ -1,19 +1,17 @@
-import { LogComponent } from "src/framework/plugin/log/log";
-import { TipsComponent } from "src/framework/plugin/tips/tips";
-import { Json } from "src/framework/basic/json";
-import { PageEvent } from "src/framework/component/pageEvent";
-import { SetTimeout } from "src/framework/basic/setTimeout";
-import { SetInterval } from "src/framework/basic/setInterval";
-
 /**
  * 编辑作者：张诗涛
- * 更新时间：2019年01月16日
+ * 更新时间：2019年01月17日
  */
+import { Json, SetTimeout, SetInterval } from "stb/basic";
+import { PageEvent } from "stb/component";
+
 let handlerFinish;
 
-// const keydown = document.onkeydown;
+const keydown = document.onkeydown;
+
 // document.onkeydown = function (...args) {
 //     keydown.apply(this, args);
+
 //     var str = Util.getEvent()
 //     log.push(`onkeypress:${str}`)
 //     var typeStr = Json.deSerializ(str);
@@ -23,8 +21,11 @@ let handlerFinish;
 //             // finish.enable(() => {
 //             log.push(`播放结束`)
 //             // })
+
 //             // singlePlay()
+
 //             handlerFinish();
+
 //             break;
 //         case "EVENT_MEDIA_BEGINING":
 //             break;
@@ -33,19 +34,12 @@ let handlerFinish;
 //             break;
 //     }
 // }
-let log = new LogComponent("log")
-let tips = new TipsComponent('tips');
 
 document.onkeypress = () => {
     var str = Util.getEvent()
     var typeStr = Json.deSerializ(str);
     switch (typeStr.type) {
         case "EVENT_MEDIA_END":    //视频播放结束事件
-            //你的代码
-            // finish.enable(() => {
-            // })
-
-            // singlePlay()
 
             handlerFinish();
 
@@ -53,7 +47,6 @@ document.onkeypress = () => {
         case "EVENT_MEDIA_BEGINING":
             break;
         case "EVENT_PLAYMODE_CHANGE":
-            //             //你的代码
             break;
     }
 }
@@ -61,7 +54,6 @@ document.onkeypress = () => {
 /**
  * @name 播放器
  */
-// 此类做枚举使用
 export var PlayerType = {
     StartPlaying: 'PlayerType.StartPlaying',                        // 开始（通常真实进度会有延迟，在调用 播放后直接触发）
     PausePlaying: 'PlayerType.PausePlaying',                        // 暂停
@@ -92,7 +84,6 @@ export class Player {
     // 播放完毕
     private finish = false;
 
-    // private settingVolumeTimer = new SetTimeout(1000);
     private settingProgressTimer = new SetTimeout(1000);
     private progressMonitor = new SetInterval(1000); // 视频播放进度以 秒 为单位进行播放，该参数禁止改变（部分盒子进度不会到达最后一或二秒便依赖该定时器进行模拟进度进行）
 
@@ -120,9 +111,7 @@ export class Player {
             this.totalTime = 0;
             this.startPlayCount = 0;
 
-            // // 在播放过程中调用此方法可能异常，原因未深纠所以做结束处理再重新播放
-            // this.pause(false);
-            // this.stop();
+            // 在播放过程中调用此方法可能异常，原因未深纠所以做结束处理再重新播放
             this.mediaPlay.setSingleMedia(this.playUrl);      // 播放源
             this.mediaPlay.playFromStart();
             this.playStatus = true;
@@ -254,8 +243,6 @@ export class Player {
         }
 
         // 播放器默认已经是全屏播放，这里不做重复处理，小窗播放情况下会重复配置，所以手动配置
-        // 配置默认视频状态为全屏。
-        // this.displayFull();
         this.mediaPlay.setVideoDisplayMode(0);/*指定屏幕大小 0:按给定大小显示 1：全屏*/
     }
     /**
@@ -435,8 +422,6 @@ export class Player {
                 this.currentTime -= value;
             }
 
-            let num = this.currentTime;
-
             this.currentTime = this.currentTime <= 0 ? 1 : this.currentTime;
             this.currentTime = this.currentTime > this.totalTime ? this.totalTime : this.currentTime;
 
@@ -478,9 +463,6 @@ export class Player {
 
             this.mediaPlay.setVolume(parseInt(<any>this.currentVolume));
             this.pageEvent.trigger(this.identCode, PlayerType.VolumeChanged, <IVolumeChanged>{ currentVolume: this.currentVolume });
-            // // 延时设置真实音量
-            // this.settingVolumeTimer.enable(() => {
-            // });
         }
     }
     private configPlayUrl(playUrl: string) {
@@ -510,11 +492,6 @@ export class Player {
         return this.totalTime;
     }
 }
-// 使用说明
-// 1. this.media = new Player({ identCode: ModuleType.Video }, this.event);
-// 2. this.media.displayFull(); 或者 this.media.displaySmall();
-// 3. this.media.play(url);
-// 如果续播部分盒子需要 先调用 this.media.release(); 需要注意释放并未注销相关事件
 
 declare class MediaPlayer {
     /**

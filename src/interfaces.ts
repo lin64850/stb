@@ -56,7 +56,7 @@ interface IOrder {
  * 情景二：APK 回调；参数未知；处理方式未知；自定义参数获取形式未知
  */
 interface IOrderCallBack {
-    (...args): void;
+    (href:string): void;
 }
 
 /**
@@ -95,6 +95,16 @@ interface IPlayParams {
      * 自定义参数；表示来源地方比如（首页小窗切全屏、推荐位、详情、专题等）自定义播放器会将 from 参数带给播放器
      */
     from: string;
+}
+
+/**
+ * 播放回调
+ * 情景一：GET 自定义播放器；回调为指定 EPG 地址；回调参数固定不会更改
+ * 情景二：GET 第三方播放器；回调为指定 EPG 地址；回调参数未知
+ * 情景三：APK 调起第三方播放器；回调为全局函数；回调参数未知
+ */
+interface IPlayCallBack {
+    (href:string): void;
 }
 
 /**

@@ -1,2 +1,4 @@
 [
+    "handle_authentication_callback",
+    "handle_order_callback"
 ]

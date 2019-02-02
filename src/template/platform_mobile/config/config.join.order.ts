@@ -65,7 +65,7 @@ function orderProduct(params: AuthenticationResult) {
  */
 let OrderCallBack: IOrderCallBack;
 
-OrderCallBack = (...args) => {
+OrderCallBack = (href: string) => {
     // TODO
 
 }

@@ -28,10 +28,17 @@ getSourceAddress = (href) => {
     return ret;
 }
 
+function backLaunch() {
+    // TODO
+    // 返回 Launch
+}
+
+
 /**
  * EPG 订购回调、EPG 播放回调未实现
  */
 
 export {
-    getSourceAddress
+    getSourceAddress,
+    backLaunch
 }
