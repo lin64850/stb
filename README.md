@@ -1,11 +1,6 @@
-# V1.2.0 文档
+# V2.1.0 文档
 >- 文档以及示例源码不定期更新
->- 版本声明：此版本开始向产品线兼容，之后版本都将兼容当前版本
 #### 收藏点star，订阅点watch
-
-> 历史版本
->- 前往版本 [v1.1.0](https://github.com/442331311/stb/issues/32)
->- 前往版本 [v1.0.0](https://github.com/442331311/stb/issues/20)
 
 ## 不再复杂的EPG页面开发
 #### EPG运行于电视端，与我们所接触的前端(手机端、电脑端)有一定差异。体现为复杂的焦点管理，调试成本很高，播放器以及各个盒子之间兼容性问题。都在我们编码前无形增加难度。甚至于一天写好所有功能，要花两到三天去调试程序BUG，这几乎是无法接受的状态，恰恰也是不可避免的问题。
@@ -101,6 +96,9 @@ protected render() {
 >>#### [播放器（三）：事件监听](https://github.com/442331311/stb/issues/35)
 >>#### ~~[播放器（一）：优化技巧]()~~
 
+### 补充文档
+>>#### [STB API Description](https://shitaozhang.github.io)
+
 ### EPG开发记录
 #### EPG页面运行于IPTV平台，其特殊性导致相关开发技术与人员是小众群体，总结了以下开发记录可有效避免一些常规问题
 >>[EPG开发日志（一）：盒子与浏览器差异](https://github.com/442331311/stb/issues/1)
@@ -110,26 +108,11 @@ protected render() {
 >- ~~[开发体验优化（二）：服务器去缓存机制（更新代码无需再重启机顶盒）]()~~
 
 #### 当前版本更新
->- 新增 插件库 dialog 对话框
->- 新增 服务器去缓存机制（更新代码无需再重启机顶盒）
->- 新增 装饰器 tabs 支持多页面切换，配置过渡效果等
->- 新增 平台页面 可在基础产品EPG页面库基础上为平台单独配置定制页面，且优先级大于基础页面
->- ~~新增 类组件 componentWillUnmount 卸载事件~~
->- 新增 添加新平台(电信/移动)快捷配置命令 yarn gulp platform:telecom --目录名称； yarn gulp platform:mobile --目录名称
->- 修复 JSX 节点值含 null 报错问题
->- 修复 JSX 节点 map 渲染列表内容为空导致的异常
->- 修复 播放器 快进退之后，指针会跳到原始位置再恢复最新位置
->- 修复 播放器 部分盒子播放完毕后当前进度接口获取到 0 导致播放结束事件无法触发
->- 修复 播放器 快进后马上按暂停导致暂停失效
->- 优化 Component setFocus setIndex 接口参数类型
->- 优化 支持焦点组件嵌套焦点组件
->- 优化 插件库 form、log、tips 更简洁的API，无需再静态节点定义容器。性能优化渲染更快
->- 优化 yarn gulp page:clean --pageName 和 yarn gulp page:complete --pageName 命令自动配置 webpack（重复创建或删除页面需要手动维护 webpack.pages.config.ts 文件）
->- 调整 各个库位置，可能变动模块扩展到 platform 文件夹管理
->- 调整 axios v0.18.0 更换为 v0.6.0 兼容性更好
->- 调整 promise 更换为 bluebird build version 3.5.0 兼容性更好
->- 调整 polyfill.js 整合 => js-md5、axios v0.18.0、VelocityJS.org (1.3.1) 插件
->- 提取 Config.api、Config.basic、Config.style、Config.tool、Cookie、Key、Player 单独维护，一个专区可能多个专区文件组成，随意组合
+>- 新增 
+>- 修复 同命名文件导入同相对路径导致代码冲突
+>- 修复 PageEvent 不支持注册 string 类型
+>- 优化 缓存设计；缓存 key 生成条件默认去掉 r 属性（接口请求时加 r 时间戳不会影响缓存机制）
+>- 调整 页面文件命名规则 menu => menu_v; menu => menu_c; menu => menu_c
 
 # 案例
 - anhui-戏曲（2017）

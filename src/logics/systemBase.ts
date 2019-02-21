@@ -72,7 +72,7 @@ export class BaseLogic {
 
         // 处理缓存仅支持 GET
         if ('GET' == method) {
-            let key = md5(`${request.url}${Json.serializ(request.data)}`);
+            let key = md5(`${request.url}${Json.serializ({ ...request.data, r: "" })}`);
 
             if (cache && cache.has(key)) {
 
@@ -94,20 +94,20 @@ export class BaseLogic {
 
                     // 处理缓存仅支持 GET
                     if ('GET' == method && cache) {
-                        let key = md5(`${request.url}${Json.serializ(request.data)}`);
+                        let key = md5(`${request.url}${Json.serializ({ ...request.data, r: "" })}`);
 
-                        cache.set(key,result);
+                        cache.set(key, result);
                     };
 
                     request.callback && request.callback(true, result);
                 },
                 failure: function (result: any) {
-                    
+
                     // 处理缓存仅支持 GET
                     if ('GET' == method && cache) {
-                        let key = md5(`${request.url}${Json.serializ(request.data)}`);
+                        let key = md5(`${request.url}${Json.serializ({ ...request.data, r: "" })}`);
 
-                        cache.set(key,result);
+                        cache.set(key, result);
                     };
 
                     request.callback && request.callback(false, result);
