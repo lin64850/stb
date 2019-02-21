@@ -1,27 +1,27 @@
 import { React, PageEvent } from "stb/component";
 import { MType } from "..";
-import { IndexControl } from "../control/index_c";
-import { IndexModel } from "../model/index_m";
+import { PageControl } from "../control/page_c";
+import { PageModel } from "../model/page_m";
 import { tips, log } from "../com_import";
 
 interface IIndexProps {
     identCode: MType.Index;
     event: PageEvent;
-    con: IndexControl;
-    mod: IndexModel;
+    con: PageControl;
+    mod: PageModel;
 }
 interface IIndexState {
 }
 
 export class IndexModule extends React.Component<IIndexProps, IIndexState>{
-    private readonly contr = this.props.con;
-    private readonly store = this.props.mod;
+    private readonly con = this.props.con.;
+    private readonly mod = this.props.mod.;
 
     constructor(props: IIndexProps) {
         super(props);
         this.state = {
         }
-        this.contr.initView = this.initView;
+        this.con.initView = this.initView;
     }
     protected render() {
         return (

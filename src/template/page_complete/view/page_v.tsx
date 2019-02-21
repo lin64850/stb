@@ -14,8 +14,8 @@ interface IPageState {
 }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly contr = this.props.con;
-    private readonly store = this.props.mod;
+    private readonly con = this.props.con;
+    private readonly mod = this.props.mod;
 
     constructor(props: IPageProps) {
         super(props);
@@ -30,6 +30,6 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         )
     }
     protected componentDidMount() {
-        this.contr.initPage();
+        this.con.initPage();
     }
 }
