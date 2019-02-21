@@ -5,6 +5,8 @@ export class PageControl {
 
     // other children model
 
+    // other children control
+    
     constructor(store: PageModel) {
         this.store = store;
     }

@@ -5,6 +5,8 @@ export class IndexControl {
 
     // other children model
 
+    // other children control
+
     constructor(store: IndexModel) {
         this.store = store;
     }
