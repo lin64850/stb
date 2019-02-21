@@ -30,6 +30,6 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
             </div>
         )
     }
-    private initView: () => {
+    private initView = () => {
     };
 }
