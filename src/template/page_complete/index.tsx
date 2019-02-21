@@ -5,10 +5,11 @@
 import { BasePage, ReactDOM, PageRegister, PageSource, React } from "stb/component";
 import { Json, SetTimeout, FormatUrl, ParseUrl } from "stb/basic";
 import { initMain, Cookie } from "@/config";
-import { PageModule } from "./view/page";
+import { PageModule } from "./view/page_v";
 import { Config } from "src/config";
+import { PageControl } from "./control/page_c";
 import { tips, log } from "./com_import";
-import { PageControl } from "./control/page";
+import { PageModel } from "./model/page_m";
 
 export const enum MType {
     Page
@@ -45,9 +46,10 @@ class Page extends BasePage<IRequest> {
         }
 
         initMain().then((ntt) => {
-            const con = new PageControl({ requ: this.request, nttMain: ntt, memo: memo });
+            const mod = new PageModel({ requ: this.request, nttMain: ntt, memo: memo });
+            const con = new PageControl(mod);
 
-            ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} con={con} />, document.getElementById('page'));
+            ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} con={con} mod={mod} />, document.getElementById('page'));
         });
 
     }
