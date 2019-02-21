@@ -2,18 +2,16 @@ import { IRequest, IMemo } from "..";
 import { MainEntity } from "src/entitys/main";
 import { lgcCom } from "../com_import";
 
-interface IIndexModelProps { requ: IRequest, nttMain: MainEntity, memo: IMemo }
-
 export class IndexModel {
-    private readonly initparams: IIndexModelProps;
+    private readonly nttMain: MainEntity;
 
     // declear logic
     // private lgcCom = lgcCom;
 
     // other children model
 
-    constructor(parms: IIndexModelProps) {
-        this.initparams = parms;
+    constructor(nttMain: MainEntity) {
+        this.nttMain = nttMain;
     }
 
     initData(): Promise<> {
