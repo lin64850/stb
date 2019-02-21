@@ -21,6 +21,7 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
         super(props);
         this.state = {
         }
+        this.contr.initView = this.initView;
     }
     protected render() {
         return (
@@ -32,4 +33,6 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
     protected componentDidMount() {
         this.contr.initPage();
     }
+    private initView: () => {
+    };
 }

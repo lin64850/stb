@@ -16,4 +16,5 @@ export class IndexControl {
             resolve();
         });
     }
+    initView: () => void;
 }
