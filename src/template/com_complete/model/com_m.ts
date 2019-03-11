@@ -3,7 +3,7 @@ import { MainEntity } from "src/entitys/main";
 import { lgcCom } from "../com_import";
 
 export class IndexModel {
-    public readonly nttMain: MainEntity;
+    private readonly nttMain: MainEntity;
 
     // declear logic
     // private lgcCom = lgcCom;

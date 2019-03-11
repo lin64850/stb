@@ -1,4 +1,4 @@
-# V2.1.0 文档
+# V2.2.0 文档
 >- 文档以及示例源码不定期更新
 #### 收藏点star，订阅点watch
 
@@ -108,13 +108,9 @@ protected render() {
 >- ~~[开发体验优化（二）：服务器去缓存机制（更新代码无需再重启机顶盒）]()~~
 
 #### 当前版本更新
->- 新增 忽略文件 src/platform/platform.config.json
->- 修复 同命名文件导入同相对路径导致代码冲突
->- 修复 PageEvent 不支持注册 string 类型模块标识
->- 优化 缓存设计；缓存 key 生成条件默认去掉 r 属性（接口请求时加 r 时间戳不会影响缓存机制）
->- 优化 com_import 职责：声明全局单例模式的对象；全局多个地方会调用对象；无其他(com_import 文件之外)依赖关系对象；比如（Logci 的实例化、播放器的实例化等）
->- 调整 页面文件命名规则 menu => menu_v; menu => menu_c; menu => menu_c
->- 调整 页面view、model、control层直接关联关系；调整对应模板
+>- 新增 焦点跟随插件（待更新...）
+>- 优化 page:complete 命名所创建模板；page 模型新增 getMemo 方法 nttMain 与 request 属性，更优的起步模板
+>- 调整 组件模板 private readonly nttMain: MainEntity; 访问权限为私有
 
 # 案例
 - anhui-戏曲（2017）
@@ -141,3 +137,4 @@ protected render() {
 - hainan-少儿（2018.1)
 - ningxia-教育（2018.x)
 - ningxia-少儿（2018.x)
+- shanxi-电竞垂直门户（2018.3）
