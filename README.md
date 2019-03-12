@@ -111,6 +111,8 @@ protected render() {
 >- 新增 焦点跟随插件（待更新...）
 >- 优化 page:complete 命名所创建模板；page 模型新增 getMemo 方法 nttMain 与 request 属性，更优的起步模板
 >- 调整 组件模板 private readonly nttMain: MainEntity; 访问权限为私有
+>- 调整 webpack 公用文件配置；修复同名文件导入冲突问题
+>- 移除 热更新配置导致冗余文件
 
 # 案例
 - anhui-戏曲（2017）

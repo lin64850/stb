@@ -94,8 +94,6 @@ for (let key in alias) {
   }
 }
 
-plugis.push(new webpack.HotModuleReplacementPlugin());
-
 const config: webpack.Configuration | any = {
   entry: entrys,
   output: {
@@ -150,7 +148,7 @@ const config: webpack.Configuration | any = {
       chunks: 'all',
       minSize: 0,
       maxSize: 0,
-      minChunks: 1,
+      minChunks: 500,
       maxAsyncRequests: 5,
       maxInitialRequests: 30,
       automaticNameDelimiter: '_',
@@ -162,7 +160,7 @@ const config: webpack.Configuration | any = {
         },
         default: {
           name: "common",
-          minChunks: 2,
+          minChunks: 500,
           priority: -20,
           reuseExistingChunk: true
         }
@@ -175,13 +173,7 @@ const config: webpack.Configuration | any = {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: _alias
   },
-  devServer: {
-    // contentBase: path.join(__dirname, "dist"),
-    inline: true,
-    hot: true
-  },
-  devtool: "eval-source-map",
-  // --inline --devtool source-map --content-base dist
+  devtool: "eval-source-map"
 }
 
 export default config;
