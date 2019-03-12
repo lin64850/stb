@@ -7,6 +7,7 @@ const logCom = new LogComponent();
 
 // declare logic
 const lgcCom = new CommonLogic();
+const lgcHom = new HomeRecomLogic();
 
 export function tips(msg: string, duration?: number) {
     tipsCom.show(msg, duration);
@@ -16,4 +17,4 @@ export function log(msg: string) {
     logCom.push(msg);
 }
 
-export { lgcCom }
+export { lgcCom ,lgcHom}

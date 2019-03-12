@@ -12,7 +12,8 @@ import { tips, log } from "./com_import";
 import { PageModel } from "./model/page_m";
 
 export const enum MType {
-    Page
+    Page,
+    Nav
 }
 interface ISource {
     url: string;
@@ -112,7 +113,8 @@ class Page extends BasePage<IRequest> {
 
 PageRegister(Page, {
     handler: [
-        MType.Page
+        MType.Page,
+        MType.Nav
     ],
     request: new ParseUrl(location.search).getDecodeURIComponent(),
     source: new PageSource(`${Config.mainCookieName}_index_source`),
