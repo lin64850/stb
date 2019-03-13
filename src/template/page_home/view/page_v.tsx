@@ -4,24 +4,23 @@ import { PageControl } from "../control/page_c";
 import { PageModel } from "../model/page_m";
 import { tips, log } from "../com_import";
 
-interface IIndexProps {
-    identCode: MType.Index;
+interface IPageProps {
+    identCode: MType.Page;
     event: PageEvent;
     con: PageControl;
     mod: PageModel;
 }
-interface IIndexState {
+interface IPageState {
 }
 
-export class IndexModule extends React.Component<IIndexProps, IIndexState>{
-    private readonly con = this.props.con.;
-    private readonly mod = this.props.con.;
+export class PageModule extends React.Component<IPageProps, IPageState>{
+    private readonly con = this.props.con;
+    private readonly mod = this.props.mod;
 
-    constructor(props: IIndexProps) {
+    constructor(props: IPageProps) {
         super(props);
         this.state = {
         }
-        this.con.initView = this.initView;
     }
     protected render() {
         return (
@@ -30,6 +29,9 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
             </div>
         )
     }
-    private initView = () => {
-    };
+    protected componentDidMount() {
+        this.con.initPage().then(({ identCode }) => {
+            this.target(identCode);
+        })
+    }
 }

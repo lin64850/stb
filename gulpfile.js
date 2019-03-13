@@ -26,6 +26,10 @@ gulp.task('init-file-platform', function () {
 gulp.task('page', taskCreatePage('page_clean'));
 gulp.task('page:clean', taskCreatePage('page_clean'));
 gulp.task('page:complete', taskCreatePage('page_complete'));
+gulp.task('page:home', taskCreatePage('page_home'));
+gulp.task('page:list', taskCreatePage('page_list'));
+gulp.task('page:record', taskCreatePage('page_record'));
+gulp.task('page:details', taskCreatePage('page_details'));
 gulp.task('com', taskCreateComponent('com_clean'));
 gulp.task('com:clean', taskCreateComponent('com_clean'));
 gulp.task('com:complete', taskCreateComponent('com_complete'));

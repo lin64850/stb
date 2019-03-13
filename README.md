@@ -109,10 +109,16 @@ protected render() {
 
 #### 当前版本更新
 >- 新增 焦点跟随插件（待更新...）
+>- 新增 page:home 首页模板；预定义导航模块、内容切换模块
+>- 新增 page:details 详情模板；预定义详情、选集、Tab选集分组、推荐模块
+>- 新增 page:list 列表模板；预定义菜单、列表模块
+>- 新增 page:record 记录模板；预定义菜单、列表（收藏记录、播放记录）模块
 >- 优化 page:complete 命名所创建模板；page 模型新增 getMemo 方法 nttMain 与 request 属性，更优的起步模板
 >- 调整 组件模板 private readonly nttMain: MainEntity; 访问权限为私有
 >- 调整 webpack 公用文件配置；修复同名文件导入冲突问题
 >- 移除 热更新配置导致冗余文件
+>- 待实现 page:play 播放模板；预定义选集、进度条、音量条模块
+>- 待实现 page:special 专题模板；预定义自定义焦点、图片、视频、按钮等自动生成模块模块
 
 # 案例
 - anhui-戏曲（2017）

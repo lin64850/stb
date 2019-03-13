@@ -1,0 +1,1 @@
+// export const index_bg = require("../../package/images/");

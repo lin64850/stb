@@ -3,23 +3,27 @@ import { MType } from "..";
 import { PageControl } from "../control/page_c";
 import { PageModel } from "../model/page_m";
 import { tips, log } from "../com_import";
+import { verticalWholelPage } from "stb/decorator";
 
-interface IIndexProps {
-    identCode: MType.Index;
+interface IListProps {
+    identCode: MType.List;
     event: PageEvent;
     con: PageControl;
     mod: PageModel;
 }
-interface IIndexState {
+interface IListState {
+    dataList?: AssetPackageItemEntity[];
 }
 
-export class IndexModule extends React.Component<IIndexProps, IIndexState>{
-    private readonly con = this.props.con.;
-    private readonly mod = this.props.con.;
+@verticalWholelPage(function () { return this.mod }, { width: 5, height: 2 })
+export class ListModule extends React.Component<IListProps, IListState>{
+    private readonly con = this.props.con.conLis;
+    private readonly mod = this.props.con.modLis;
 
-    constructor(props: IIndexProps) {
+    constructor(props: IListProps) {
         super(props);
         this.state = {
+            dataList: []
         }
         this.con.initView = this.initView;
     }
@@ -29,6 +33,10 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
                 <span>Hello EPG!</span>
             </div>
         )
+    }
+    protected componentDidMount() {
+        // 禁用默认加载
+        return false;
     }
     private initView = () => {
     };

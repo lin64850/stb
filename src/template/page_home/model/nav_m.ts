@@ -44,7 +44,7 @@ export class NavModel {
      * 某项数据
      * @param serial 为空取当前选中项
      */
-    getData(serial?): Promise<RecomPageEntity> {
+    getItem(serial?): Promise<RecomPageEntity> {
         return new Promise((resolve) => {
             let index = serial;
 
