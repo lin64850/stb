@@ -77,24 +77,24 @@ protected render() {
 ### 高阶
 >>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
 >>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/36)
->>#### ~~[插件库：引言]()~~
+>>#### [插件库：引言](https://shitaozhang.github.io/concept/)
 >>#### [插件库（一）：消息](https://github.com/442331311/stb/issues/21)
 >>#### [插件库（二）：日志](https://github.com/442331311/stb/issues/23)
 >>#### [插件库（三）：表单](https://github.com/442331311/stb/issues/24)
->>#### ~~[插件库（四）：对话]()~~
->>#### ~~[装饰器：引言]()~~
->>#### ~~[装饰器（一）：普通]()~~
->>#### ~~[装饰器（二）：走马灯]()~~
->>#### ~~[装饰器（三）：横向数据翻页]()~~
->>#### ~~[装饰器（四）：纵向数据翻页]()~~
->>#### ~~[装饰器（五）：横向数据滚动]()~~
->>#### ~~[装饰器（六）：纵向数据滚动]()~~
+>>#### [插件库（四）：对话](https://shitaozhang.github.io/plugindialog/)
+>>#### [装饰器：引言](https://shitaozhang.github.io/concept/)
+>>#### [装饰器（一）：焦点](https://shitaozhang.github.io/decoratefocus/)
+>>#### [装饰器（二）：走马灯](https://shitaozhang.github.io/decoratemarquee/)
+>>#### [装饰器（三）：横向数据翻页](https://shitaozhang.github.io/horizontawholelpage/)
+>>#### [装饰器（四）：纵向数据翻页](https://shitaozhang.github.io/verticalwholelpage/)
+>>#### [装饰器（五）：横向数据滚动](https://shitaozhang.github.io/horizontalsteppage/)
+>>#### [装饰器（六）：纵向数据滚动](https://shitaozhang.github.io/verticalsteppage/)
 
 ### 播放器
 >>#### [播放器（一）：引言](https://github.com/442331311/stb/issues/31)
 >>#### [播放器（二）：接口调用](https://github.com/442331311/stb/issues/34)
 >>#### [播放器（三）：事件监听](https://github.com/442331311/stb/issues/35)
->>#### ~~[播放器（一）：优化技巧]()~~
+>>#### [播放器（四）：API说明](https://shitaozhang.github.io/player/)
 
 ### 补充文档
 >>#### [STB API Description](https://shitaozhang.github.io)
