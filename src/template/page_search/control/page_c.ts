@@ -11,8 +11,16 @@ import { TabControl } from "./tab_c";
 interface IPageControlProps { requ: IRequest, nttMain: MainEntity, memo: IMemo }
 
 export class PageControl {
-    public readonly props: IPageControlProps;
     public readonly store: PageModel;
+
+    public readonly modKeyboard: KeyboardModel;
+    public readonly modDefault: DefaultModel;
+    public readonly modEmpty: EmptyModel;
+    public readonly modList: ListModel;
+    public readonly modExpand: ExpandModel;
+    public readonly modTab: TabModel;
+
+    public readonly props: IPageControlProps;
     public readonly conKeyBoard: KeyboardControl;
     public readonly conDefault: DefaultControl;
     public readonly conEmpty: EmptyControl;
@@ -24,6 +32,14 @@ export class PageControl {
     constructor(parms: IPageControlProps) {
         this.props = parms;
         this.store = new PageModel(parms.nttMain);
+
+        this.modKeyboard = new KeyboardModel(mainNtt);
+        this.modDefault = new DefaultModel(mainNtt);
+        this.modEmpty = new EmptyModel(mainNtt);
+        this.modList = new ListModel(8, mainNtt);
+        this.modExpand = new ExpandModel(mainNtt);
+        this.modTab = new TabModel(mainNtt);
+
         this.conKeyBoard = new KeyboardControl(this.store.modKeyboard);
         this.conDefault = new DefaultControl(this.store.modDefault);
         this.conEmpty = new EmptyControl(this.store.modDefault);
@@ -32,18 +48,18 @@ export class PageControl {
         this.conTab = new TabControl(this.store.modTab)
     }
 
-    initPage(index): Promise<any> {
+    initPage(search): Promise<any> {
         return new Promise((resolve) => {
-            this.conDefault.initData(index).then(() => {
+            this.conDefault.initData(search).then(() => {
                 this.conTab.switchView(0);
                 resolve();
             });
         });
     }
 
-    initSearch({ pageIndex, keyword, index }): Promise<any> {
+    initSearch({ pageIndex, keyword, search }): Promise<any> {
         return new Promise((resolve) => {
-            this.conList.initData({ pageIndex, keyword, index }).then((data) => {
+            this.conList.initData({ pageIndex, keyword, search }).then((data) => {
                 if (data.length > 0) {
                     this.conTab.switchView(2);
                 }
@@ -52,9 +68,9 @@ export class PageControl {
         });
     }
 
-    initEmpty(index): Promise<any> {
+    initEmpty(search): Promise<any> {
         return new Promise((resolve) => {
-            this.conEmpty.initData(index).then(() => {
+            this.conEmpty.initData(search).then(() => {
                 this.conTab.switchView(1);
                 resolve();
             });

@@ -9,6 +9,7 @@ import { PageModule } from "./view/page_v";
 import { Config } from "src/config";
 import { tips, log } from "./com_import";
 import { PageControl } from "./control/page_c";
+import { PageModel } from "./model/page_m";
 
 export const enum MType {
     Page,
@@ -31,7 +32,7 @@ export interface IRequest {
 }
 export interface IMemo {
     key: MType;
-    index?: number;
+    search?: number;
     pageType?: number;
     keyword?: string;
     pageIndex?: number;
@@ -53,8 +54,9 @@ class Page extends BasePage<IRequest> {
         }
 
         initMain().then((ntt) => {
-            const con = new PageControl({ requ: this.request, nttMain: ntt, memo: memo });
-
+            const mod = new PageModel({ requ: this.request, nttMain: ntt, memo: memo });
+            const con = new PageControl(mod);
+            
             ReactDOM.render(<PageModule identCode={MType.Page} event={this.event} con={con} />, document.getElementById('page'));
         });
 

@@ -141,8 +141,8 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
                     if (undefined != entrance) {
                         this.setKeyworlds(this.con.entrance(this.state.keyword, entrance));
                     }
-                } else if (e.data.index || e.data.index === 0) {
-                    this.setFocus(e.data.index)
+                } else if (e.data.search || e.data.search === 0) {
+                    this.setFocus(e.data.search)
                 }
             }
         })
@@ -150,7 +150,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
 
     protected setKeyworlds(val) {
         if (this.con.keywordTips !== val) {
-            this.props.con.initSearch({ pageIndex: 1, keyword: val, index: 0 }).then((data) => {
+            this.props.con.initSearch({ pageIndex: 1, keyword: val, search: 0 }).then((data) => {
                 if (data.length == 0) {
                     this.props.con.initEmpty(0);
                 }
@@ -172,13 +172,13 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
                 this.setKeyworlds(this.con.keywordTips);
             }
         } else {
-            this.currentIndex = this.index;
+            this.currentIndex = this.search;
             this.isShowKeypad(true);
-            const tag = this.tags.eq(this.index);
+            const tag = this.tags.eq(this.search);
             const num = tag.find("[class=num]").html();
             if (tag.find("[class=let]").html()) {
                 const val = [num, ...tag.find("[class=let]").html().split("")];
-                this.target(MType.Expand, { ...Position(tag.get(0)), values: val, currentIndex: this.index });
+                this.target(MType.Expand, { ...Position(tag.get(0)), values: val, currentIndex: this.search });
             } else if (num) {
                 this.setKeyworlds(this.con.entrance(this.state.keyword, num))
             }

@@ -61,9 +61,9 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         )
     }
 
-    private initView = (data, index) => {
+    private initView = (data, search) => {
         return new Promise((reslove) => {
-            this.setIndex(index);
+            this.setIndex(search);
             this.setState({
                 dataList: data,
             });
@@ -82,10 +82,10 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
     protected onEnter() {
         const memo: IMemo = {
             key: this.identCode,
-            index: this.index,
+            search: this.search,
             pageType: this.props.con.conTab.getPageType(),
         }
-        const { video_id } = this.state.dataList[this.index];
+        const { video_id } = this.state.dataList[this.search];
         this.trigger(PageType.Blank, { url: "./video_details.html", params: { video_id }, memo: memo });
     }
 

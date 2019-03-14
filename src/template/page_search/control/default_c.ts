@@ -7,14 +7,14 @@ export class DefaultControl {
         this.store = parms;
     }
 
-    initData(index): Promise<any> {
+    initData(search): Promise<any> {
         return new Promise((resolve) => {
             this.store.getData().then((data) => {
-                this.initDefault(data, index)
+                this.initDefault(data, search)
                 resolve();
             })
         });
     }
 
-    initDefault: (data, index) => Promise<any>;
+    initDefault: (data, search) => Promise<any>;
 }

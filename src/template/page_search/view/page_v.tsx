@@ -33,27 +33,27 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
 
     protected componentDidMount() {
         if (this.con.props.memo) {
-            const { key, index, pageType, keyword, pageIndex } = this.con.props.memo;
+            const { key, search: search, pageType, keyword, pageIndex } = this.con.props.memo;
             if (pageType === 0) {
-                this.con.initPage(index).then(() => {
+                this.con.initPage(search).then(() => {
                     this.target(key);
                 })
             } else if (pageType === 1) {
                 this.con.conKeyBoard.initData(keyword).then(() => {
-                    this.con.initEmpty(index).then(() => {
+                    this.con.initEmpty(search).then(() => {
                         this.target(key);
                     })
                 })
             } else if (pageType === 2) {
                 this.con.conKeyBoard.initData(keyword).then(() => {
-                    this.con.initSearch({ pageIndex, keyword, index }).then(() => {
+                    this.con.initSearch({ pageIndex, keyword, search }).then(() => {
                         this.target(key);
                     })
                 })
             }
         } else {
             this.con.initPage(0).then(() => {
-                this.target(MType.Keyboard, { index: 4 });
+                this.target(MType.Keyboard, { search: 4 });
             });
         }
     }

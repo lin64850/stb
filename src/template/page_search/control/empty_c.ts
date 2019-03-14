@@ -7,14 +7,14 @@ export class EmptyControl {
         this.store = parms;
     }
 
-    initData(index): Promise<{ list }> {
+    initData(search): Promise<{ list }> {
         return new Promise((resolve) => {
             this.store.getData().then((data) => {
-                this.initEmpty(data, index)
+                this.initEmpty(data, search)
                 resolve();
             })
         });
     }
 
-    initEmpty: (data, index) => Promise<any>;
+    initEmpty: (data, search) => Promise<any>;
 }

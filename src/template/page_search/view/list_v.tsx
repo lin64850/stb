@@ -48,7 +48,7 @@ export class ListModule extends React.Component<IListProps, IListState>{
                         </div>
                         <div class="line">
                         </div>
-                        <div class="page_index">
+                        <div class="page_search">
                             {this.paging.getPageIndex()} /
                         </div>
                         <div class="page_size">
@@ -81,9 +81,9 @@ export class ListModule extends React.Component<IListProps, IListState>{
         )
     }
 
-    private initView = (list, index) => {
+    private initView = (list, search) => {
         return new Promise((reslove) => {
-            this.setIndex(index);
+            this.setIndex(search);
             this.setState({
                 dataList: list
             });
@@ -107,12 +107,12 @@ export class ListModule extends React.Component<IListProps, IListState>{
     protected onEnter() {
         const memo: IMemo = {
             key: this.identCode,
-            index: this.index,
+            search: this.search,
             pageType: this.props.con.conTab.getPageType(),
             pageIndex: this.con.store.paging.getPageIndex(),
             keyword: this.props.con.conKeyBoard.getKeyword(),
         }
-        const { video_id } = this.state.dataList[this.index];
+        const { video_id } = this.state.dataList[this.search];
         this.trigger(PageType.Blank, { url: "./video_details.html", params: { video_id }, memo: memo });
     }
 

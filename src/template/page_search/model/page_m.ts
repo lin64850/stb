@@ -1,25 +1,32 @@
+import { IRequest, IMemo, MType } from "..";
 import { MainEntity } from "src/entitys/main";
-import { KeyboardModel } from './keyboard_m';
-import { DefaultModel } from './default_m';
-import { EmptyModel } from "./empty_m";
-import { ListModel } from "./list_m";
-import { ExpandModel } from "./expand_m";
-import { TabModel } from "./tab_m";
+import { lgcCom } from "../com_import";
+
+interface IPageModelProps { requ: IRequest, nttMain: MainEntity, memo: IMemo }
 
 export class PageModel {
-    public readonly modKeyboard: KeyboardModel;
-    public readonly modDefault: DefaultModel;
-    public readonly modEmpty: EmptyModel;
-    public readonly modList: ListModel;
-    public readonly modExpand: ExpandModel;
-    public readonly modTab: TabModel;
+    private readonly initparams: IPageModelProps;
+    public readonly nttMain: MainEntity;
+    public readonly request: IRequest;
 
-    constructor(mainNtt: MainEntity){
-        this.modKeyboard = new KeyboardModel(mainNtt);
-        this.modDefault = new DefaultModel(mainNtt);
-        this.modEmpty = new EmptyModel(mainNtt);
-        this.modList = new ListModel(8, mainNtt);
-        this.modExpand = new ExpandModel(mainNtt);
-        this.modTab = new TabModel(mainNtt);
+    // declear logic
+    // private lgcCom = lgcCom;
+
+    // other children model
+
+    constructor(parms: IPageModelProps) {
+        this.initparams = parms;
+        this.nttMain = this.initparams.nttMain;
+        this.request = this.initparams.requ;
+    }
+
+    getMemo(): IMemo {
+        return this.initparams.memo || {
+            key: MType.Page,
+            search: 0,
+            pageType: 0,
+            keyword: '',
+            pageIndex: 1
+        }
     }
 }

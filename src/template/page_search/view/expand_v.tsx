@@ -107,25 +107,25 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
     }
 
     protected autoFocus(keyCode) {
-        const r = Focus.center(this.tags, this.index, keyCode);
+        const r = Focus.center(this.tags, this.search, keyCode);
         if (r) {
-            this.setFocus(r.index);
+            this.setFocus(r.search);
         } else {
-            const r = Focus.scope(this.tags, this.index, keyCode);
+            const r = Focus.scope(this.tags, this.search, keyCode);
             if (r) {
-                this.setFocus(r.index);
+                this.setFocus(r.search);
             } else {
                 if (Key.Up === keyCode) {
                     if (this.currentIndex == 3) {
                         this.props.con.conKeyBoard.isShowKeypad(false)
-                        this.target(MType.Keyboard, { index: 0 })
+                        this.target(MType.Keyboard, { search: 0 })
                     } else if (this.currentIndex > 3) {
                         this.props.con.conKeyBoard.isShowKeypad(false)
-                        this.target(MType.Keyboard, { index: this.currentIndex - 3 })
+                        this.target(MType.Keyboard, { search: this.currentIndex - 3 })
                     }
                 } else if (Key.Down === keyCode) {
                     this.props.con.conKeyBoard.isShowKeypad(false)
-                    this.target(MType.Keyboard, { index: this.currentIndex + 3 })
+                    this.target(MType.Keyboard, { search: this.currentIndex + 3 })
                 } else if (Key.Right === keyCode) {
                     if (this.currentIndex == 2 || this.currentIndex == 5 || this.currentIndex == 8) {
                         this.props.con.conKeyBoard.isShowKeypad(false)
@@ -140,12 +140,12 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
                         }
                     } else {
                         this.props.con.conKeyBoard.isShowKeypad(false)
-                        this.target(MType.Keyboard, { index: this.currentIndex + 1 })
+                        this.target(MType.Keyboard, { search: this.currentIndex + 1 })
                     }
                 } else if (Key.Left) {
                     if (this.currentIndex !== 3 && this.currentIndex !== 6) {
                         this.props.con.conKeyBoard.isShowKeypad(false)
-                        this.target(MType.Keyboard, { index: this.currentIndex - 1 })
+                        this.target(MType.Keyboard, { search: this.currentIndex - 1 })
                     }
                 }
             }
@@ -155,7 +155,7 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
 
     protected onEnter() {
         this.props.con.conKeyBoard.isShowKeypad(false);
-        this.target(MType.Keyboard, { entrance: this.state.values[this.index] });
+        this.target(MType.Keyboard, { entrance: this.state.values[this.search] });
     }
 
     protected onBackspace() {

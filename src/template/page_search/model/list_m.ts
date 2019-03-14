@@ -15,10 +15,10 @@ export class ListModel extends WholePageControl {
         this.nttMain = mainNtt;
     }
 
-    getData(index): Promise<any> {
-        let requst = (index) => {
+    getData(search): Promise<any> {
+        let requst = (search) => {
             const pageSize = this.paging.getPageSize();
-            const pageIndex = index;
+            const pageIndex = search;
             return new Promise((resolve, reject) => {
                 this.lgc.getAssetVideoSearch({
                     business_code: this.nttMain.global_variable.business_code,
@@ -45,9 +45,9 @@ export class ListModel extends WholePageControl {
         }
         // 预览
         return new Promise((resolve, reject) => {
-            requst(index).then((list: any[]) => {
+            requst(search).then((list: any[]) => {
                 if (this.paging.isNextPage()) {
-                    requst(index + 1).then((list2) => {
+                    requst(search + 1).then((list2) => {
                         resolve(list.concat(list2));
                     });
                 } else {

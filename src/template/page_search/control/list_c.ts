@@ -7,15 +7,15 @@ export class ListControl {
         this.store = parms;
     }
 
-    initData({ pageIndex, keyword, index }): Promise<any> {
+    initData({ pageIndex, keyword, search }): Promise<any> {
         this.store.setKeyword(keyword);
         return new Promise((resolve) => {
             this.store.toIndex(pageIndex).then((list) => {
-                this.initList(list, index);
+                this.initList(list, search);
                 resolve(list);
             });
         });
     }
 
-    initList: (list, index) => Promise<any>;
+    initList: (list, search) => Promise<any>;
 }
