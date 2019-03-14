@@ -1,4 +1,5 @@
 import { PageModel } from "../model/page_m";
+import { MType, IMemo } from "..";
 
 export class PageControl {
     private readonly store: PageModel;
@@ -6,7 +7,7 @@ export class PageControl {
     // other children model
 
     // other children control
-    
+
     constructor(store: PageModel) {
         this.store = store;
     }
@@ -15,5 +16,15 @@ export class PageControl {
         return new Promise((resolve, reject) => {
             resolve();
         });
+    }
+    getStatus(identCode: MType, index: number): IMemo {
+        let memo = {
+            key: identCode,
+            index: index
+        }
+
+        // TODO
+
+        return memo;
     }
 }
