@@ -1,0 +1,1 @@
+// export const dynamic_special_bg = require("../../package/images/");

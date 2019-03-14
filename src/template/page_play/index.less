@@ -1,0 +1,257 @@
+@import "~@/config/config.style.less";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 1;
+    background-color: transparent;
+}
+
+#page,
+.content,
+#tips,
+#log,
+.bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+}
+
+// 初始化 Bootstrap 元素预定义规则
+.init() {
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+    list-style: none;
+}
+
+.episode{
+    position: absolute;
+    left: 0;
+    top: 630px;
+    width: 1280px;
+    height: 97px;
+    // background-image: url("../../package/images/play/b_bg.png");
+    .item-group{
+        position: absolute;
+        top: 17px;
+        left: 45px;
+        .item{
+            position: relative;
+            width: 110px;
+            height: 50px;
+            float: left;
+            margin-right: 10px;
+
+            &.enable{
+                .act{
+                    display: block;
+                }
+            }
+            &.focus{
+                .txt{
+                    color: #feb731;
+                }
+                .foc{
+                    display: block;
+                }
+            }
+            .foc,.def{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .act {
+                position: absolute;
+                left: 0;
+                top: -10px;
+            }
+            .act,.foc{
+                display: none;
+            }
+            .def{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .foc{
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .txt{
+                position: absolute;
+                top: 10px;
+                left: 0px;
+                width: 113px;
+                height: 50px;
+                font-size:   30px;
+                color: #ffffff;
+                text-align: center;
+            }
+            
+        }
+        .corner{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+            &.left{
+                top: 0px;
+                left: 0px;
+            }
+            &.right{
+                top: 0px;
+                right: 0px;
+            }
+        }
+    }
+    
+    .to-front{
+        position: absolute;
+        top: 35px;
+        right: 20px;
+    }
+    .to-behind{
+        position: absolute;
+        top: 35px;
+        left: 20px;
+    }
+}
+
+// 底部
+.bottom{
+    position: absolute;
+    left: 0;
+    top: 520px;
+    width: 1280px;
+    height: 200px;
+    background-image: url('../../package/images/play/bg_bottom_cover.png');
+    z-index: 10;
+}
+
+.btn-play,.btn-pause{
+    display: block;
+    position: absolute;
+    left: 64px;
+    bottom:110px;
+    width: 74px;
+    height: 74px;
+}
+.btn-play{
+    background-image: url('../../package/images/play/btn_play.png');
+}
+.btn-pause{
+    background-image: url('../../package/images/play/btn_pause.png');
+}
+
+.progress-box{
+    position: absolute;
+    left: 198px;
+    height: 200px;
+    width: 938px;
+}
+
+.text-title{
+    display: block;
+    line-height: 1;
+    font-size: 36px;
+    color: #ffffff;
+}
+
+.progress-bg-bar,.progress-current-bar{
+    position: absolute;
+    top: 52px;
+    left: 0;
+    height: 5px;
+    background-color: #ffffff;
+    // opacity: .5;
+    width: 938px;
+    z-index: 1;
+}
+.progress-current-bar{
+    background-color: #2d8afd;
+    width: 0px;
+}
+
+.text-current-time,.text-total-time{
+    font-size: 30px;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 73px;
+}
+.text-total-time{
+    left: auto;
+    right: 0;
+}
+.point{
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    // background-color: #3887ff;
+    opacity: 1;
+    z-index: 5;
+    background-image:url('../../package/images/play/point.png');
+}
+
+.volume{
+    position: absolute;
+    left: 480px;
+    top: 80px;
+    width: 322px;
+    height: 54px;
+    background-image: url("../../package/images/common/icon_black.png");
+    border-radius: 8px;
+
+    .icon-volume{
+        position: absolute;
+        left: 14px;
+        top:15px;
+        width: 30px;
+        height: 25px;
+        background-image: url("../../package/images/play/icon_volume.png");
+        background-repeat: no-repeat;
+
+        &.mute{
+            background-position: center center;
+            background-image: url("../../package/images/play/icon_mute.png");
+        }
+    }
+
+    .grid{
+        position: absolute;
+        left: 50px;
+        top: 15px;
+        &>div{
+            float: left;
+            margin-right: 5px;
+            width: 6px;
+            height: 22px;
+            background-image: url("../../package/images/play/icon_volume_white.png");
+
+            &.full{
+                background-image: url("../../package/images/play/icon_volume_blue.png");
+            }
+        }
+
+    }
+    .text{
+        position: absolute;
+        font-size: 20px;
+        right: 8px;
+        top: 18px;
+        color: white;
+    }
+}
