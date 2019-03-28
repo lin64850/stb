@@ -21,8 +21,8 @@ interface IEpisodeState {
 
 @horizontaWholelPage(function () { return this.mod; })
 export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>{
-    private readonly con = this.props.con.conEpi;
-    private readonly mod = this.props.con.modEpi;
+    readonly con = this.props.con.conEpi;
+    readonly mod = this.props.con.modEpi;
 
     constructor(props: IEpisodeProps) {
         super(props);
@@ -32,10 +32,10 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         this.con.initView = this.initView;
     }
 
-    protected render() {
+    render() {
     }
 
-    private initView = ({ dataList, index, selectEpisode }) => {
+    initView = ({ dataList, index, selectEpisode }) => {
         this.mod.setIndex(index);
         this.setIndex(index);
         this.setState({
@@ -44,17 +44,17 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         });
     };
 
-    protected onChange(status, keyCode) {
+    onChange(status, keyCode) {
         if (status) {
             this.mod.setIndex(this.index);
         }
     }
 
-    protected onFront() {
+    onFront() {
         this.con.changeTab((this.props.con.conTab));
     }
 
-    protected onBehind() {
+    onBehind() {
         this.con.changeTab((this.props.con.conTab));
     }
 }

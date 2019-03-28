@@ -21,8 +21,8 @@ interface IEpisodeState {
 
 @horizontaWholelPage(function () { return this.mod; })
 export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>{
-    private readonly con = this.props.con.conEpisode;
-    private readonly mod = this.props.con.store.episodeModule;
+    readonly con = this.props.con.conEpisode;
+    readonly mod = this.props.con.store.episodeModule;
 
     constructor(props: IEpisodeProps) {
         super(props);
@@ -35,7 +35,7 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         this.con.setCurrentIndex = this.setCurrentIndex;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="episode" style={{ display: this.state.display ? "block" : "none" }}>
                 <div class="item-group">
@@ -58,7 +58,7 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         )
     }
 
-    private initView = (dataList: any[], pageIndex, index) => {
+    initView = (dataList: any[], pageIndex, index) => {
         return new Promise((resolve) => {
             this.setIndex(index);
             this.con.currentIndex = index;
@@ -69,11 +69,11 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         });
     }
 
-    private setCurrentIndex = (index) => {
+    setCurrentIndex = (index) => {
         this.setIndex(index);
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onfocus(() => {
             this.setState({
                 display: true
@@ -86,7 +86,7 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         })
     }
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (!status) {
             if (keycode === Key.Left) {
                 if (!this.mod.isFront()) {
@@ -96,11 +96,11 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         }
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.target(MType.Page)
     }
 
-    protected onEnter() {
+    onEnter() {
         addPlay(this.props.con.props.requ.videoId, this.state.dataList[this.con.currentIndex].seq, getCurrentTime());
         let seq = this.state.dataList[this.index].seq;
         let title = this.state.dataList[this.index].title;
@@ -111,7 +111,7 @@ export class EpisodeModule extends React.Component<IEpisodeProps, IEpisodeState>
         })
     }
 
-    protected componentDidMount() {
+    componentDidMount() {
         return false;
     }
 }

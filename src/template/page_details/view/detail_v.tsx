@@ -30,10 +30,10 @@ export class DetailModule extends React.Component<IDetailProps, IDetailState>{
         this.con.initView = this.initView;
     }
 
-    protected render() {
+    render() {
     }
 
-    private initView = ({index}) => {
+    initView = ({index}) => {
         this.setIndex(index);
     };
 }

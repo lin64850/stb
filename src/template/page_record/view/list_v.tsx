@@ -17,8 +17,8 @@ interface IListState {
 
 @verticalWholelPage(function () { return this.mod }, { width: 5, height: 2 })
 export class ListModule extends React.Component<IListProps, IListState>{
-    private readonly con = this.props.con.conLis;
-    private readonly mod = this.props.con.modLis;
+    readonly con = this.props.con.conLis;
+    readonly mod = this.props.con.modLis;
 
     constructor(props: IListProps) {
         super(props);
@@ -27,17 +27,17 @@ export class ListModule extends React.Component<IListProps, IListState>{
         }
         this.con.initView = this.initView;
     }
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>
             </div>
         )
     }
-    protected componentDidMount() {
+    componentDidMount() {
         // 禁用默认加载
         return false;
     }
-    private initView = () => {
+    initView = () => {
     };
 }

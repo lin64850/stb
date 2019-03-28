@@ -18,12 +18,12 @@ interface IListState {
     dataList?: any[];
 }
 
-@verticalWholelPage(function() { return this.mod; }, { width: 4, height: 2 })
+@verticalWholelPage(function () { return this.mod; }, { width: 4, height: 2 })
 export class ListModule extends React.Component<IListProps, IListState>{
-    private readonly con = this.props.con.conList;
-    private readonly mod = this.props.con.store.modList;
-    private readonly episodeView = new DefaultView();
-    private readonly paging = this.props.con.store.modList.paging;
+    readonly con = this.props.con.conList;
+    readonly mod = this.props.con.store.modList;
+    readonly episodeView = new DefaultView();
+    readonly paging = this.props.con.store.modList.paging;
 
     constructor(props: IListProps) {
         super(props);
@@ -33,7 +33,7 @@ export class ListModule extends React.Component<IListProps, IListState>{
         this.con.initList = this.initView;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="listContainer">
                 <div class="search_data">
@@ -81,7 +81,7 @@ export class ListModule extends React.Component<IListProps, IListState>{
         )
     }
 
-    private initView = (list, search) => {
+    initView = (list, search) => {
         return new Promise((reslove) => {
             this.setIndex(search);
             this.setState({
@@ -91,7 +91,7 @@ export class ListModule extends React.Component<IListProps, IListState>{
         })
     }
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (!status) {
             if (keycode === Key.Left) {
                 this.target(MType.Keyboard);
@@ -99,12 +99,12 @@ export class ListModule extends React.Component<IListProps, IListState>{
         }
     }
 
-    protected componentDidMount() {
+    componentDidMount() {
         // 禁用默认加载
         return false;
     }
 
-    protected onEnter() {
+    onEnter() {
         const memo: IMemo = {
             key: this.identCode,
             search: this.search,
@@ -116,7 +116,7 @@ export class ListModule extends React.Component<IListProps, IListState>{
         this.trigger(PageType.Blank, { url: "./video_details.html", params: { video_id }, memo: memo });
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.trigger(PageType.Previous);
     }
 }

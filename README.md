@@ -7,6 +7,36 @@
 #### 基于这样的初衷想过一些方案，比如利用主流框架优势(React、Vue)来简化开发难度，通过TypeScript 引入模块化方案。通过前端OOP合理组织代码。有些方案可行，盒子运行内核由各大厂商(华为、中兴、海信、烽火)等。盒子版本有2k、4k，由于这些客观原因，导致主流框架无法运行。
 #### React 具有视图层复用，单项数据流等优势，对于EPG开发来说是一种福音。读了 [React 设计思想](https://github.com/react-guide/react-basic) 以及各个大神解析的 React 实现思路。完成了具备（状态机、虚拟DOM、组件化、子父组件）等概念的TV版React 框架且在各大IPTV专区完美运行，当然还有非常大改进空间。不过现有框架的优势也很明显，因此建议大家在了解后采用他，并提出自己宝贵改进建议。
 
+#### 当前版本
+>- 新增 焦点跟随插件（待更新...）
+>- 新增 page:home 首页模板；预定义导航模块、内容切换模块
+>- 新增 page:details 详情模板；预定义详情、选集、Tab选集分组、推荐模块
+>- 新增 page:list 列表模板；预定义菜单、列表模块
+>- 新增 page:record 记录模板；预定义菜单、列表（收藏记录、播放记录）模块
+>- 新增 page:search 搜索模板；预定义键盘、列表、推荐模块
+>- 新增 page:play 播放模板；预定义选集、进度条、音量条模块
+>- 新增 page:special 专题模板；预定义自定义焦点、图片、视频、按钮等自动生成模块模块
+>- 调整 page:complete 组件模板；优化部分细节
+>- 调整 组件模板；属性访问权限
+>- 调整 webpack 公用文件配置；修复同名文件导入冲突问题
+>- 调整 start:pro 配置支持发布版本（去掉源文件指向、添加代码压缩）
+>- 调整 电信平台播放器，播放结束不续播问题
+>- 调整 config.basic.ts 平台配置文件
+>- 调整 config.tool.ts 平台配置文件
+>- 调整 config.style.less 文件增加 .default 函数
+>- 调整 arithmetic 与 controller 文件夹下系列文件泛型支持
+>- 调整 创建页面模板构建流程，优化部分细节
+>- 移除 组件的方法、事件、属性、访问修饰符 
+>- 移除 热更新配置导致冗余文件
+
+#### 未来版本
+>- 更多更详细更完善的各类功能模板
+>- 基于 Bootstarp EPG UI框架
+>- 热更新，代码改动自动刷新视图
+
+### 收集版本
+>- 自动刷新功能 [处理启动浏览器之后要刷新才能显示的问题](https://github.com/shitaozhang/stb/pull/39/commits/5b052a4572ade37c8aebef180cf85ec9e39b2186)
+
 ### [特性预览](https://github.com/442331311/stb/issues/30)
 > **React API** 
 ``` typescript
@@ -107,21 +137,6 @@ protected render() {
 >- #### [开发体验优化（一）：Visual Studio Code 插件推荐](https://github.com/442331311/stb/issues/26)
 >- ~~[开发体验优化（二）：服务器去缓存机制（更新代码无需再重启机顶盒）]()~~
 
-#### 当前版本更新
->- 新增 焦点跟随插件（待更新...）
->- 新增 page:home 首页模板；预定义导航模块、内容切换模块
->- 新增 page:details 详情模板；预定义详情、选集、Tab选集分组、推荐模块
->- 新增 page:list 列表模板；预定义菜单、列表模块
->- 新增 page:record 记录模板；预定义菜单、列表（收藏记录、播放记录）模块
->- 新增 page:search 搜索模板；预定义键盘、列表、推荐模块
->- 新增 page:play 播放模板；预定义选集、进度条、音量条模块
->- 新增 page:special 专题模板；预定义自定义焦点、图片、视频、按钮等自动生成模块模块
->- 优化 page:complete 命名所创建模板；page 模型新增 getMemo 方法 nttMain 与 request 属性，更优的起步模板
->- 调整 组件模板 private readonly nttMain: MainEntity; 访问权限为私有
->- 调整 webpack 公用文件配置；修复同名文件导入冲突问题
->- 更新 平台配置通用电信播放器、四川移动播放器
->- 移除 热更新配置导致冗余文件
-
 # 案例
 - anhui-戏曲（2017）
 - neiment-环球（2017）
@@ -140,11 +155,12 @@ protected render() {
 - guizhou-国学（2018.11）
 - shanxi-国学（2018.11）
 - sichuanyidong-快乐佳贝（2018.12）
-- jiangxi-芒果（2018.1）
-- hainan-芒果（2018.1)
-- hainan-电竞（2018.x)
-- hainan-教育（2018.x)
-- hainan-少儿（2018.1)
-- ningxia-教育（2018.x)
-- ningxia-少儿（2018.x)
-- shanxi-电竞垂直门户（2018.3）
+- jiangxi-芒果（2019.1）
+- hainan-芒果（2019.1)
+- hainan-电竞（2019.x)
+- hainan-教育（2019.x)
+- hainan-少儿（2019.1)
+- ningxia-教育（2019.x)
+- ningxia-少儿（2019.x)
+- shanxi-电竞垂直门户（2019.3）
+- xinjiang-少儿（2019.x）

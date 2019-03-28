@@ -17,8 +17,8 @@ interface IMenuState {
 
 @focus
 export class MenuModule extends React.Component<IMenuProps, IMenuState>{
-    private readonly con = this.props.con.conMen;
-    private readonly mod = this.props.con.modMen;
+    readonly con = this.props.con.conMen;
+    readonly mod = this.props.con.modMen;
 
     constructor(props: IMenuProps) {
         super(props);
@@ -27,22 +27,22 @@ export class MenuModule extends React.Component<IMenuProps, IMenuState>{
         }
         this.con.initView = this.initView;
     }
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>
             </div>
         )
     }
-    protected onChange(status, keyCode) {
+    onChange(status, keyCode) {
         if (status) {
             this.con.switchPage({ navIdx: this.index });
         }
     }
-    private initView = (dataList, { index }) => {
+    initView = (dataList, { index }) => {
 
         this.setIndex(index);
-        
+
         this.setState({
             dataList: dataList
         });

@@ -55,7 +55,7 @@ function taskCreatePage(name) {
 
       return gulp.src('./src/template/' + name + '/**/*')
         // .pipe(rename({basename: fileName}))
-        .pipe(replace('index', fileName))
+        // .pipe(replace('index', fileName))
         .pipe(gulp.dest('./src/pages/' + fileName))
     }
   }

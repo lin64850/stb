@@ -17,8 +17,8 @@ interface INavState {
 
 @focus
 export class NavModule extends React.Component<INavProps, INavState>{
-    private readonly con = this.props.con.conNav;
-    private readonly mod = this.props.con.modNav;
+    readonly con = this.props.con.conNav;
+    readonly mod = this.props.con.modNav;
 
     constructor(props: INavProps) {
         super(props);
@@ -27,14 +27,14 @@ export class NavModule extends React.Component<INavProps, INavState>{
         }
         this.con.initView = this.initView;
     }
-    protected render() {
+    render() {
     }
-    protected onChange(status, keyCode) {
+    onChange(status, keyCode) {
         if (status) {
             this.con.switchPage({ navIdx: this.index });
         }
     }
-    private initView = (dataList, { navIdx }) => {
+    initView = (dataList, { navIdx }) => {
 
         // 设置焦点
         this.setIndex(navIdx);

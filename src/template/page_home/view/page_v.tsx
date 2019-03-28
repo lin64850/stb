@@ -14,22 +14,22 @@ interface IPageState {
 }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly con = this.props.con;
-    private readonly mod = this.props.mod;
+    readonly con = this.props.con;
+    readonly mod = this.props.mod;
 
     constructor(props: IPageProps) {
         super(props);
         this.state = {
         }
     }
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>
             </div>
         )
     }
-    protected componentDidMount() {
+    componentDidMount() {
         this.con.initPage().then(({ identCode }) => {
             this.target(identCode);
         })

@@ -31,7 +31,7 @@ export class EmptyModule extends React.Component<IEmptyProps, IEmptyState>{
         this.con.initEmpty = this.initView;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="emptyListContainer">
                 <div class="empty">
@@ -72,8 +72,8 @@ export class EmptyModule extends React.Component<IEmptyProps, IEmptyState>{
             </div>
         )
     }
-    
-    private initView = (data, search) => {
+
+    initView = (data, search) => {
         return new Promise((reslove) => {
             this.setIndex(search);
             this.setState({
@@ -83,7 +83,7 @@ export class EmptyModule extends React.Component<IEmptyProps, IEmptyState>{
         })
     }
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (!status) {
             if (keycode === Key.Left) {
                 this.target(MType.Keyboard);
@@ -91,7 +91,7 @@ export class EmptyModule extends React.Component<IEmptyProps, IEmptyState>{
         }
     }
 
-    protected onEnter() {
+    onEnter() {
         const memo: IMemo = {
             key: this.identCode,
             search: this.search,
@@ -102,7 +102,7 @@ export class EmptyModule extends React.Component<IEmptyProps, IEmptyState>{
         this.trigger(PageType.Blank, { url: "./video_details.html", params: { video_id }, memo: memo });
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.trigger(PageType.Previous);
     }
 }

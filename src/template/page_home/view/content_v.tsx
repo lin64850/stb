@@ -16,8 +16,8 @@ interface IContentState {
 
 @tabs('show', 'toggle', 1280, 720, 1)
 export class ContentModule extends React.Component<IContentProps, IContentState>{
-    private readonly con = this.props.con.conTen;
-    private readonly mod = this.props.con.modTen;
+    readonly con = this.props.con.conTen;
+    readonly mod = this.props.con.modTen;
 
     constructor(props: IContentProps) {
         super(props);
@@ -25,7 +25,7 @@ export class ContentModule extends React.Component<IContentProps, IContentState>
         }
         this.con.initView = this.initView;
     }
-    protected render() {
+    render() {
         return (
 
             <div tag="tab-group" >
@@ -44,7 +44,7 @@ export class ContentModule extends React.Component<IContentProps, IContentState>
 
         )
     }
-    private initView = ({ dipslay }) => {
+    initView = ({ dipslay }) => {
 
         this.setState({
             display: dipslay

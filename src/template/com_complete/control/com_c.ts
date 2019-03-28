@@ -1,5 +1,15 @@
 import { IndexModel } from "../model/index_m";
 
+interface IInitIndexData {
+}
+interface IInitIndexMemo {
+}
+export interface IInitViewData {
+}
+export interface IInitViewMemo {
+    index: number;
+}
+
 export class IndexControl {
     private readonly store: IndexModel;
 
@@ -11,10 +21,14 @@ export class IndexControl {
         this.store = store;
     }
 
-    initPage(): Promise<> {
+    initPage(data: IInitIndexData, memo: IInitIndexMemo): Promise<void> {
         return new Promise((resolve, reject) => {
+
+            const { } = data;
+            const { } = memo;
+
             resolve();
         });
     }
-    initView: () => void;
+    initView: (data: IInitViewData, memo: IInitViewMemo) => void;
 }

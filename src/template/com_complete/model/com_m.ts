@@ -14,7 +14,7 @@ export class IndexModel {
         this.nttMain = nttMain;
     }
 
-    initData(): Promise<> {
+    initData(): Promise<void> {
         return new Promise((resolve, reject) => {
             resolve();
         });

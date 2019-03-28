@@ -3,6 +3,7 @@ import { MType } from "..";
 import { PageControl } from "../control/page_c";
 import { PageModel } from "../model/page_m";
 import { tips, log } from "../com_import";
+import { IInitViewData, IInitViewMemo } from "../control/index_c";
 
 interface IIndexProps {
     identCode: MType.Index;
@@ -14,8 +15,8 @@ interface IIndexState {
 }
 
 export class IndexModule extends React.Component<IIndexProps, IIndexState>{
-    private readonly con = this.props.con.;
-    private readonly mod = this.props.con.;
+    readonly con = this.props.con.;
+    readonly mod = this.props.con.;
 
     constructor(props: IIndexProps) {
         super(props);
@@ -23,13 +24,14 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
         }
         this.con.initView = this.initView;
     }
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>
             </div>
         )
     }
-    private initView = () => {
+    initView = (data: IInitViewData, memo: IInitViewMemo) => {
+        console.log(`index initView`, data, memo);
     };
 }

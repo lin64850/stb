@@ -18,7 +18,7 @@ interface IVolumeState {
 }
 
 export class VolumeModule extends React.Component<IVolumeProps, IVolumeState>{
-    private readonly con = this.props.con;
+    readonly con = this.props.con;
     boxVoluTimer = new SetTimeout(3000);
     constructor(props: IVolumeProps) {
         super(props);
@@ -29,7 +29,7 @@ export class VolumeModule extends React.Component<IVolumeProps, IVolumeState>{
         }
     }
 
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <div class={this.state.display ? "volume" : "volume hide"} >
@@ -41,7 +41,7 @@ export class VolumeModule extends React.Component<IVolumeProps, IVolumeState>{
         )
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onfocus(() => {
             this.setState({
                 display: true
@@ -109,7 +109,7 @@ export class VolumeModule extends React.Component<IVolumeProps, IVolumeState>{
         })
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.target(MType.Page);
     }
 }

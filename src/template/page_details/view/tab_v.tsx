@@ -19,8 +19,8 @@ interface ITabState {
 
 @horizontaWholelPage(function () { return this.mod; })
 export class TabModule extends React.Component<ITabProps, ITabState>{
-    private readonly con = this.props.con.conTab;
-    private readonly mod = this.props.con.modTab;
+    readonly con = this.props.con.conTab;
+    readonly mod = this.props.con.modTab;
 
     constructor(props: ITabProps) {
         super(props);
@@ -30,10 +30,10 @@ export class TabModule extends React.Component<ITabProps, ITabState>{
         this.con.initView = this.initView;
     }
 
-    protected render() {
+    render() {
     }
 
-    private initView = ({ dataList }, { index }) => {
+    initView = ({ dataList }, { index }) => {
         this.mod.setIndex(index);
         this.setIndex(index);
         this.setState({
@@ -41,22 +41,22 @@ export class TabModule extends React.Component<ITabProps, ITabState>{
         });
     };
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (status) {
             this.mod.setIndex(this.index);
             this.changeEpisode(this.state.dataList);
         }
     }
 
-    protected onFront(data) {
+    onFront(data) {
         this.changeEpisode(data);
     }
 
-    protected onBehind(data) {
+    onBehind(data) {
         this.changeEpisode(data);
     }
 
-    private changeEpisode(data) {
+    changeEpisode(data) {
         let { page } = data[this.index];
         this.props.con.conEpi.initPage({ pageIndex: page, index: 0, selectEpisode: 1 });
     }

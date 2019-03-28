@@ -20,8 +20,8 @@ interface IKeyboardState {
 
 @focus
 export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardState>{
-    private readonly con = this.props.con.conKeyBoard;
-    private currentIndex = 1;
+    readonly con = this.props.con.conKeyBoard;
+    currentIndex = 1;
 
     constructor(props: IKeyboardProps) {
         super(props);
@@ -34,7 +34,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         this.con.isShowKeypad = this.isShowKeypad;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="menu">
                 <img src={bg} alt="" class="background" />
@@ -120,7 +120,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         )
     }
 
-    private initView = (keyword) => {
+    initView = (keyword) => {
         return new Promise((reslove) => {
             this.setState({
                 keyword: keyword
@@ -129,11 +129,11 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         })
     }
 
-    private getKeyword = () => {
+    getKeyword = () => {
         return this.state.keyword;
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onfocus((e) => {
             if (e.data) {
                 if (e.data.entrance) {
@@ -148,7 +148,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         })
     }
 
-    protected setKeyworlds(val) {
+    setKeyworlds(val) {
         if (this.con.keywordTips !== val) {
             this.props.con.initSearch({ pageIndex: 1, keyword: val, search: 0 }).then((data) => {
                 if (data.length == 0) {
@@ -163,7 +163,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         });
     }
 
-    protected onEnter(data) {
+    onEnter(data) {
         if (data) {
             const { btn_type } = data;
             if ("backspace" === btn_type) {
@@ -185,11 +185,11 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         }
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.trigger(PageType.Previous);
     }
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (!status) {
             if (keycode === Key.Right) {
                 if (this.props.con.conTab.getPageType() === 0) {
@@ -203,7 +203,7 @@ export class KeyboardModule extends React.Component<IKeyboardProps, IKeyboardSta
         }
     }
 
-    private isShowKeypad = (status) => {
+    isShowKeypad = (status) => {
         this.setState({
             hideShowKeypad: status
         })

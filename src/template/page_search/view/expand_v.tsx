@@ -20,8 +20,8 @@ interface IExpandState {
 
 @focus
 export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
-    private readonly conKeyboard = this.props.con.conKeyBoard;
-    private currentIndex: number;
+    readonly conKeyboard = this.props.con.conKeyBoard;
+    currentIndex: number;
 
     constructor(props: IExpandProps) {
         super(props);
@@ -33,7 +33,7 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
         }
     }
 
-    protected render() {
+    render() {
         return (
             <div>
                 <div class={`key ${this.state.display ? "" : "hide"}`} style={this.state}>
@@ -81,7 +81,7 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
         )
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onfocus((e) => {
             if (e.data) {
                 const { left, top, values, currentIndex } = e.data;
@@ -102,11 +102,11 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
         })
     }
 
-    protected componentDidMount() {
+    componentDidMount() {
         return false;
     }
 
-    protected autoFocus(keyCode) {
+    autoFocus(keyCode) {
         const r = Focus.center(this.tags, this.search, keyCode);
         if (r) {
             this.setFocus(r.search);
@@ -153,12 +153,12 @@ export class ExpandModule extends React.Component<IExpandProps, IExpandState>{
         return false;
     }
 
-    protected onEnter() {
+    onEnter() {
         this.props.con.conKeyBoard.isShowKeypad(false);
         this.target(MType.Keyboard, { entrance: this.state.values[this.search] });
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.props.con.conKeyBoard.isShowKeypad(false);
         this.target(MType.Keyboard);
     }

@@ -1,4 +1,7 @@
 export var ConfigBasic = {
+    appId: "",
+    appCode: "",
+    appVersion: "",
     /**
      * 项目唯一标识
      */

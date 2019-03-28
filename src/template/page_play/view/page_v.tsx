@@ -16,13 +16,13 @@ interface IPageProps {
 interface IPageState { }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly con = this.props.con;
+    readonly con = this.props.con;
 
     constructor(props: IPageProps) {
         super(props);
     }
 
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <ProgressModule identCode={MType.Progress} event={this.event} con={this.props.con} />
@@ -32,7 +32,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         )
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onkeydown((e) => {
             // 快进、快退激活进度条模块
             if (e.keyCode === Key.Down) {
@@ -59,7 +59,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         });
     }
 
-    protected componentDidMount() {
+    componentDidMount() {
         this.con.initPage().then(({ target }) => {
             this.target(target)
         });

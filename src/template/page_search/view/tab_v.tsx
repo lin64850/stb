@@ -17,7 +17,7 @@ interface ITabState {
 
 @tabs('show', 'toggle', 776, 720, 3)
 export class TabModule extends React.Component<ITabProps, ITabState>{
-    private readonly con = this.props.con;
+    readonly con = this.props.con;
 
     constructor(props: ITabProps) {
         super(props);
@@ -28,7 +28,7 @@ export class TabModule extends React.Component<ITabProps, ITabState>{
         this.con.conTab.getPageType = this.getPageType;
     }
 
-    protected render() {
+    render() {
         return (
             <div tag="tab-group" >
                 <div tag="tab" control="0">
@@ -44,13 +44,13 @@ export class TabModule extends React.Component<ITabProps, ITabState>{
         )
     }
 
-    private switchView = (display: number) => {
+    switchView = (display: number) => {
         this.setState({
             display: display
         });
     }
 
-    private getPageType = () => {
+    getPageType = () => {
         return this.state.display;
     }
 }

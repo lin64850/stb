@@ -19,7 +19,7 @@ interface IPlayState {
 }
 
 export class PlayModule extends React.Component<IPlayProps, IPlayState>{
-    private readonly con = this.props.con.conPlayCon;
+    readonly con = this.props.con.conPlayCon;
 
     constructor(props: IPlayProps) {
         super(props);
@@ -29,7 +29,7 @@ export class PlayModule extends React.Component<IPlayProps, IPlayState>{
         this.con.initPlayConView = this.initView;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <ProgressModule identCode={MType.Progress} event={this.event} con={this.props.con} />
@@ -42,7 +42,7 @@ export class PlayModule extends React.Component<IPlayProps, IPlayState>{
         )
     }
 
-    private initView = () => {
+    initView = () => {
         return new Promise((resolve) => {
             resolve();
         });

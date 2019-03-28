@@ -1,13 +1,36 @@
 
 import { Config } from "src/config";
 import { MainEntity } from "src/entitys/main";
+import { Cookie } from ".";
+import { CommonLogic } from "src/logics/common";
+import { Json } from "stb/basic";
+import { pages } from "../../../../webpack.pages.config";
 
 /**
  * 初始化主入口
  */
 export function initMain(): Promise<MainEntity> {
-    return new Promise((resolve, reject) => {
-        resolve();
+    return new Promise((resolve) => {
+        let cokMain = new Cookie(Config.mainCookieName);
+        let lgc = new CommonLogic();
+        const nttMain = cokMain.getCookie();
+        if (!nttMain) {
+            lgc.getMain({
+                app_id: Config.appId,
+                app_code: Config.appCode,
+                app_device_id: UserID,
+                app_version: Config.appVersion,
+                app_device_model: STBType
+            }).then((info: any) => {
+                if (info._success) {
+                    const nttMain = Json.serializ({ global_variable: { business_code: info.data.global_variable.business_code, notice: info.data.global_variable.notice }, token: info.data.token });
+                    cokMain.setCookie(nttMain);
+                    resolve(Json.deSerializ(nttMain));
+                }
+            });
+        } else {
+            resolve(Json.deSerializ(nttMain));
+        }
     });
 }
 
@@ -16,6 +39,10 @@ export function initMain(): Promise<MainEntity> {
  */
 export function clearGlobalData(): Promise<any> {
     return new Promise((resolve, reject) => {
+        pages.forEach((item) => {
+            new Cookie(`${Config.mainCookieName}_${item}_source`).clearCookie();
+            new Cookie(`${Config.mainCookieName}_${item}_status`).clearCookie();
+        });
         resolve();
     });
 }

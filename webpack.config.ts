@@ -4,6 +4,7 @@ import * as HtmlWebpackPlugin from 'html-webpack-plugin';
 import * as webpack from 'webpack';
 import * as cleanWebpackPlugin from 'clean-webpack-plugin';
 import { pages } from "./webpack.pages.config";
+import * as UglifyJsPlugin from "uglifyjs-webpack-plugin";
 
 const jsonAlias = require("./src/platform/platform.alias.config.json");
 const jsonPlatform = require("./src/platform/platform.config.json");
@@ -19,7 +20,8 @@ const plugis: any = [
   new cleanWebpackPlugin(['dist']),
   new ExtractTextPlugin({
     filename: '[name].css'
-  })
+  }),
+  new UglifyJsPlugin()
 ];
 
 const name = alias["@"];

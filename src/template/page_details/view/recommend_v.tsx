@@ -21,8 +21,8 @@ interface IRecommendState {
 
 @marquee
 export class RecommendModule extends React.Component<IRecommendProps, IRecommendState>{
-    private readonly con = this.props.con.conRec;
-    private readonly mod = this.props.con.modRec;
+    readonly con = this.props.con.conRec;
+    readonly mod = this.props.con.modRec;
 
     constructor(props: IRecommendProps) {
         super(props);
@@ -32,10 +32,10 @@ export class RecommendModule extends React.Component<IRecommendProps, IRecommend
         this.con.initView = this.initView;
     }
 
-    protected render() {
+    render() {
     }
 
-    private initView = ({ dataList }) => {
+    initView = ({ dataList }) => {
         this.setState({
             dataList,
         })

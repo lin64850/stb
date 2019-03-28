@@ -15,13 +15,13 @@ interface IPageProps {
 interface IPageState { }
 
 export class PageModule extends React.Component<IPageProps, IPageState>{
-    private readonly con = this.props.con;
+    readonly con = this.props.con;
 
     constructor(props: IPageProps) {
         super(props);
     }
 
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <KeyboardModule identCode={MType.Keyboard} event={this.event} con={this.con} />
@@ -31,7 +31,7 @@ export class PageModule extends React.Component<IPageProps, IPageState>{
         )
     }
 
-    protected componentDidMount() {
+    componentDidMount() {
         if (this.con.props.memo) {
             const { key, search: search, pageType, keyword, pageIndex } = this.con.props.memo;
             if (pageType === 0) {

@@ -19,8 +19,8 @@ interface IDefaultState {
 
 @marquee
 export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>{
-    private readonly con = this.props.con.conDefault;
-    private readonly episodeView = new DefaultView();
+    readonly con = this.props.con.conDefault;
+    readonly episodeView = new DefaultView();
 
     constructor(props: IDefaultProps) {
         super(props);
@@ -30,7 +30,7 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         this.con.initDefault = this.initView;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="defaultListContainer">
                 <div class="default">
@@ -61,7 +61,7 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         )
     }
 
-    private initView = (data, search) => {
+    initView = (data, search) => {
         return new Promise((reslove) => {
             this.setIndex(search);
             this.setState({
@@ -71,7 +71,7 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         })
     }
 
-    protected onChange(status, keycode) {
+    onChange(status, keycode) {
         if (!status) {
             if (keycode === Key.Left) {
                 this.target(MType.Keyboard);
@@ -79,7 +79,7 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         }
     }
 
-    protected onEnter() {
+    onEnter() {
         const memo: IMemo = {
             key: this.identCode,
             search: this.search,
@@ -89,7 +89,7 @@ export class DefaultModule extends React.Component<IDefaultProps, IDefaultState>
         this.trigger(PageType.Blank, { url: "./video_details.html", params: { video_id }, memo: memo });
     }
 
-    protected onBackspace() {
+    onBackspace() {
         this.trigger(PageType.Previous);
     }
 }

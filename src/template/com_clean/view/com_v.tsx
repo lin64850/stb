@@ -18,7 +18,7 @@ export class IndexModule extends React.Component<IIndexProps, IIndexState>{
         this.state = {
         }
     }
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <span>Hello EPG!</span>

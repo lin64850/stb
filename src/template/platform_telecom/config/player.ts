@@ -1,7 +1,9 @@
 /**
- * 编辑作者：张诗涛
- * 更新时间：2019年01月17日
+ * 编写作者：张诗涛
+ * 平台环境：通用电信
+ * 更新时间：2019年03月28日
  */
+
 import { Json, SetTimeout, SetInterval } from "stb/basic";
 import { PageEvent } from "stb/component";
 

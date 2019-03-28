@@ -12,9 +12,9 @@ export class PageControl {
         this.store = store;
     }
 
-    initPage(): Promise<> {
+    initPage(): Promise<{ identCode }> {
         return new Promise((resolve, reject) => {
-            resolve();
+            resolve({ identCode: MType.Page });
         });
     }
     getStatus(identCode: MType, index: number): IMemo {

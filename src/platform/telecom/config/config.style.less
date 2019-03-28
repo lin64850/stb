@@ -1,5 +1,11 @@
 @import "~stb/bootepg.less";
 
+.default(@transition:.2s){
+    transition: @transition;
+    -ms-transition:@transition;
+    -webkit-transition:@transition;
+}
+
 // 元素焦点样式
 .focus(@sacle:1.02, @border_radius:3px, @color: #fff, @shadow: #fff) {
     

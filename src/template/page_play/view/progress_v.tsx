@@ -21,9 +21,9 @@ interface IProgressState {
 }
 
 export class ProgressModule extends React.Component<IProgressProps, IProgressState>{
-    private readonly con = this.props.con;
-    private readonly conPro = this.props.con.conProgress;
-    private readonly playTools = new PlayTools()
+    readonly con = this.props.con;
+    readonly conPro = this.props.con.conProgress;
+    readonly playTools = new PlayTools()
     // 快件规则 间隔低于 500 ms 快进 10 间隔 1 s 内连续快进加 总进度的 60 分之 1
     funcLock = new FuncLock();
     timerProg = new SetTimeout(500);
@@ -49,7 +49,7 @@ export class ProgressModule extends React.Component<IProgressProps, IProgressSta
         this.conPro.initProgressView = this.initView;
     }
 
-    protected render() {
+    render() {
         return (
             <div class="content">
                 <div class={this.state.display ? "bottom" : "bottom hide"}>
@@ -69,7 +69,7 @@ export class ProgressModule extends React.Component<IProgressProps, IProgressSta
         )
     }
 
-    protected subscribeToEvents() {
+    subscribeToEvents() {
         this.onfocus((e) => {
             this.boxProgTimer.enable(() => {
                 this.setState({
