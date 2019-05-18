@@ -1,147 +1,184 @@
-# V2.2.1 文档
->- 文档以及示例源码不定期更新
-#### 收藏点star，订阅点watch
+<p align="center">
+<a href="" target="_blank">
+	
+![Preact](https://raw.githubusercontent.com/developit/preact/8b0bcc927995c188eca83cba30fbc83491cc0b2f/logo.svg?sanitize=true "Preact")
 
-## 不再复杂的EPG页面开发
-#### EPG运行于电视端，与我们所接触的前端(手机端、电脑端)有一定差异。体现为复杂的焦点管理，调试成本很高，播放器以及各个盒子之间兼容性问题。都在我们编码前无形增加难度。甚至于一天写好所有功能，要花两到三天去调试程序BUG，这几乎是无法接受的状态，恰恰也是不可避免的问题。
-#### 基于这样的初衷想过一些方案，比如利用主流框架优势(React、Vue)来简化开发难度，通过TypeScript 引入模块化方案。通过前端OOP合理组织代码。有些方案可行，盒子运行内核由各大厂商(华为、中兴、海信、烽火)等。盒子版本有2k、4k，由于这些客观原因，导致主流框架无法运行。
-#### React 具有视图层复用，单项数据流等优势，对于EPG开发来说是一种福音。读了 [React 设计思想](https://github.com/react-guide/react-basic) 以及各个大神解析的 React 实现思路。完成了具备（状态机、虚拟DOM、组件化、子父组件）等概念的TV版React 框架且在各大IPTV专区完美运行，当然还有非常大改进空间。不过现有框架的优势也很明显，因此建议大家在了解后采用他，并提出自己宝贵改进建议。
+</a>
+</p>
+<p align="center">📺STB TV端全栈解决方案</p>
 
-#### 当前版本
->- 调整 横向数据步滚动装饰器支持走马灯
+**STB 组件的所有功能：**
 
-#### 未来版本
->- 更多更详细更完善的各类功能模板
->- 基于 Bootstarp EPG UI框架
->- 热更新，代码改动自动刷新视图
+- 熟悉的 React API 和模式: [ES6 Class] 和 [Functional Components]
+- 你所需要的一切: JSX, <abbr title="Virtual DOM">VDOM</abbr>, TypeScript, <abbr title="Hot Module Replacement">Less</abbr>, <abbr title="Server-Side Rendering">Redux & Mobx</abbr>..
+- TV 端系列工具：stb-conllection、stb-cookie、stb-decorator、stb-event、stb-key、stb-react、stb-redux、stb-shadow、stb-tools
+- Transparent asynchronous rendering with a pluggable scheduler
+- 🆕💥 **与[STB CLI](https://github.com/shitaozhang/stb-cli)捆绑的即时无配置应用程序**
 
-### 收集版本
->- 自动刷新功能 [处理启动浏览器之后要刷新才能显示的问题](https://github.com/shitaozhang/stb/pull/39/commits/5b052a4572ade37c8aebef180cf85ec9e39b2186)
+### 💁 [STB 网站上 ➞](https://github.com/shitaozhang/stb)的更多信息
 
-### [特性预览](https://github.com/442331311/stb/issues/30)
-> **React API** 
-``` typescript
-export class PageModule extends React.Component<IPageProps, IPageState>{
-    constructor(props: IPageProps) {
-        super(props);
-        this.state = {
-        }
-    }
-    protected render() {
-        return (
-            <div class="content">
-                <span>Hello EPG!</span>
-            </div>
-        )
-    }
-    protected componentDidMount(){
-    }
-    protected componentDidUpdate(){
-    }
-    protected componentFocusUpdate(){
-    }
+---
+
+<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [演示](#demos)
+- [Libraries & Add-ons](#libraries--add-ons)
+- [Getting Started](#getting-started) - [Import what you need](#import-what-you-need) - [Rendering JSX](#rendering-jsx) - [Components](#components) - [Props & State](#props--state)
+- [Linked State](#linked-state)
+- [Examples](#examples)
+- [Extensions](#extensions)
+- [Debug Mode](#debug-mode)
+- [Backers](#backers)
+- [Sponsors](#sponsors)
+- [License](#license)
+
+<!-- /TOC -->
+
+# STB
+
+---
+
+## 演示
+
+#### 真实应用
+
+- [**STB-TodoMVC**](https://github.com/shitaozhang/stb-todomvc) _([GitHub Project](https://github.com/shitaozhang/stb-todomvc))_
+
+#### 可运行例子
+
+- [**Flickr Browser**](http://codepen.io/developit/full/VvMZwK/) (@ Preact 官方例子)
+- [**Animating Text**](http://codepen.io/developit/full/LpNOdm/) (@ Preact 官方例子)
+- [**60FPS Rainbow Spiral**](http://codepen.io/developit/full/xGoagz/) (@ Preact 官方例子)
+- [**Simple Clock**](http://jsfiddle.net/developit/u9m5x0L7/embedded/result,js/) (@ Preact 官方例子)
+- [**3D + ThreeJS**](http://codepen.io/developit/pen/PPMNjd?editors=0010) (@ Preact 官方例子)
+- [**Stock Ticker**](http://codepen.io/developit/pen/wMYoBb?editors=0010) (@ Preact 官方例子)
+- [_Create your Own!_](https://jsfiddle.net/developit/rs6zrh5f/embedded/result/) (@ Preact 官方例子)
+
+### 入门项目
+
+- [**零配置启动 => STB-React + STB-Redux + Typescript + Less + Webpack 4 + Real-time refresh**](https://github.com/shitaozhang/stb-neat-start):star:_([GitHub Project](https://github.com/shitaozhang/stb-neat-start))_ :sunny:
+- [**零配置启动 => STB-React + STB-Redux + Typescript + Less + Webpack 4 + Real-time refresh + 多平台构建**](https://github.com/shitaozhang/stb-start):star:_([GitHub Project](https://github.com/shitaozhang/stb-start))_ :sunny:
+- [**Preact Mobx Starter**](https://awaw00.github.io/preact-mobx-starter/) _([GitHub Project - Peact 官方项目](https://github.com/awaw00/preact-mobx-starter))_ :sunny:
+- [**Preact Redux Example**](https://github.com/developit/preact-redux-example) :star:_([GitHub Project - Peact 官方项目](https://github.com/developit/preact-redux-example))_ :sunny:
+
+---
+
+## 入门
+
+<!--
+> 💁 _**Note:** You [don't need ES2015 to use Preact](https://github.com/developit/preact-in-es3)... but give it a try!_ -->
+
+开始使用 STB 的最简单方法是安装[STB CLI](https://github.com/shitaozhang/stb-cli)。这个简单的命令行工具为您提供了最好的 Webpack 和兼容设置，甚至可以在底层工具发生变化时让您保持最新状态。最重要的是，它很容易理解！它在构建您的应用程序中，不需要任何配置，并采用最佳实践 🙌。
+
+您也可以从 [stb-start-neat 定制版](https://github.com/shitaozhang/stb-neat-start) or a [stb-start 平台版](https://github.com/shitaozhang/stb-start)模板开始
+
+### 使用 JSX
+
+开箱即用，Preact 提供了一个 h()函数，可以将您的 JSX 转换为虚拟 DOM 元素（这里是如何）。它还提供了 render()一个从该 Virtual DOM 创建 DOM 树的功能。
+
+开箱即用，stb-react 提供了一个 `h()` 函数，可以将您的 JSX 转换为虚拟 DOM 元素 _([查看说明-Preact 官方例子](http://jasonformat.com/wtf-is-jsx))_.它还提供了 `render()` 一个从该 Virtual DOM 创建 DOM 树的功能。
+
+要渲染一些 JSX，只需导入这两个函数并像这样使用它们:
+
+```js
+import { h, render } from "stb-react";
+
+render(
+  <div id="foo">
+    <span>Hello, world!</span>
+    <button onClick={e => alert("hi!")}>Click Me</button>
+  </div>,
+  document.body
+);
+```
+
+### 使用组件
+
+decorator 会调用以下生命周期方法：
+
+| 生命周期方法                | 当它被调用时                         |
+| --------------------------- | ------------------------------------ |
+| `componentWillMount`        | 在组件挂载到 DOM 之前                |
+| `componentDidMount`         | 在组件被挂载到 DOM 之后              |
+| `componentWillUnmount`      | 在从 DOM 中删除之前                  |
+| `componentWillReceiveProps` | 在新属性被接受之前                   |
+| `shouldComponentUpdate`     | 在`render()`之前返回 `false`跳过渲染 |
+| `componentWillUpdate`       | `render()` 之前                      |
+| `componentDidUpdate`        | `render()` 之后                      |
+| `componentFocusDidUpdate`   | 视图渲染或需要更新焦点时             |
+
+## 调试模式
+
+您可以开启事件代理监听日志查看组件以及焦点的状态 。
+
+1. 开启调试模式
+
+```js
+PageRegister(Page, {
+  /**
+   * 系统事件监听
+   */
+  debugSystem: true,
+  /**
+   * 程序事件监听
+   */
+  debugOther: true
+});
+```
+
+2. 打开浏览器调试窗口 console 选项监听日志
+
+```js
+ 1558153861109 "SUBSCRIBE" "*-PageEventType.Error-0" null   // 订阅程序事件消息
+ 1558153861110 "SUBSCRIBE" "*-blank-0" null                 // 注册全局事件（打开新页面事件）
+ 1558153861110 "SUBSCRIBE" "*-previous-0" null              // 注册全局事件（打开上一个页面事件）
+ 1558153861113 "SUBSCRIBE" "0-focus-0" null                 // 注册 Input 焦点模块聚焦事件
+ 1558153861113 "SUBSCRIBE" "0-blur-0" null                  // 注册 Input 焦点模块失焦事件
+ 1558153861113 "SUBSCRIBE" "0-keydown-0" null               // 注册 Input 焦点模块输入事件（装饰器订阅）
+ 1558153861113 "SUBSCRIBE" "0-keydown-1" null               // 注册 Input 焦点模块输入事件（自定义订阅）
+ 1558153861114 "SUBSCRIBE" "1-focus-0" null                 // 注册 BtnToogle 焦点模块聚焦事件
+ 1558153861114 "SUBSCRIBE" "1-blur-0" null                  // ...
+ 1558153861114 "SUBSCRIBE" "1-keydown-0" null
+ 1558153861114 "SUBSCRIBE" "2-focus-0" null
+ 1558153861114 "SUBSCRIBE" "2-blur-0" null
+ 1558153861115 "SUBSCRIBE" "2-keydown-0" null
+ 1558153861115 "SUBSCRIBE" "3-focus-0" null
+ 1558153861116 "SUBSCRIBE" "3-blur-0" null
+ 1558153861116 "SUBSCRIBE" "3-keydown-0" null
+```
+
+> 上述 0 1 2 ... 模块为枚举类型对应焦点模块定义顺序，例:
+
+```ts
+export const enum MType {
+  Input, // 运行时取值为 0
+  BtnToogle, // 运行时取值为 1
+  ListTodo, // 运行时取值为 2
+  Command, // 运行时取值为 3
+  Page // 运行时取值为 4
 }
 ```
 
-> #### **Jsx 语法**
+**技术支持：**
 
-``` typescript
-protected render() {
-    return (
-        <div class="content">
-            <span>Hello EPG!</span>
-        </div>
-    )
-}
-```
-> **[智能焦点](https://github.com/442331311/stb/issues/30)**
+- 视图层基于[Preact](https://preactjs.com/)基础实现，再次基础进行二次开发。轻量且高效视图层渲染解决方案。
+- 数据流管理[Redux Zero](https://matheusml1.gitbooks.io/redux-zero-docs/content/)是一个基于 Redux 的轻量级状态容器，只有一个商店，没有 reducer。用 TypeScript 编写，非常小。
+- 数据与业务可扩展性、复用性、维护性一直是中大型项目迫切需要解决问题，此次尝试数据流管理方案的引入 [TodoMVC](http://todomvc.com/) [STB-TodoMVC](https://github.com/shitaozhang/stb-todomvc)几乎涵盖目前最新 STB 框架所有特性，功能包括 增、删、改、查的运行实例
+- 设计演变[第一版 辅助方案](https://github.com/shitaozhang/framework_stb) [第二版 嵌入式方案](https://github.com/shitaozhang/stb/tree/v2.2.0) 到 [stb 第三版-智能全栈解决方案](https://github.com/shitaozhang/stb)
 
-> **[数据滚动](https://github.com/442331311/stb/issues/30)**
+**重要声明：**
 
-> **[翻页组件](https://github.com/442331311/stb/issues/30)**
+- 当前为公测版，兼容性正在适配中
 
-> **数据结构 (已经兼容的ES6特性)**
->- [字典](https://github.com/442331311/framework/blob/master/conllection/dictionary.ts)
->- [链表](https://github.com/442331311/framework/blob/master/conllection/doublyLinkedList.ts)
->- [队列](https://github.com/442331311/framework/blob/master/conllection/queue.ts)
->- [集合](https://github.com/442331311/framework/blob/master/conllection/set.ts)
+## 更新日志
 
-~~BootEpg UI库~~
-> ~~分页列表~~
-> ~~菜单~~
+## 致敬
 
-### 起步
->>#### [我的第一个EPG程序（一）：初始化项目环境](https://github.com/442331311/stb/issues/3)
->>#### [我的第一个EPG程序（二）：Hello EPG!](https://github.com/442331311/stb/issues/4)
->>#### [我的第一个EPG程序（三）：焦点管理](https://github.com/442331311/stb/issues/5)
->>#### [我的第一个EPG程序（四）：认识页面生命周期](https://github.com/442331311/stb/issues/18)
->>#### [我的第一个EPG程序（五）：页面跳转与参数传递](https://github.com/442331311/stb/issues/19)
+- [Jason Miller - Preact 作者](https://github.com/developit)
 
-### 进阶
->>#### [程序设计（一）：组件](https://github.com/442331311/stb/issues/25)
->>#### [程序设计（二）：父组件](https://github.com/442331311/stb/issues/27)
->>#### [程序设计（三）：子组件](https://github.com/442331311/stb/issues/29)
->>#### ~~[程序设计（四）：子组件嵌套子组件]()~~
->>#### ~~[程序设计（五）：接口数据缓存]()~~
->>#### ~~[代码优化（一）：TSX]()~~
+## Sponsors
 
-### 高阶
->>#### [命令行工具（一）：创建页面](https://github.com/442331311/stb/issues/22)
->>#### [命令行工具（二）：创建组件](https://github.com/442331311/stb/issues/36)
->>#### [插件库：引言](https://shitaozhang.github.io/concept/)
->>#### [插件库（一）：消息](https://github.com/442331311/stb/issues/21)
->>#### [插件库（二）：日志](https://github.com/442331311/stb/issues/23)
->>#### [插件库（三）：表单](https://github.com/442331311/stb/issues/24)
->>#### [插件库（四）：对话](https://shitaozhang.github.io/plugindialog/)
->>#### [装饰器：引言](https://shitaozhang.github.io/concept/)
->>#### [装饰器（一）：焦点](https://shitaozhang.github.io/decoratefocus/)
->>#### [装饰器（二）：走马灯](https://shitaozhang.github.io/decoratemarquee/)
->>#### [装饰器（三）：横向数据翻页](https://shitaozhang.github.io/horizontawholelpage/)
->>#### [装饰器（四）：纵向数据翻页](https://shitaozhang.github.io/verticalwholelpage/)
->>#### [装饰器（五）：横向数据滚动](https://shitaozhang.github.io/horizontalsteppage/)
->>#### [装饰器（六）：纵向数据滚动](https://shitaozhang.github.io/verticalsteppage/)
+支持我们，并帮助我们继续我们的活动。
 
-### 播放器
->>#### [播放器（一）：引言](https://github.com/442331311/stb/issues/31)
->>#### [播放器（二）：接口调用](https://github.com/442331311/stb/issues/34)
->>#### [播放器（三）：事件监听](https://github.com/442331311/stb/issues/35)
->>#### [播放器（四）：API说明](https://shitaozhang.github.io/player/)
-
-### 补充文档
->>#### [STB API Description](https://shitaozhang.github.io)
-
-### EPG开发记录
-#### EPG页面运行于IPTV平台，其特殊性导致相关开发技术与人员是小众群体，总结了以下开发记录可有效避免一些常规问题
->>[EPG开发日志（一）：盒子与浏览器差异](https://github.com/442331311/stb/issues/1)
-
-### 开发体验优化
->- #### [开发体验优化（一）：Visual Studio Code 插件推荐](https://github.com/442331311/stb/issues/26)
->- ~~[开发体验优化（二）：服务器去缓存机制（更新代码无需再重启机顶盒）]()~~
-
-# 案例
-- anhui-戏曲（2017）
-- neiment-环球（2017）
-- yunnan-4k（2017）
-- anhui-猜灯谜（2018）
-- anhui-送祝福（2018）
-- neiment-天翼（2018.3）
-- anhui-聚合（2018.5）
-- yunnan-618活动（2018.6）
-- anhui-世界杯活动（2018.6）
-- shanxi-少儿（2018.7）
-- anhui-体育（2018.9）
-- guizhou-电竞（2018.11）
-- anhui-直播活动（2018.11）
-- guangxi-教育（2018.11）
-- guizhou-国学（2018.11）
-- shanxi-国学（2018.11）
-- sichuanyidong-快乐佳贝（2018.12）
-- jiangxi-芒果（2019.1）
-- hainan-芒果（2019.1)
-- hainan-电竞（2019.x)
-- hainan-教育（2019.x)
-- hainan-少儿（2019.1)
-- ningxia-教育（2019.x)
-- ningxia-少儿（2019.x)
-- shanxi-电竞垂直门户（2019.3）
-- xinjiang-少儿（2019.x）
+<!--
+<a href="https://opencollective.com/preact/sponsor/0/website" target="_blank"><img src="https://opencollective.com/preact/sponsor/0/avatar.svg"></a> -->

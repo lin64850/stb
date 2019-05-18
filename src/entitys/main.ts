@@ -1,3 +1,0 @@
-class MainEntity {
-}
-export { MainEntity }
