@@ -1,0 +1,1 @@
+export { MainData } from "./main_data";

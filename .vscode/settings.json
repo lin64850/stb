@@ -1,0 +1,15 @@
+{
+    "files.exclude": {
+        "**/.gitignore": false,
+        "**/.vscode": false,
+        "**/dist": false,
+        "**/monitor": false,
+        "**/monitor.exe": false,
+        "**/package.json": false,
+        "**/README.md": false,
+        "**/tsconfig.json": false,
+        "**/virtual": false,
+        "**/webpack.config.js": false,
+        "**/yarn.lock": false
+    }
+}

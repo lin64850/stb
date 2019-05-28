@@ -1,7 +1,7 @@
 <p align="center">
 <a href="" target="_blank">
 	
-![Preact](https://raw.githubusercontent.com/developit/preact/8b0bcc927995c188eca83cba30fbc83491cc0b2f/logo.svg?sanitize=true "Preact")
+![STB](https://github.com/shitaozhang/stb/resources/images/logo.png "stb-react")
 
 </a>
 </p>
@@ -168,9 +168,37 @@ export const enum MType {
 
 **重要声明：**
 
-- 当前为公测版，兼容性正在适配中
+- 目前完成四川移动平台适配，并且支持所有兼容 ES 标准环境，无限接近稳定版
+- 更新许多令人兴奋的特性视图解决方案基于 preact-10.0.0-beta.1 重写，支持其所有特性基础上扩展 TV 端所需特性，虚拟 DOM 渲染性能有了质的提升
+- 内置 bootstrap-epg TV UI 组件开箱即用
+- 内置 stb-decorator 无缝对接焦点组件、翻页组件、数据滚动、走马灯等预定义功能
+- 内置 mobx 和 mobx-stb 用于数据流管理
+- 内置 stb-shadow 阴影算法，且优化运算性能
+- 具体依赖如下:
+
+```json
+    "bootstrap-epg": "0.0.1-beta",
+    "mobx": "4.0.0",
+    "mobx-stb": "0.0.1-beta.0",
+    "stb-conllection": "0.0.5-beta.1",
+    "stb-cookie": "0.0.1-beta.2",
+    "stb-decorator": "0.0.2-beta.2",
+    "stb-event": "0.1.0-beta",
+    "stb-key": "0.0.1-beta",
+    "stb-plugin": "0.0.0-beta.1",
+    "stb-react": "0.5.0-beta.8",
+    "stb-shadow": "0.0.4-beta",
+    "stb-tools": "0.0.9-beta.5",
+```
 
 ## 更新日志
+
+- ✅ 修复输出图片路径问题
+- ✅ 增加实时刷新页面
+- ✅ 调整模板文件适配 1280 \* 720 （720P）默认分辨率
+- ✅ 优化源码依赖打包效率
+- ✅ 新增多平台管理方案
+- ✅ 调整文件目录结构
 
 ## 致敬
 

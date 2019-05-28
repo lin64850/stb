@@ -1,20 +1,15 @@
+/node_modules/
+
+/dist/
+
+.git
+
+.DS_Store
+
 .idea/*
-node_modules
-.vscode
 
-dist/*
-!dist/images
-
-dist/
+yarn.lock
 
 npm-debug.log
 
-.DS_Store
-docs/
-
-.git/
-
-node_modules/
-node_modules/*
-
-src/platform/platform.config.json
+/virtual/

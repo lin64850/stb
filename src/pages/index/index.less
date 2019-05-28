@@ -1,0 +1,167 @@
+@import "../../configs/config.style.less";
+
+* {
+  border: 1px solid red;
+}
+
+.logo {
+  position: absolute;
+  z-index: 10;
+  left: 22px;
+  top: 34px;
+  width: 282px;
+  height: 95px;
+}
+
+.nav {
+  position: absolute;
+  left: 345px;
+  .item {
+    float: left;
+    width: 62px;
+    height: 69px;
+    margin-top: 42px;
+    margin-right: 69px;
+    border: 1px solid red;
+
+    img {
+      position: absolute;
+      left: -27px;
+      top: -30px;
+    }
+    .foc,
+    .act {
+      visibility: hidden;
+      width: 117px;
+      height: 117px;
+    }
+    .foc {
+      left: -40px;
+      top: -42px;
+      width: 155px;
+      height: 153px;
+    }
+
+    &.focus {
+      .foc {
+        visibility: visible;
+      }
+    }
+    &.active {
+      .act {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.control {
+  position: absolute;
+  left: 1017px;
+  top: 28px;
+  .item {
+    float: left;
+    width: 58px;
+    height: 83px;
+    margin-right: 63px;
+    margin-left: -7px;
+    border: 1px solid red;
+  }
+  .foc {
+    left: -43px;
+    top: -30px;
+  }
+  .t {
+    .foc {
+      left: -32px;
+    }
+  }
+}
+
+.recommend {
+  position: absolute;
+  left: 58px;
+  top: 160px;
+  width: 1300px;
+  height: 528px;
+
+  .item-group {
+    float: left;
+    margin-right: 30px;
+  }
+  .col-1 {
+    width: 548px;
+  }
+  .col-3 {
+    width: 248px;
+  }
+  .item-1 {
+    margin-right: 28px;
+  }
+
+  .item {
+    position: relative;
+    float: left;
+    margin-bottom: 25px;
+    border: 1px solid red;
+  }
+
+  .foc {
+    left: -16px;
+    top: -15px;
+  }
+
+  .big {
+    width: 542px;
+    height: 304px;
+    &.focus {
+      .focus(1.06);
+    }
+  }
+
+  .long {
+    width: 318px;
+    height: 507px;
+    &.focus {
+      .focus(1.06);
+    }
+  }
+
+  .small {
+    width: 258px;
+    height: 179px;
+
+    &.focus {
+      .focus(1.1);
+    }
+  }
+
+  .noraml {
+    width: 248px;
+    height: 253px;
+    &.focus {
+      .focus(1.1);
+    }
+  }
+
+  .noraml-2 {
+    margin-top: -15px;
+    width: 248px;
+    height: 230px;
+    &.focus {
+      .focus(1.1);
+    }
+  }
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1280px;
+  height: 720px;
+}
+
+.focus {
+  background-color: red !important;
+}
