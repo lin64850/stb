@@ -1,7 +1,7 @@
 <p align="center">
 <a href="" target="_blank">
-	
-![STB](https://github.com/shitaozhang/stb/resources/images/logo.png "stb-react")
+
+![image](https://github.com/shitaozhang/stb/blob/master/resources/images/logo.png)
 
 </a>
 </p>
