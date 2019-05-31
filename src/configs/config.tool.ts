@@ -1,5 +1,6 @@
 import { ConfigApi } from "./config.api";
-import { FormatUrl } from "stb-tools";
+import { FormatUrl, ParseUrl } from "stb-tools";
+import { Tips, Log } from "../../framework/plugin";
 
 export var Tools = {
     /**
@@ -70,9 +71,45 @@ export var Tools = {
     },
 
     /**
-     * 干净的URL
+     * URL
      */
-    getNestUrl() {
+    getNeatUrl() {
         return new FormatUrl(window.location.href, {}).getURL();
+    },
+
+    /**
+     * path
+     */
+    getPath() {
+        var url = new FormatUrl(window.location.href, {}).getURL(), path;
+
+        if ('.html' === url.substr(url.length - 5, url.length)) {
+            path = url.substr(0, url.lastIndexOf('/'));
+        } else {
+            path = url;
+        }
+
+        return path;
+    },
+
+    filterParams(url, filter: string[]) {
+        const params = new ParseUrl(url).getDecodeURIComponent();
+
+        filter.forEach((v) => {
+            delete params[v];
+        });
+
+        return new FormatUrl(url, params).getEncodeURIComponent();
     }
+}
+
+const tipsCom = new Tips();
+const logCom = new Log();
+
+export function tips(msg: string, duration?: number) {
+    tipsCom.show(msg, duration);
+};
+
+export function log(msg: string) {
+    logCom.push(msg);
 }

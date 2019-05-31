@@ -31,7 +31,7 @@ module.exports = {
       minSize: 0,
       cacheGroups: {
         commons: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/](node_modules|framework)[\\/]/,
           name: 'common',
           chunks: 'all'
         },
@@ -46,6 +46,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
+      "stb-cookie": path.resolve(__dirname, 'src/alias/cookie'),
+      "stb-key": path.resolve(__dirname, 'src/alias/key')
     }
   },
   devtool: 'source-map',

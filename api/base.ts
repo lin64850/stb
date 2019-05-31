@@ -62,7 +62,7 @@ export class BaseLogic {
 
             let isnet = true;
             if ("get" === params.method) {
-                let key = md5(`${params.url}${Json.serializ(params.params)}`);
+                let key = md5(`${params.url}${Json.serializ({ ...params.params, r: "" })}`);
 
                 if (cache && cache.has(key)) {
 
@@ -89,7 +89,7 @@ export class BaseLogic {
                     // 处理缓存仅支持 GET
                     if ('get' == params.method && cache) {
 
-                        let key = md5(`${params.url}${Json.serializ(params.params)}`);
+                        let key = md5(`${params.url}${Json.serializ({ ...params.params, r: "" })}`);
 
                         cache.set(key, info);
                     };

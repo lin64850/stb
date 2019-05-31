@@ -1,6 +1,3 @@
-/**
- * @name 盒子接口
- */
 window.PageTitle = document.title.split('-').length > 1 ? document.title.split('-')[1].toLowerCase() : "";
 try {
     window.Authentication.CTCGetConfig("UserID");
@@ -35,8 +32,8 @@ if (!window.Utility) {
 }
 
 // 返回launcher
-function toLauncher() {
-
+function outToLaunch() {
+    window.close();
 }
 /**
  * 设备配置映射
@@ -374,8 +371,4 @@ function hasDesignatedBox(stbType, stbName) {
     else {
         return false;
     }
-}
-// 安徽是否支持统一播放器
-function hasUnifyPlayer() {
-    return STBAppManager.isAppInstalled("com.anhui.tv");
 }

@@ -9,3 +9,6 @@ declare var AreaNode;
 declare var IP;
 declare var MAC;
 declare var CountyID;
+
+// 退出至 Launch
+declare function outToLaunch(): void;
