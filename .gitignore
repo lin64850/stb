@@ -13,3 +13,5 @@ yarn.lock
 npm-debug.log
 
 /virtual/
+
+yarn-error.log
