@@ -219,8 +219,7 @@ export const enum MType {
 - ✅ 扩展全局工具 /src/configs/config.tool.ts
 - ✅ 定义 launcher 交互全局方法 outToLaunch
 - ✅ 修复 dependencies 系列依赖库部分兼容性问题
-
-
+- ✅ 新增 roll_y 插件实现简介滚动动画
 
 ## 致敬
 

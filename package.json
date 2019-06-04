@@ -56,8 +56,8 @@
         "stb-shadow": "0.0.4-beta.1",
         "stb-tools": "0.0.9-beta.7",
         "typescript": "^3.4.5"
-      },
-      "devDependencies": {
+    },
+    "devDependencies": {
         "awesome-typescript-loader": "^5.2.1",
         "clean-webpack-plugin": "^2.0.1",
         "copy-webpack-plugin": "^5.0.3",
@@ -71,5 +71,5 @@
         "webpack": "^4.30.0",
         "webpack-cli": "^3.3.1",
         "webpack-dev-server": "^3.3.1"
-      }
+    }
 }

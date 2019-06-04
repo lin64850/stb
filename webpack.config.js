@@ -46,8 +46,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      "stb-cookie": path.resolve(__dirname, 'src/alias/cookie'),
-      "stb-key": path.resolve(__dirname, 'src/alias/key')
+      // "stb-key": path.resolve(__dirname, 'src/alias/key')
     }
   },
   devtool: 'source-map',

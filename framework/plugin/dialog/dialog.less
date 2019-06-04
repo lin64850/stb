@@ -1,0 +1,53 @@
+#dialog{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+}
+.dialog-component{
+    position: absolute;
+    left: 400px;
+    top: 207px;
+    width: 480px;
+    height: 220px;
+    overflow: hidden;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 99;
+    background-image: url("../../../src/assets/images/common/alert_bg.png");
+
+    &>h3{
+        position: absolute;
+        left: 0px;
+        top: 55px;
+        width: 480px;
+        height: 100px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 36px;
+        color: #fff;
+        margin: 0;
+    }
+    &>div{
+        position: absolute;
+        left: 46px;
+        top: 130px;
+        width: 166px;
+        height: 64px;
+        line-height: 46px;
+        font-size: 24px;
+        background-image: url("../../../src/assets/images/common/alert_btn.png");
+        border-radius: 10px;
+        overflow: hidden;
+
+        &:last-child{
+            left: 266px;
+        }
+
+        &.focus{
+            background-image: url("../../../src/assets/images/common/alert_btn_f.png");
+        }
+    }
+}
