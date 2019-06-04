@@ -72,6 +72,83 @@
 
 您也可以从 [stb-start-neat 定制版](https://github.com/shitaozhang/stb-neat-start) or a [stb-start 平台版](https://github.com/shitaozhang/stb-start)模板开始
 
+如果上面方式失败，使用更直接方式安装
+
+1. 安装
+
+```js
+$ git clone https://github.com/shitaozhang/stb-neat-start.git
+```
+
+2. 目录
+
+```js
+$ cd stb-neat-start
+```
+
+3. 依赖
+
+```js
+$ npm install
+```
+
+4. 开发
+
+```js
+$ npm run dev
+```
+
+4. 预览访问
+
+```js
+$ http://localhost:9000
+```
+
+平台版
+
+1. 安装
+
+```js
+$ git clone https://github.com/shitaozhang/stb-start.git
+```
+
+2. 目录
+
+```js
+$ cd stb-start
+```
+
+3. 依赖
+
+```js
+$ npm install
+```
+
+4. 服务
+   windows
+
+```js
+$ npm run mon:win
+```
+
+mac
+
+```js
+$ npm run mon:mac
+```
+
+5. 开发
+
+```js
+$ npm run dev
+```
+
+6. 预览访问
+
+```js
+$ http://localhost:9000
+```
+
 ### 使用 JSX
 
 开箱即用，Preact 提供了一个 h()函数，可以将您的 JSX 转换为虚拟 DOM 元素（这里是如何）。它还提供了 render()一个从该 Virtual DOM 创建 DOM 树的功能。
