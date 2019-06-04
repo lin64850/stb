@@ -177,18 +177,18 @@ export const enum MType {
 - 具体依赖如下:
 
 ```json
-    "bootstrap-epg": "0.0.1-beta",
-    "mobx": "4.0.0",
-    "mobx-stb": "0.0.1-beta.0",
-    "stb-conllection": "0.0.5-beta.1",
-    "stb-cookie": "0.0.1-beta.2",
-    "stb-decorator": "0.0.2-beta.2",
-    "stb-event": "0.1.0-beta",
-    "stb-key": "0.0.1-beta",
-    "stb-plugin": "0.0.0-beta.1",
-    "stb-react": "0.5.0-beta.8",
-    "stb-shadow": "0.0.4-beta",
-    "stb-tools": "0.0.9-beta.5",
+    "bootstrap-epg",
+    "mobx",
+    "mobx-stb",
+    "stb-conllection",
+    "stb-cookie",
+    "stb-decorator",
+    "stb-event",
+    "stb-key",
+    "stb-plugin",
+    "stb-react",
+    "stb-shadow",
+    "stb-tools",
 ```
 
 ## 平台兼容
