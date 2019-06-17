@@ -83,7 +83,7 @@ $ git clone https://github.com/shitaozhang/stb.git
 2. 目录
 
 ```js
-$ cd stb-neat-start
+$ cd stb
 ```
 
 3. 依赖
