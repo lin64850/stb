@@ -48,13 +48,14 @@
         "mobx-stb": "0.0.1-beta.0",
         "stb-conllection": "0.0.5-beta.1",
         "stb-cookie": "0.0.1-beta.2",
-        "stb-decorator": "0.0.2-beta.2",
+        "stb-decorator": "0.0.2-beta.4",
         "stb-event": "0.1.0-beta",
         "stb-key": "0.0.1-beta",
+        "stb-player": "1.0.5",
         "stb-plugin": "0.0.0-beta.1",
         "stb-react": "0.5.1-beta.2",
         "stb-shadow": "0.0.4-beta.1",
-        "stb-tools": "0.0.9-beta.7",
+        "stb-tools": "0.0.9-beta.8",
         "typescript": "^3.4.5"
     },
     "devDependencies": {

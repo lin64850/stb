@@ -1,2 +1,5 @@
-interface IMainData {
+declare namespace API{
+    interface IMainData{
+        
+    }
 }

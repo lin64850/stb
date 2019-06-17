@@ -31,13 +31,15 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  font-family: "SimHei";
+  font-family: "微软雅黑";
   line-height: 1;
   background-color: transparent;
 }
 
 #page,
-.content {
+.content,
+html,
+body {
   position: absolute;
   left: 0;
   top: 0;
@@ -51,23 +53,28 @@ body {
   position: relative;
 
   .def,
-  .foc {
+  .foc,
+  .act {
     position: absolute;
     left: 0px;
     top: 0px;
   }
-  .foc {
+  .foc,
+  .act {
     visibility: hidden;
+    display: none;
   }
 
   &.focus {
     .foc {
-      visibility: visible;
+      visibility: visible !important;
+      display: block !important;
     }
   }
   &.active {
     .act {
-      visibility: visible;
+      visibility: visible !important;
+      display: block !important;
     }
   }
 }

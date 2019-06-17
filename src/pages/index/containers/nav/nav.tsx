@@ -3,7 +3,7 @@ import { observer } from "mobx-stb";
 import { MType } from "../..";
 import { Key } from "stb-key";
 import { focus } from "stb-decorator";
-import NavModel from "../../models/nav_model";
+import { NavModel } from "../../models/nav_model";
 import { PageType } from "stb-event";
 import { FormatUrl } from "stb-tools";
 

@@ -1,13 +1,13 @@
 import { Component, h } from "stb-react";
 import { observer } from "mobx-stb";
 import { MType } from "../..";
-import RootModel from "../../models/root_model";
+import { RootModel } from "../../models/root_model";
 import { Nav } from "../nav/nav";
 import { Control } from "../control/control";
 import { Body } from "../body/body";
 
 @observer
-class Root extends Component<Index.IRootProps, Index.IRootState>{
+export class Root extends Component<Index.IRootProps, Index.IRootState>{
     store: RootModel = this.props.store;
 
     componentDidMount() {
@@ -30,4 +30,3 @@ class Root extends Component<Index.IRootProps, Index.IRootState>{
         )
     }
 }
-export default Root;

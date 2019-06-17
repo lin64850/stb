@@ -100,6 +100,11 @@ export var Tools = {
         });
 
         return new FormatUrl(url, params).getEncodeURIComponent();
+    },
+
+    fileName(defFull?) {
+        var strUrl = window.location.href, arrUrl = strUrl.split("/"), strPage = arrUrl[arrUrl.length - 1];
+        return (-1 === strPage.indexOf('?') ? strPage : strPage.substr(0, strPage.indexOf('?'))) || defFull;
     }
 }
 

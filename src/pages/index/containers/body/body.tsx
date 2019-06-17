@@ -3,7 +3,7 @@ import { observer } from "mobx-stb";
 import { MType } from "../..";
 import { Key } from "stb-key";
 import { focus } from "stb-decorator";
-import BodyModel from "../../models/body_model";
+import {BodyModel} from "../../models/body_model";
 import { Focus } from "stb-shadow";
 
 @focus

@@ -8,8 +8,6 @@
 
 .idea/*
 
-yarn.lock
-
 npm-debug.log
 
 /virtual/

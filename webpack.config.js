@@ -49,7 +49,7 @@ module.exports = {
       // "stb-key": path.resolve(__dirname, 'src/alias/key')
     }
   },
-  devtool: 'source-map',
+  devtool: 'eval',
   module: {
     rules: [
       {

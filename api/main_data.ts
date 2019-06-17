@@ -5,7 +5,7 @@ class MainData extends BaseLogic {
     /**
      * GET 请求
      */
-    mainGet(data: IMainData) {
+    mainGet(data: API.IMainData) {
         return this.requestGet<MainEntity>({
             url: this.getApiAddress("main"),
             params: data,
@@ -14,11 +14,12 @@ class MainData extends BaseLogic {
             }
         });
 
+
     }
     /**
      * POST 请求
      */
-    mainPost(data: IMainData) {
+    mainPost(data: API.IMainData) {
         return this.requestPost({
             url: this.getApiAddress("main"),
             params: data,

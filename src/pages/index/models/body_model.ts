@@ -1,7 +1,8 @@
 import { observable } from "mobx";
 import { IModel } from "stb-react";
 
-export default class BodyModel implements IModel {
+export class BodyModel implements IModel {
+    getIndex: () => number;
     identCode: string | number;
     identCodeTo: string | number;
     setIndex: (index: number) => void;

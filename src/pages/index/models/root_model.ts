@@ -1,12 +1,12 @@
 import { MainEntity } from "../../../../entitys";
-import NavModel from "./nav_model";
-import BodyModel from "./body_model";
+import { NavModel } from "./nav_model";
+import { BodyModel } from "./body_model";
 import { observable } from "mobx";
 import { Tools } from "../../../configs";
 import { MType } from "..";
 import { ControlModel } from "./control_model";
 
-export default class RootModel {
+export class RootModel {
     private readonly nttMain: MainEntity;
     private readonly request: Index.IRequest
     private readonly memo: Index.IMemo;
@@ -44,5 +44,11 @@ export default class RootModel {
     }
 
     initMemo = (): Index.IMemo => ({ identCode: MType.Nav, index: 0 })
-
+    getMemo = (identCode) => {
+        const memo: Index.IMemo = {
+            identCode: identCode,
+            index: this.modBody.getIndex()
+        }
+        return memo;
+    }
 }

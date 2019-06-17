@@ -68,16 +68,16 @@
 <!--
 > 💁 _**Note:** You [don't need ES2015 to use Preact](https://github.com/developit/preact-in-es3)... but give it a try!_ -->
 
-开始使用 STB 的最简单方法是安装[STB CLI](https://github.com/shitaozhang/stb-cli)。这个简单的命令行工具为您提供了最好的 Webpack 和兼容设置，甚至可以在底层工具发生变化时让您保持最新状态。最重要的是，它很容易理解！它在构建您的应用程序中，不需要任何配置，并采用最佳实践 🙌。
+<!-- 开始使用 STB 的最简单方法是安装[STB CLI](https://github.com/shitaozhang/stb-cli)。这个简单的命令行工具为您提供了最好的 Webpack 和兼容设置，甚至可以在底层工具发生变化时让您保持最新状态。最重要的是，它很容易理解！它在构建您的应用程序中，不需要任何配置，并采用最佳实践 🙌。
 
 您也可以从 [stb-start-neat 定制版](https://github.com/shitaozhang/stb-neat-start) or a [stb-start 平台版](https://github.com/shitaozhang/stb-start)模板开始
 
-如果上面方式失败，使用更直接方式安装
+如果上面方式失败，使用更直接方式安装 -->
 
 1. 安装
 
 ```js
-$ git clone https://github.com/shitaozhang/stb-neat-start.git
+$ git clone https://github.com/shitaozhang/stb.git
 ```
 
 2. 目录
@@ -103,7 +103,7 @@ $ npm run dev
 ```js
 $ http://localhost:9000
 ```
-
+<!-- 
 平台版
 
 1. 安装
@@ -147,7 +147,7 @@ $ npm run dev
 
 ```js
 $ http://localhost:9000
-```
+``` -->
 
 ### 使用 JSX
 
@@ -245,9 +245,9 @@ export const enum MType {
 
 **重要声明：**
 
-- 目前完成四川移动平台适配，并且支持所有兼容 ES 标准环境，无限接近稳定版
+- 支持所有兼容 ES5 标准环境(稳定版)
 - 更新许多令人兴奋的特性视图解决方案基于 preact-10.0.0-beta.1 重写，支持其所有特性基础上扩展 TV 端所需特性，虚拟 DOM 渲染性能有了质的提升
-- 内置 bootstrap-epg TV UI 组件开箱即用
+- 内置 bootstrap-epg TV UI 组件开箱即用(目前列表、菜单)
 - 内置 stb-decorator 无缝对接焦点组件、翻页组件、数据滚动、走马灯等预定义功能
 - 内置 mobx 和 mobx-stb 用于数据流管理
 - 内置 stb-shadow 阴影算法，且优化运算性能
@@ -282,21 +282,36 @@ export const enum MType {
 
 ## 更新日志
 
-- ✅ 修复输出图片路径问题
-- ✅ 增加实时刷新页面
-- ✅ 调整模板文件适配 1280 \* 720 （720P）默认分辨率
-- ✅ 优化源码依赖打包效率
-- ✅ 新增多平台管理方案
-- ✅ 调整文件目录结构
+- ✅ 修复 输出图片路径问题
+- ✅ 增加 实时刷新页面
+- ✅ 调整 模板文件适配 1280 \* 720 （720P）默认分辨率
+- ✅ 优化 源码依赖打包效率
+- ✅ 新增 多平台管理方案
+- ✅ 调整 文件目录结构
 - ✅ API 加入时间戳情况下仍可实现缓存机制
 - ✅ 更新 project_plan 文档格式
-- ✅ 更新插件兼容至当前版本 /framework/plugin/\*
-- ✅ 更新装饰器走马灯(marquee)翻页(pageY、pageX)焦点(focus)数据滚动(stepX、stepY)修复兼容性问题
-- ✅ 优化公用样式提取流程
-- ✅ 扩展全局工具 /src/configs/config.tool.ts
+- ✅ 更新 插件兼容至当前版本 /framework/plugin/\*
+- ✅ 更新 装饰器走马灯(marquee)翻页(pageY、pageX)焦点(focus)数据滚动(stepX、stepY)修复兼容性问题
+- ✅ 优化 公用样式提取流程
+- ✅ 扩展 全局工具 /src/configs/config.tool.ts
 - ✅ 定义 launcher 交互全局方法 outToLaunch
 - ✅ 修复 dependencies 系列依赖库部分兼容性问题
 - ✅ 新增 roll_y 插件实现简介滚动动画
+- ✅ 更新 stb-decorator 插件 stepLigc 对象 cuteData 属性对象增加 toAt 方法可改变坐标 getAt 将不再改变坐标
+- ✅ 新增 Velocity 动画插件至 polyfill.js；interfaces.ts 添加 Velocity 全局变量类型声明
+- ✅ 更新 config.styles.less;新增 border-radius 函数 item 组件(焦点元素组件基础行为) page-bg 背景图片样式
+- ✅ 更新 Plugin 插件修复部分 BUG
+- ✅ 更新 project_plan.xlsx 计划文档细化部分任务
+- ✅ 修复 decorator 库 pageY 装饰器向上翻页自动焦点问题
+- ✅ 优化 源码编译效率
+- ✅ 修复 stb-tools 库 funcLock 函数节流对象 enable 方法
+- ✅ 新增 鉴权、订购、播放解决方案;src/configss/config.\*\*.join.ts(真实案例，但不可运行，可在改基础上修改，遵循入口参数与返回参数类型，快速构建属自己项目)
+- ✅ 修复 四川移动播放器部分 BUG
+
+## 修复方案
+
+- jsx 列表渲染多个同级 {} 导致 ref 失效；解决方案静态标签包裹比如 div {} div
+- subscribeToEvents 方法中访问当前组件属性为空；原因是事件订阅时是在组件实例化阶段进行，可通过 this.props 访问传入参数
 
 ## 致敬
 

@@ -44,4 +44,7 @@ declare namespace Index {
         identCode: number | string;
         index: number;
     }
+    interface ISource {
+        url: string;
+    }
 }
