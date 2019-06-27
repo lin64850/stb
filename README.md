@@ -103,7 +103,8 @@ $ npm run dev
 ```js
 $ http://localhost:9000
 ```
-<!-- 
+
+<!--
 平台版
 
 1. 安装
@@ -282,36 +283,29 @@ export const enum MType {
 
 ## 更新日志
 
-- ✅ 修复 输出图片路径问题
-- ✅ 增加 实时刷新页面
-- ✅ 调整 模板文件适配 1280 \* 720 （720P）默认分辨率
-- ✅ 优化 源码依赖打包效率
-- ✅ 新增 多平台管理方案
-- ✅ 调整 文件目录结构
-- ✅ API 加入时间戳情况下仍可实现缓存机制
-- ✅ 更新 project_plan 文档格式
-- ✅ 更新 插件兼容至当前版本 /framework/plugin/\*
-- ✅ 更新 装饰器走马灯(marquee)翻页(pageY、pageX)焦点(focus)数据滚动(stepX、stepY)修复兼容性问题
-- ✅ 优化 公用样式提取流程
-- ✅ 扩展 全局工具 /src/configs/config.tool.ts
-- ✅ 定义 launcher 交互全局方法 outToLaunch
-- ✅ 修复 dependencies 系列依赖库部分兼容性问题
-- ✅ 新增 roll_y 插件实现简介滚动动画
-- ✅ 更新 stb-decorator 插件 stepLigc 对象 cuteData 属性对象增加 toAt 方法可改变坐标 getAt 将不再改变坐标
-- ✅ 新增 Velocity 动画插件至 polyfill.js；interfaces.ts 添加 Velocity 全局变量类型声明
-- ✅ 更新 config.styles.less;新增 border-radius 函数 item 组件(焦点元素组件基础行为) page-bg 背景图片样式
-- ✅ 更新 Plugin 插件修复部分 BUG
-- ✅ 更新 project_plan.xlsx 计划文档细化部分任务
-- ✅ 修复 decorator 库 pageY 装饰器向上翻页自动焦点问题
-- ✅ 优化 源码编译效率
-- ✅ 修复 stb-tools 库 funcLock 函数节流对象 enable 方法
-- ✅ 新增 鉴权、订购、播放解决方案;src/configss/config.\*\*.join.ts(真实案例，但不可运行，可在改基础上修改，遵循入口参数与返回参数类型，快速构建属自己项目)
-- ✅ 修复 四川移动播放器部分 BUG
+- ✅ 调整 Join Play 自定义处理回调规则
+- ✅ 新增 FuncOvertime 时间溢出；用于处理未知时间回调，如回调为主动触发超出指定事件会修复性触发，例:
+
+```typescript
+// exeFunc 500 毫秒内未作出响应，callback 主动触发，500 毫秒内响应直接触发 callback
+new FuncOvertime(500).enable(exeFunc, callback);
+```
 
 ## 修复方案
 
 - jsx 列表渲染多个同级 {} 导致 ref 失效；解决方案静态标签包裹比如 div {} div
 - subscribeToEvents 方法中访问当前组件属性为空；原因是事件订阅时是在组件实例化阶段进行，可通过 this.props 访问传入参数
+- 组件 subscribeToEvents 事件需在当前模块满足 identCode 不为空条件下触发；如为满足仍需触发可在 componentDidMount 事件中调用，例:
+
+```typescript
+    subscribeToEvents() {
+        // todo other sub
+    }
+    componentDidMount() {
+        // fix not module
+        this.subscribeToEvents();
+    }
+```
 
 ## 致敬
 

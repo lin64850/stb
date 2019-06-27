@@ -73,7 +73,7 @@ declare namespace Config {
          * 播放
          * @param callBack 跳转之前回调；设计到跳转播放与调起APK，在执行之前回调，Promise 未 resolve 将不会执行跳转或调起操作
          */
-        (params: IPlayParams, callBack: (method: "jump" | "apk") => Promise<any>): Promise<any>;
+        (params: IPlayParams, callBack: (method: "jump" | "apk", jumpUrl: string) => void): Promise<any>;
     }
 
     /**
@@ -141,13 +141,13 @@ declare namespace Config {
          * 自定义
          */
         from: IFromType;
-        video_id:string;
-        episode:string;
+        video_id: string;
+        episode: string;
         /**
          * 第三方
          * 1 = 成功其他失败
          */
-        success?:"1";
+        success?: "1";
     }
     /**
      * 订购发起来源类型
