@@ -307,6 +307,8 @@ new FuncOvertime(500).enable(exeFunc, callback);
     }
 ```
 
+- 装饰器 pageY 切换不同数据源重写渲染时，导致走马灯效果未被卸载。可先为 dataList 赋值 [] 强制卸载再装载新数据源。可解决该问题
+
 ## 致敬
 
 - [Jason Miller - Preact 作者](https://github.com/developit)
