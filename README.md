@@ -42,10 +42,7 @@
 
 ### 入门项目
 
-- [**零配置启动 => STB-React + STB-Redux + Typescript + Less + Webpack 4 + Real-time refresh**](https://github.com/shitaozhang/stb-neat-start):star:_([GitHub Project](https://github.com/shitaozhang/stb-neat-start))_ :sunny:
-- [**零配置启动 => STB-React + STB-Redux + Typescript + Less + Webpack 4 + Real-time refresh + 多平台构建**](https://github.com/shitaozhang/stb-start):star:_([GitHub Project](https://github.com/shitaozhang/stb-start))_ :sunny:
 - [**Preact Mobx Starter**](https://awaw00.github.io/preact-mobx-starter/) _([GitHub Project - Peact 官方项目](https://github.com/awaw00/preact-mobx-starter))_ :sunny:
-- [**Preact Redux Example**](https://github.com/developit/preact-redux-example) :star:_([GitHub Project - Peact 官方项目](https://github.com/developit/preact-redux-example))_ :sunny:
 
 ---
 
