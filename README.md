@@ -15,22 +15,14 @@
 - Transparent asynchronous rendering with a pluggable scheduler
 - 🆕💥 **与[STB CLI](https://github.com/shitaozhang/stb-cli)捆绑的即时无配置应用程序**
 
-### 💁 [STB 网站上 ➞](https://github.com/shitaozhang/stb)的更多信息
+### 💁 [STB 网站上 ➞](https://shitaozhang.github.io/)的更多信息
 
 ---
 
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [演示](#demos)
-- [Libraries & Add-ons](#libraries--add-ons)
-- [Getting Started](#getting-started) - [Import what you need](#import-what-you-need) - [Rendering JSX](#rendering-jsx) - [Components](#components) - [Props & State](#props--state)
-- [Linked State](#linked-state)
-- [Examples](#examples)
-- [Extensions](#extensions)
-- [Debug Mode](#debug-mode)
-- [Backers](#backers)
-- [Sponsors](#sponsors)
-- [License](#license)
+- [演示](https://shitaozhang.github.io/stb.demo.io/)
+- [焦点、虚拟DOM、组件交互（键盘上、下、左、右控制焦点移动）](https://shitaozhang.github.io/stb.demo.io/)
 
 <!-- /TOC -->
 
@@ -46,13 +38,7 @@
 
 #### 可运行例子
 
-- [**Flickr Browser**](http://codepen.io/developit/full/VvMZwK/) (@ Preact 官方例子)
-- [**Animating Text**](http://codepen.io/developit/full/LpNOdm/) (@ Preact 官方例子)
-- [**60FPS Rainbow Spiral**](http://codepen.io/developit/full/xGoagz/) (@ Preact 官方例子)
-- [**Simple Clock**](http://jsfiddle.net/developit/u9m5x0L7/embedded/result,js/) (@ Preact 官方例子)
-- [**3D + ThreeJS**](http://codepen.io/developit/pen/PPMNjd?editors=0010) (@ Preact 官方例子)
-- [**Stock Ticker**](http://codepen.io/developit/pen/wMYoBb?editors=0010) (@ Preact 官方例子)
-- [_Create your Own!_](https://jsfiddle.net/developit/rs6zrh5f/embedded/result/) (@ Preact 官方例子)
+...
 
 ### 入门项目
 
