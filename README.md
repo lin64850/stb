@@ -13,7 +13,6 @@
 - 你所需要的一切: JSX, <abbr title="Virtual DOM">VDOM</abbr>, TypeScript, <abbr title="Hot Module Replacement">Less</abbr>, <abbr title="Server-Side Rendering">Redux & Mobx</abbr>..
 - TV 端系列工具：stb-conllection、stb-cookie、stb-decorator、stb-event、stb-key、stb-react、stb-redux、stb-shadow、stb-tools
 - Transparent asynchronous rendering with a pluggable scheduler
-- 🆕💥 **与[STB CLI](https://github.com/shitaozhang/stb-cli)捆绑的即时无配置应用程序**
 
 ### 💁 [STB 网站上 ➞](https://shitaozhang.github.io/)的更多信息
 
