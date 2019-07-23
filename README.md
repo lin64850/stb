@@ -272,6 +272,7 @@ export const enum MType {
 // exeFunc 500 毫秒内未作出响应，callback 主动触发，500 毫秒内响应直接触发 callback
 new FuncOvertime(500).enable(exeFunc, callback);
 ```
+- ✅ 更新 `typescript` 版本至 `^3.5.3` 解决安装错误问题
 
 ## 修复方案
 
