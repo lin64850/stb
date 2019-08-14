@@ -47,6 +47,18 @@
 
 ---
 
+## 代理
+
+配置淘宝镜像，确保安装顺利
+
+```ts npm
+npm config set registry https://registry.npm.taobao.org/
+```
+
+```ts yarn
+yarn config set registry https://registry.npm.taobao.org/
+```
+
 ## 入门
 
 <!--
