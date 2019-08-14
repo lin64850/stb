@@ -3,8 +3,11 @@ var web = require('web-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyPlugin = require('copy-webpack-plugin');
+var p = require("./platform.json");
 
 var base = "src", contentBase;
+
+if (p && p.enable) base = p.output;
 
 contentBase = [
   path.resolve(__dirname, base, '**/*.html'),

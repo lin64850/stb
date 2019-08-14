@@ -1,0 +1,6 @@
+{
+    "base": "src",
+    "platfrom": "platform/sicuan",
+    "output": "virtual",
+    "enable": false
+}

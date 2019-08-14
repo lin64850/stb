@@ -3,13 +3,14 @@
         "**/.gitignore": false,
         "**/.vscode": false,
         "**/dist": false,
-        "**/monitor": false,
-        "**/monitor.exe": false,
+        "**/monitor": true,
+        "**/monitor.exe": true,
         "**/package.json": false,
         "**/README.md": false,
         "**/tsconfig.json": false,
         "**/virtual": false,
         "**/webpack.config.js": false,
-        "**/yarn.lock": false
+        "**/yarn.lock": false,
+        "**/deploy.sh":true
     }
 }

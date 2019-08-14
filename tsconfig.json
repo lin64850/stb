@@ -14,6 +14,8 @@
     ]
   },
   "exclude": [
-    "./resources/**/*"
+    "./resources/**/*",
+    "./platform/**/*",
+    // "./src/**/*",
   ]
 }

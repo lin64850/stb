@@ -92,15 +92,31 @@ $ npm install
 
 4. 开发
 
+<!-- - 启动监听
+
+```tips
+平台版本启动需先启动监听服务，普通启动可以忽略这个步骤
+`windows`环境启用监听：`npm run mon:win`
+`mac `：环境启用监听：`npm run mon:mac`
+```
+
+> `npm run mon:mac` 如果无法运行，需先设置权限：`chmod 777 monitor`
+
+- 启动编译 -->
+
 ```js
 $ npm run dev
 ```
 
-4. 预览访问
+5. 预览访问
 
 ```js
 $ http://localhost:9000
 ```
+
+## 平台配置
+
+- 一套代码在多省份运行解决方案（编辑中...）
 
 <!--
 平台版
@@ -290,6 +306,7 @@ new FuncOvertime(500).enable(exeFunc, callback);
 ```
 
 - ✅ 更新 `typescript` 版本至 `^3.5.3` 解决安装错误问题
+- ✅ 新增 多省份平台公用一份源码解决方案（方案说明编辑中...）
 
 ## 修复方案
 
