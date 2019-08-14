@@ -1,6 +1,6 @@
 {
     "name": "stb",
-    "version": "8.0.0-beta.1",
+    "version": "8.0.1",
     "description": "📺STB TV端全栈解决方案。Android、Linux、电信、移动、广电",
     "main": "none",
     "scripts": {

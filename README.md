@@ -21,14 +21,16 @@
 <!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [演示](https://shitaozhang.github.io/stb.demo.io/)
-- [焦点、虚拟DOM、组件交互（键盘上、下、左、右控制焦点移动）](https://shitaozhang.github.io/stb.demo.io/)
+- [焦点、虚拟 DOM、组件交互（键盘上、下、左、右控制焦点移动）](https://shitaozhang.github.io/stb.demo.io/)
 
 <!-- /TOC -->
 
 # STB
 
 ---
+
 ## 运行环境兼容性检测
+
 - [**stb-detection**](https://github.com/shitaozhang/stb-detection)
 
 ## 演示
@@ -286,6 +288,7 @@ export const enum MType {
 // exeFunc 500 毫秒内未作出响应，callback 主动触发，500 毫秒内响应直接触发 callback
 new FuncOvertime(500).enable(exeFunc, callback);
 ```
+
 - ✅ 更新 `typescript` 版本至 `^3.5.3` 解决安装错误问题
 
 ## 修复方案
