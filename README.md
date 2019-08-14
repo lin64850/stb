@@ -28,6 +28,8 @@
 # STB
 
 ---
+## 运行环境兼容性检测
+- [**stb-detection**](https://github.com/shitaozhang/stb-detection)
 
 ## 演示
 
