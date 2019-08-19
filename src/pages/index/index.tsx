@@ -1,3 +1,7 @@
+/**
+ * 作   者:
+ * 创建时间:
+ */
 import './index.less?raw';
 import { BasePage, PageRegister } from 'stb-event';
 import { render, h } from 'stb-react';
@@ -59,11 +63,10 @@ class Page extends BasePage {
     }
 }
 
-
 PageRegister(Page, {
     request: new ParseUrl(location.search).getDecodeURIComponent(),
     source: new PageSource(new Cookie(`${ConfigBasic.mainCookieName}_index_source`)),
     cokStatus: new Cookie(`${ConfigBasic.mainCookieName}_index_status`),
-    debugSystem: true,
-    debugOther: true
+    debugSystem: false,
+    debugOther: false
 });
