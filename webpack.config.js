@@ -120,7 +120,15 @@ module.exports = {
                 loader: 'file-loader',
                 options: {
                   name(file) {
-                    return file.substr(file.indexOf('images') + 7, file.length - 1);
+                    var str = file.substr(file.indexOf('images') + 7, file.length - 1);
+
+                    var len = str.split(/\\/g).length - 1;
+
+                    len = len < 0 ? 0 : len;
+
+                    for (var i = 0; i < 1; i++) str = str.replace(/\\/g, '\/');
+
+                    return str;
                   },
                   publicPath: "../images",
                   outputPath: "images"

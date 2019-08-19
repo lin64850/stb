@@ -303,6 +303,7 @@ new FuncOvertime(500).enable(exeFunc, callback);
 
 - ✅ 更新 `typescript` 版本至 `^3.5.3` 解决安装错误问题
 - ✅ 新增 多省份平台公用一份源码解决方案（方案说明编辑中...）
+- ✅ 修复 windows 系统在 less 文件引用图片路径导致兼容性问题
 
 ## 修复方案
 
