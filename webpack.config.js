@@ -49,7 +49,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     alias: {
-      // "stb-key": path.resolve(__dirname, 'src/alias/key')
+      // "stb-player": path.resolve(__dirname, 'src/alias/player')
     }
   },
   devtool: 'eval',
