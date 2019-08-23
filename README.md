@@ -331,5 +331,9 @@ new FuncOvertime(500).enable(exeFunc, callback);
 
 支持我们，并帮助我们继续我们的活动。
 
+## 圈子
+
+![image](https://github.com/shitaozhang/stb/blob/master/resources/images/qrcode.png)
+
 <!--
 <a href="https://opencollective.com/preact/sponsor/0/website" target="_blank"><img src="https://opencollective.com/preact/sponsor/0/avatar.svg"></a> -->
