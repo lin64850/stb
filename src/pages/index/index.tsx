@@ -1,6 +1,7 @@
 /**
- * 作   者:
+ * 创建作者:
  * 创建时间:
+ * 更新时间:
  */
 import './index.less?raw';
 import { BasePage, PageRegister } from 'stb-event';
@@ -24,10 +25,6 @@ class Page extends BasePage {
     init() {
         let source: Index.ISource = { url: this.request.back_url || "-1" };
         this.source.saveToLocal(Json.serializ(source));
-
-        // log(`userId:${UserID}`);
-        // log(`userId:${getPlatform()}`);
-
     }
     load() {
         if (this.cokStatus.getCookie()) var memo: Index.IMemo = Json.deSerializ(this.cokStatus.getCookie());
@@ -35,7 +32,6 @@ class Page extends BasePage {
         this.store = new RootModel(null, this.request, memo);
 
         render(<Root event={this.event} store={this.store} />, document.getElementById('root'));
-
     }
     openBlank({ url }) {
         const memo = this.store.getMemo(this.event.getTargetIdentCode());
@@ -58,7 +54,6 @@ class Page extends BasePage {
             } else {
                 window.location.href = url;
             }
-
         }
     }
 }
