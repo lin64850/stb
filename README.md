@@ -306,6 +306,7 @@ new FuncOvertime(500).enable(exeFunc, callback);
 - ✅ 修复 windows 系统在 less 文件引用图片路径导致兼容性问题
 - ✅ 更新 `docs/project_plan.xlsx` 进度计划文档新增背景/Logo动态栏
 - ✅ 新增 中国电信、中国四川移动平台播放器，可在`webpack.config.js`下`resolve.alias`配置启用
+- ✅ 更新 polyfill.js 兼容性
 
 ## 修复方案
 
