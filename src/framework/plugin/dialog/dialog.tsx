@@ -15,8 +15,8 @@ interface IDialogState {
     message?: string;
 }
 
-const txt_confirm = require("../../../src/assets/images/common/txt_confirm.png");
-const txt_cancel = require("../../../src/assets/images/common/txt_cancel.png");
+const txt_confirm = require("../../../assets/images/common/txt_confirm.png");
+const txt_cancel = require("../../../assets/images/common/txt_cancel.png");
 
 @focus
 class DialogModule extends Component<IDialogProps, IDialogState>{
