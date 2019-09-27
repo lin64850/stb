@@ -29,13 +29,21 @@ getSourceAddress = (href) => {
 
     return ret;
 }
-
+/**
+ * 情景一：专区EPG退出至Launch
+ */
 function backLaunch() {
     // TODO
     // 返回 Launch
-    window.close();
 }
-
+/**
+ * 情景一：服务端渲染盒子跳转指定版本
+ */
+function redirect(href) {
+    return new Promise((resolve, rejects) => {
+        resolve();
+    })
+}
 /**
  * 平台
  */
@@ -72,5 +80,6 @@ export {
     getSourceAddress,
     backLaunch,
     getPlatform,
-    setPlatform
+    setPlatform,
+    redirect
 }

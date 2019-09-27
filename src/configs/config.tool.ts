@@ -118,3 +118,31 @@ export function tips(msg: string, duration?: number) {
 export function log(msg: string) {
     logCom.push(msg);
 }
+
+/**
+ * XML 转 JSON对象
+ * @param str 要过滤的XML格式字符串
+ * @description 转换XML为对象格式（<div>123</div> => {div:123}）
+ */
+export function xmlToData(str: string): any {
+    if (str) {
+        str = str.replace(' ', '');
+        let dstr = /<([^>]+)>([^<>]+)<\/\1>/ig;
+        let data = {};
+        if (dstr.test(str)) {
+            let domain = str.match(dstr);
+            domain.forEach(v => {
+                let dstrItem = /<([^>]+)>([^<>]+)<\/\1>/ig;
+                let dItem = dstrItem.exec(v);
+                if (dItem) {
+                    data[dItem[1]] = dItem[2];
+                }
+            });
+            return data;
+        } else {
+            return data;
+        }
+    } else {
+        return ""
+    }
+}

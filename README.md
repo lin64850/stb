@@ -286,10 +286,11 @@ export const enum MType {
 
 ## 平台兼容
 
-| 平台     | 状态                 |
-| -------- | -------------------- |
-| 四川移动 | 支持                 |
-| 安徽电信 | 支持                 |
+| 平台     | 状态 |
+| -------- | ---- |
+| 四川移动 | 支持 |
+| 安徽电信 | 支持 |
+
 [查看更多平台](https://shitaozhang.github.io/guide/support.html#%E5%85%BC%E5%AE%B9)
 
 ## 更新日志
@@ -305,13 +306,15 @@ new FuncOvertime(500).enable(exeFunc, callback);
 - ✅ 更新 `typescript` 版本至 `^3.5.3` 解决安装错误问题
 - ✅ 新增 多省份平台公用一份源码解决方案（方案说明编辑中...）
 - ✅ 修复 windows 系统在 less 文件引用图片路径导致兼容性问题
-- ✅ 更新 `docs/project_plan.xlsx` 进度计划文档新增背景/Logo动态栏
+- ✅ 更新 `docs/project_plan.xlsx` 进度计划文档新增背景/Logo 动态栏
 - ✅ 新增 中国电信、中国四川移动平台播放器，可在`webpack.config.js`下`resolve.alias`配置启用
 - ✅ 更新 polyfill.js 兼容性
 - ✅ 新增 mobx（数据流管理工具）不兼容的替代方案(文档编辑中...)
 - ✅ 优化 内置装饰器功能
+- ✅ 新增 xmlToData（XML 数据转换 JSON 对象）方法`路径:/src/configs/config.tool.ts`
+- ✅ 新增 新增专区对接预留功能 redirect（某个页面加载时做重定向操作）`路径:/src/configs/config.join.ts`
 - ❌ 修复 翻页组件更新导致走马灯未同步问题
-- ❌ 修复 平台配置模式文件引用错误（参考芒果2.0）
+- ❌ 修复 平台配置模式文件引用错误（参考芒果 2.0）
 
 ## 修复方案
 
