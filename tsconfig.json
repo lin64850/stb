@@ -16,6 +16,7 @@
   "exclude": [
     "./resources/**/*",
     "./platform/**/*",
+    "./virtual/**/*",
     // "./src/**/*",
   ]
 }

@@ -1,6 +1,6 @@
 import { ConfigApi } from "./config.api";
 import { FormatUrl, ParseUrl } from "stb-tools";
-import { Tips, Log } from "../../framework/plugin";
+import { Tips, Log } from "../framework/plugin";
 
 export var Tools = {
     /**

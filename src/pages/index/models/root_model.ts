@@ -1,4 +1,4 @@
-import { MainEntity } from "../../../../entitys";
+import { MainEntity } from "../../../entitys";
 import { NavModel } from "./nav_model";
 import { BodyModel } from "./body_model";
 import { observable } from "mobx";

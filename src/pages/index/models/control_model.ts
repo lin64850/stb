@@ -1,5 +1,5 @@
 import { IModel } from "stb-react";
-import { MainEntity } from "../../../../entitys";
+import { MainEntity } from "../../../entitys";
 
 export class ControlModel implements IModel {
     getIndex: () => number;

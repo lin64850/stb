@@ -313,8 +313,8 @@ new FuncOvertime(500).enable(exeFunc, callback);
 - ✅ 优化 内置装饰器功能
 - ✅ 新增 xmlToData（XML 数据转换 JSON 对象）方法`路径:/src/configs/config.tool.ts`
 - ✅ 新增 新增专区对接预留功能 redirect（某个页面加载时做重定向操作）`路径:/src/configs/config.join.ts`
-- ❌ 修复 翻页组件更新导致走马灯未同步问题
-- ❌ 修复 平台配置模式文件引用错误（参考芒果 2.0）
+- ✅ 调整 根目录下文件夹 `api、entitys、framewrok` 移动至 `src` 目录下，平台配置功能已经可用
+- ✅ 修复 平台模式配置文件导致虚拟目录被编译错误
 
 ## 修复方案
 

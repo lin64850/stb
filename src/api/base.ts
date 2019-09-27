@@ -1,4 +1,4 @@
-import { ConfigApi } from "../src/configs";
+import { ConfigApi } from "../configs";
 import { Dictionary } from "stb-conllection";
 import { Json } from "stb-tools";
 

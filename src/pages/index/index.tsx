@@ -7,7 +7,7 @@ import './index.less?raw';
 import { BasePage, PageRegister } from 'stb-event';
 import { render, h } from 'stb-react';
 import { Root } from './containers/root/root';
-import { MainData } from '../../../api';
+import { MainData } from '../../api';
 import { RootModel } from './models/root_model';
 import { Json, ParseUrl, PageSource } from 'stb-tools';
 import { ConfigBasic, Join } from '../../configs';

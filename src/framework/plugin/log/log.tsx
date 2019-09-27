@@ -1,7 +1,7 @@
 
 import "./log.less?raw";
 import { Component, h, render } from "stb-react";
-import { ConfigBasic } from "../../../src/configs/config.basic";
+import { ConfigBasic } from "../../../configs/config.basic";
 
 /**
  * 提示框组件

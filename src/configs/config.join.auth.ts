@@ -1,4 +1,4 @@
-import { MainData } from "../../api";
+import { MainData } from "../api";
 import { FormatUrl } from "stb-tools";
 import { getPlatform } from "./config.join";
 import { Tools } from "./config.tool";
