@@ -315,6 +315,7 @@ new FuncOvertime(500).enable(exeFunc, callback);
 - ✅ 新增 新增专区对接预留功能 redirect（某个页面加载时做重定向操作）`路径:/src/configs/config.join.ts`
 - ✅ 调整 根目录下文件夹 `api、entitys、framewrok` 移动至 `src` 目录下，平台配置功能已经可用
 - ✅ 修复 平台模式配置文件导致虚拟目录被编译错误
+- ✅ 调整 `stb-shadow` 库中 Focus.scope 算法，使之更贴合现实业务场景。受影响的功能有 @focus 装饰器，修复在极端情况下情况导致的异常。体现在焦点进行上下移动时
 
 ## 修复方案
 
