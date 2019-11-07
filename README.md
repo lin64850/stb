@@ -1,7 +1,7 @@
 <p align="center">
 <a href="" target="_blank">
 
-![image](https://github.com/shitaozhang/stb/blob/master/resources/images/logo.png)
+![image](./resources/images/logo.png)
 
 </a>
 </p>
@@ -13,6 +13,8 @@
 - 你所需要的一切: JSX, <abbr title="Virtual DOM">VDOM</abbr>, TypeScript, <abbr title="Hot Module Replacement">Less</abbr>, <abbr title="Server-Side Rendering">Redux & Mobx</abbr>..
 - TV 端系列工具：stb-conllection、stb-cookie、stb-decorator、stb-event、stb-key、stb-react、stb-redux、stb-shadow、stb-tools
 - Transparent asynchronous rendering with a pluggable scheduler
+
+> 如果觉得有帮助，还请留下您的 star 
 
 ### 💁 [STB 网站上 ➞](https://shitaozhang.github.io/)的更多信息
 
@@ -360,13 +362,15 @@ export function AutoList(store: ListModel) {
 
 - [Jason Miller - Preact 作者](https://github.com/developit)
 
-## Sponsors
+## 支持
 
-支持我们，并帮助我们继续我们的活动。
+如果有帮助到您，想请作者喝杯咖啡~
+
+![image](./resources/images/weixin.jpg)![image](./resources/images/zhifubao.jpg)
 
 ## 圈子
 
-![image](https://github.com/shitaozhang/stb/blob/master/resources/images/qrcode.png)
+- 作者 QQ：442331311 联系请备注'STB'
+- QQ 群号：432045070 云集IPTV行业各方技术大佬，希望对您有所帮助
 
-<!--
-<a href="https://opencollective.com/preact/sponsor/0/website" target="_blank"><img src="https://opencollective.com/preact/sponsor/0/avatar.svg"></a> -->
+![image](./resources/images/qrcode.png)
