@@ -20,35 +20,21 @@
 
 ---
 
-<!-- TOC depthFrom:2 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+## 在线预览
 
-- [演示](https://shitaozhang.github.io/stb.demo.io/)
+- [初始状态演示（控制键盘上下左右可移动焦点）](https://shitaozhang.github.io/stb.demo.io/)
 - [焦点、虚拟 DOM、组件交互（键盘上、下、左、右控制焦点移动）](https://shitaozhang.github.io/stb.demo.io/)
-
-<!-- /TOC -->
-
-# STB
 
 ---
 
-## 运行环境兼容性检测
+## 环境兼容性检测
 
 - [**stb-detection**](https://github.com/shitaozhang/stb-detection)
 
-## 演示
-
-#### 真实应用
+## 可运行例子
 
 - [**STB-TodoMVC**](https://github.com/shitaozhang/stb-todomvc) _([GitHub Project](https://github.com/shitaozhang/stb-todomvc))_
 - [启萌乐园](https://github.com/shitaozhang/stb-project/tree/master/sicuan-qimeng)
-
-#### 可运行例子
-
-...
-
-### 入门项目
-
-- [**Preact Mobx Starter**](https://awaw00.github.io/preact-mobx-starter/) _([GitHub Project - Peact 官方项目](https://github.com/awaw00/preact-mobx-starter))_ :sunny:
 
 ---
 
