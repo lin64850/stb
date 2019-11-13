@@ -1921,11 +1921,6 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@^2.3.1:
-  version "2.5.5"
-  resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
-  integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
-
 homedir-polyfill@^1.0.1:
   version "1.0.3"
   resolved "https://registry.npmjs.org/homedir-polyfill/-/homedir-polyfill-1.0.3.tgz#743298cef4e5af3e194161fbadcc2151d3a058e8"
@@ -2705,18 +2700,6 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
-
-mobx-stb@0.0.1-beta.0:
-  version "0.0.1-beta.0"
-  resolved "https://registry.npmjs.org/mobx-stb/-/mobx-stb-0.0.1-beta.0.tgz#d7ab84dcaaf1f97238a88a188f621d0f5f596563"
-  integrity sha512-u1Ai9sXnHHs9unaioIGNgwDRJQvGEuWb0f0Ls4eU6Vk8zReS50Ub6VuDlky+K1p4pShU+Kumv4L0p7FIEJxqvw==
-  dependencies:
-    hoist-non-react-statics "^2.3.1"
-
-mobx@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmjs.org/mobx/-/mobx-4.0.0.tgz#3e03d39e2ff187372120db30187b0383f51ec876"
-  integrity sha1-PgPTni/xhzchINswGHsDg/UeyHY=
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -4039,10 +4022,10 @@ stb-shadow@0.0.4-beta:
     stb-key "0.0.1-beta"
     stb-tools "0.0.7-beta"
 
-stb-shadow@0.0.4-beta.1:
-  version "0.0.4-beta.1"
-  resolved "https://registry.npmjs.org/stb-shadow/-/stb-shadow-0.0.4-beta.1.tgz#249f3b58c6383b14c1363ddb718984b293018f44"
-  integrity sha512-H547xZaRKhTqEBINSjeg++NaXQfs43lfSSpmdaWY8tpDdXdF1gJSNVAeF2adQLbsaR2Y5Z58LTxwAwgyRtJFUg==
+stb-shadow@0.0.4-beta.3:
+  version "0.0.4-beta.3"
+  resolved "https://registry.npmjs.org/stb-shadow/-/stb-shadow-0.0.4-beta.3.tgz#aacfb387ca6763e9b818bf1c26050f95bb82d1d6"
+  integrity sha512-n5KyyluBJSm0fN2RgDxgR72jmFOuGc1Je+J7XKD0yI/VXAggiMusinxLqYvWpTypr349Cewelmbmp+p2XtDXBQ==
   dependencies:
     stb-key "0.0.1-beta"
     stb-tools "0.0.7-beta"

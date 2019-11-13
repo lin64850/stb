@@ -1,7 +1,6 @@
 import { MainEntity } from "../../../entitys";
 import { NavModel } from "./nav_model";
 import { BodyModel } from "./body_model";
-import { observable } from "mobx";
 import { Tools } from "../../../configs";
 import { MType } from "..";
 import { ControlModel } from "./control_model";
@@ -15,7 +14,6 @@ export class RootModel {
     readonly modBody: BodyModel;
     readonly modCont: ControlModel;
 
-    @observable
     bg: string = "";
 
     constructor(nttMain: MainEntity, request: Index.IRequest, memo: Index.IMemo) {

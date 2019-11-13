@@ -43,8 +43,6 @@
     },
     "homepage": "https://github.com/shitaozhang",
     "dependencies": {
-        "mobx": "4.0.0",
-        "mobx-stb": "0.0.1-beta.0",
         "bootstrap-epg": "0.0.1-beta",
         "stb-conllection": "0.0.5-beta.1",
         "stb-cookie": "0.0.1-beta.2",
@@ -54,7 +52,7 @@
         "stb-player": "1.0.5",
         "stb-plugin": "0.0.0-beta.1",
         "stb-react": "0.5.1-beta.4",
-        "stb-shadow": "0.0.4-beta.1",
+        "stb-shadow": "0.0.4-beta.3",
         "stb-tools": "0.0.9-beta.8",
         "typescript": "^3.5.3"
     },

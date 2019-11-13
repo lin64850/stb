@@ -1,5 +1,4 @@
 import { Component, h } from "stb-react";
-import { observer } from "mobx-stb";
 import { MType } from "../..";
 import { Key } from "stb-key";
 import { focus } from "stb-decorator";
@@ -7,7 +6,6 @@ import {BodyModel} from "../../models/body_model";
 import { Focus } from "stb-shadow";
 
 @focus
-@observer
 export class Body extends Component<Index.IBodyProps, Index.IBodyState>{
 
     store: BodyModel = this.props.store;

@@ -1,4 +1,3 @@
-import { observable } from "mobx";
 import { IModel } from "stb-react";
 
 export class NavModel implements IModel {
@@ -8,7 +7,6 @@ export class NavModel implements IModel {
     setIndex: (index: number) => void;
     setFocus: (index: number) => void;
 
-    @observable
     dataList: string[] = [
         '首页',
         '栏目',

@@ -14,7 +14,7 @@
 - TV 端系列工具：stb-conllection、stb-cookie、stb-decorator、stb-event、stb-key、stb-react、stb-redux、stb-shadow、stb-tools
 - Transparent asynchronous rendering with a pluggable scheduler
 
-> 如果觉得有帮助，还请留下您的 star 
+> 如果觉得有帮助，还请留下您的 star
 
 ### 💁 [STB 网站上 ➞](https://shitaozhang.github.io/)的更多信息
 
@@ -304,6 +304,7 @@ new FuncOvertime(500).enable(exeFunc, callback);
 - ✅ 调整 根目录下文件夹 `api、entitys、framewrok` 移动至 `src` 目录下，平台配置功能已经可用
 - ✅ 修复 平台模式配置文件导致虚拟目录被编译错误
 - ✅ 调整 `stb-shadow` 库中 Focus.scope 算法，使之更贴合现实业务场景。受影响的功能有 @focus 装饰器，修复在极端情况下情况导致的异常。体现在焦点进行上下移动时
+- ✅ 更新 内置全局函数 setState 替换 mobx 数据流管理工具（兼容性及性能更好）
 
 ## 修复方案
 
@@ -322,17 +323,20 @@ new FuncOvertime(500).enable(exeFunc, callback);
 ```
 
 - 装饰器 pageY 切换不同数据源重写渲染时，导致走马灯效果未被卸载。可先为 dataList 赋值 [] 强制卸载再装载新数据源。可解决该问题
-- 装饰器 pageY、pageX、stepY、stepX等依赖于对应 store model 进行交互的组件同时存在于两个或两个以上的视图组建，导致数据异常（表现为 List 组件类定义后，渲染了 List1、List2、List3...且每个视图组件对应独立数据管理类，但是与装饰器交互时都指向了 List1 对应的数据模型），推荐方案如下：
-通常定义组件类方式：
+- 装饰器 pageY、pageX、stepY、stepX 等依赖于对应 store model 进行交互的组件同时存在于两个或两个以上的视图组建，导致数据异常（表现为 List 组件类定义后，渲染了 List1、List2、List3...且每个视图组件对应独立数据管理类，但是与装饰器交互时都指向了 List1 对应的数据模型），推荐方案如下：
+  通常定义组件类方式：
+
 ```
 @stepX(function () { return this.store; })
 class List extends Component{
       store: ListModel = this.props.store;
 ...
 ```
+
 装饰器原理，在编译时传入 List 类为其扩展属性和方法行为，但仅执行一次
-在渲染上面 List1、List2、List3... 时由于最先渲染 List1 ，因此 this.store 已经指向为 List 类，后面的 List2、List3... 都是 List 的实例，共享了第一次List的store数据模型
+在渲染上面 List1、List2、List3... 时由于最先渲染 List1 ，因此 this.store 已经指向为 List 类，后面的 List2、List3... 都是 List 的实例，共享了第一次 List 的 store 数据模型
 解决方案如下：
+
 ```
 // @stepX(function () { console.log(`${this.identCode} 执行了获取 sotre 操作`, this.store); return this.store; })
 export function AutoList(store: ListModel) {
@@ -341,8 +345,8 @@ export function AutoList(store: ListModel) {
         store: ListModel = this.props.store;
 ...
 ```
-至此可解决 List 组件搭配分页数据装饰器情况下，也能正确指向动态分配的 sotre 数据模型
 
+至此可解决 List 组件搭配分页数据装饰器情况下，也能正确指向动态分配的 sotre 数据模型
 
 ## 致敬
 
@@ -357,6 +361,6 @@ export function AutoList(store: ListModel) {
 ## 圈子
 
 - 作者 QQ：442331311 联系请备注'STB'
-- QQ 群号：432045070 云集IPTV行业各方技术大佬，希望对您有所帮助
+- QQ 群号：432045070 云集 IPTV 行业各方技术大佬，希望对您有所帮助
 
 ![image](./resources/images/qrcode.png)

@@ -1,5 +1,4 @@
 import { Component, h } from "stb-react";
-import { observer } from "mobx-stb";
 import { MType } from "../..";
 import { Key } from "stb-key";
 import { focus } from "stb-decorator";
@@ -8,7 +7,6 @@ import { PageType } from "stb-event";
 import { FormatUrl } from "stb-tools";
 
 @focus
-@observer
 export class Nav extends Component<Index.INavProps, Index.INavState>{
 
     store: NavModel = this.props.store;
