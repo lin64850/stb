@@ -278,6 +278,10 @@ export const enum MType {
 | -------- | ---- |
 | 四川移动 | 支持 |
 | 安徽电信 | 支持 |
+| 海南电信 | 支持 |
+| 江苏电信 | 支持 |
+| 陕西电信 | 支持 |
+...
 
 [查看更多平台](https://shitaozhang.github.io/guide/support.html#%E5%85%BC%E5%AE%B9)
 
@@ -352,15 +356,15 @@ export function AutoList(store: ListModel) {
 
 - [Jason Miller - Preact 作者](https://github.com/developit)
 
-## 支持
+<!-- ## 支持
 
 如果有帮助到您，想请作者喝杯咖啡~
 
-![image](./resources/images/weixin.jpg)![image](./resources/images/zhifubao.jpg)
+![image](./resources/images/weixin.jpg)![image](./resources/images/zhifubao.jpg) -->
 
 ## 圈子
 
-- 作者 QQ：442331311 联系请备注'STB'
-- QQ 群号：432045070 云集 IPTV 行业各方技术大佬，希望对您有所帮助
+<!-- - 作者 QQ：442331311 联系请备注'STB' -->
+- IPTV交流群：432045070 
 
 ![image](./resources/images/qrcode.png)
